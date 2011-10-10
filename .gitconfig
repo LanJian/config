@@ -1,0 +1,30 @@
+[user]
+	name = Jack Huang
+	email = jackhxs@gmail.com
+[core]
+  editor = /usr/bin/vim
+[github]
+	user = LanJian
+	token = 382c53bd9adb795100f4f00b150620b1
+[apply]
+  whitespace = fix
+[color]
+  status = auto
+  branch = auto
+  diff = auto
+[alias]
+  ci = commit
+  up = update
+  st = status
+  br = branch
+  co = checkout
+  ch = cherry-pick
+  di = diff
+  lg = log -p
+  gl = log --graph --decorate
+  glp = log --graph --oneline --abbrev-commit --decorate
+  rl = reflog
+  who = shortlog -s --
+  llog = log --date=local
+  ol = log --oneline
+  w = whatchanged
