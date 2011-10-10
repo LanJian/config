@@ -5,7 +5,6 @@
   editor = /usr/bin/vim
 [github]
 	user = LanJian
-	token = 382c53bd9adb795100f4f00b150620b1
 [apply]
   whitespace = fix
 [color]
