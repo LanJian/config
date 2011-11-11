@@ -26,14 +26,16 @@ Bundle 'gmarik/vundle'
 " Utilities
 Bundle 'pyflakes.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
 Bundle 'wincent/Command-T'
-Bundle 'comments.vim'
 Bundle 'xolox/vim-notes'
+Bundle 'Flex-Development-Support'
+Bundle 'ActionScript-3-Omnicomplete'
 
 " Syntax highlighting
 Bundle 'tpope/vim-rails'
@@ -52,7 +54,36 @@ Bundle 'JSON.vim'
 " Syntactic sugar
 Bundle 'Twinside/vim-haskellConceal'
 
+
+" NERDTree
+map <F2> :NERDTreeToggle<cr>
+
+" Supertab
+let g:SuperTabDefaultCompletionType = "context"
+
+" taglist
+let Tlist_Use_Right_Window = 1
+map <F3> :TlistToggle<cr>
+
+" Eclim
+let g:EclimBrowser='open'
+nnoremap <silent> <leader>i :JavaImportMissing<cr>
+nnoremap <silent> <leader>d :JavaDocSearch -x declarations<cr>
+nnoremap <silent> <cr> :JavaSearchContext<cr>
+nnoremap <silent> <leader>c :JavaCorrect<cr>
+
+" Syntastic
+let g:syntastic_enable_signs=1
+
+" Flex Development
+au BufNewFile,BufRead *.mxml    		setfiletype mxml
+au BufNewFile,BufRead *.as          	setfiletype actionscript
+
+" actionscript tags
+let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
+
 filetype plugin indent on
+set ofu=syntaxcomplete#Complete
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -146,11 +177,11 @@ nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 map <C-K> <C-W>k<C-W>_
 map <C-J> <C-W>j<C-W>_
-nmap <Enter> za
+set wmh=0
 
 nnoremap ; :
 
-set wmh=0
+
 
 function! Putclip(type, ...) range
   let sel_save = &selection
