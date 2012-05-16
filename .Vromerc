@@ -7,6 +7,3 @@ set autocomplete_prev=<S-Tab>
 set autocomplete_next=<Tab>
 set autocomplete_prev_10=<Up>
 set autocomplete_next_10=<Down>
-
-" search engine
-set defaultsearch=none
