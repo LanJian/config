@@ -88,6 +88,10 @@ set ofu=syntaxcomplete#Complete
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" hightlight unwanted whitespace
+:highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+:match ExtraWhitespace /\s\+\%#\@<!$/
+
 set number
 set autoindent
 set ts=2
