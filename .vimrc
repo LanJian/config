@@ -59,7 +59,7 @@ Bundle 'Twinside/vim-haskellConceal'
 map <F2> :NERDTreeToggle<cr>
 
 " Supertab
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " taglist
 let Tlist_Use_Right_Window = 1
@@ -78,6 +78,9 @@ let g:syntastic_enable_signs=1
 " Flex Development
 au BufNewFile,BufRead *.mxml    		setfiletype mxml
 au BufNewFile,BufRead *.as          	setfiletype actionscript
+
+" Spitfire files
+au BufNewFile,BufRead *.spt    		setfiletype htmlcheetah
 
 " actionscript tags
 let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
