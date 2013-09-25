@@ -33,9 +33,11 @@ Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
 Bundle 'wincent/Command-T'
-Bundle 'xolox/vim-notes'
-Bundle 'Flex-Development-Support'
+"Bundle 'xolox/vim-notes'
+"Bundle 'Flex-Development-Support'
 Bundle 'ActionScript-3-Omnicomplete'
+"Bundle 'Vim-JDE'
+Bundle 'javacomplete'
 
 " Syntax highlighting
 Bundle 'tpope/vim-rails'
@@ -50,6 +52,17 @@ Bundle 'haskell.vim'
 Bundle 'vim-stylus'
 Bundle 'nginx.vim'
 Bundle 'JSON.vim'
+
+" Vim-JDE
+"set cfu=VjdeCompletionFun
+"let g:vjde_completion_key='<c-m>'
+"let g:vjde_lib_path="/usr/local/android/platforms/android-18/android.jar"
+
+" javacomplete
+"autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+"autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+"inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P>
+"let g:java_classpath="/usr/local/android/platforms/android-18/android.jar"
 
 " Syntactic sugar
 Bundle 'Twinside/vim-haskellConceal'
@@ -67,10 +80,15 @@ map <F3> :TlistToggle<cr>
 
 " Eclim
 let g:EclimBrowser='open'
-nnoremap <silent> <leader>i :JavaImportMissing<cr>
+nnoremap <silent> <leader>i :JavaImportOrganize<cr>
 nnoremap <silent> <leader>d :JavaDocSearch -x declarations<cr>
 nnoremap <silent> <cr> :JavaSearchContext<cr>
 nnoremap <silent> <leader>c :JavaCorrect<cr>
+
+" Eclim + Java
+au BufNewFile,BufRead *.java    		let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+au BufNewFile,BufRead *.java        set ts=4
+au BufNewFile,BufRead *.java        set shiftwidth=4
 
 " Syntastic
 let g:syntastic_enable_signs=1
@@ -99,6 +117,8 @@ set number
 set autoindent
 set ts=2
 set shiftwidth=2
+set smartindent
+set smarttab
 syntax  on
 set nohls
 "set background=dark
