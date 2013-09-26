@@ -52,6 +52,7 @@ Bundle 'haskell.vim'
 Bundle 'vim-stylus'
 Bundle 'nginx.vim'
 Bundle 'JSON.vim'
+Bundle 'groenewege/vim-less'
 
 " Vim-JDE
 "set cfu=VjdeCompletionFun
@@ -110,8 +111,13 @@ set ofu=syntaxcomplete#Complete
 set backspace=indent,eol,start
 
 " hightlight unwanted whitespace
-:highlight ExtraWhitespace ctermbg=darkred guibg=darkred
-:match ExtraWhitespace /\s\+\%#\@<!$/
+highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+match ExtraWhitespace /\s\+\%#\@<!$/
+
+" 80 char per line
+highlight ColorColumn ctermbg=7
+let &colorcolumn=join(range(81,999),",")
+"set colorcolumn=80
 
 set number
 set autoindent
@@ -172,8 +178,8 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " For all text files set 'textwidth' to 80 characters.
+  autocmd FileType text setlocal textwidth=80
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
