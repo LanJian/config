@@ -54,6 +54,9 @@ Bundle 'nginx.vim'
 Bundle 'JSON.vim'
 Bundle 'groenewege/vim-less'
 
+" Syntactic sugar
+Bundle 'Twinside/vim-haskellConceal'
+
 " Vim-JDE
 "set cfu=VjdeCompletionFun
 "let g:vjde_completion_key='<c-m>'
@@ -64,9 +67,6 @@ Bundle 'groenewege/vim-less'
 "autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 "inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P>
 "let g:java_classpath="/usr/local/android/platforms/android-18/android.jar"
-
-" Syntactic sugar
-Bundle 'Twinside/vim-haskellConceal'
 
 
 " NERDTree
