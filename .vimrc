@@ -1,14 +1,3 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2006 Nov 16
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -21,91 +10,98 @@ filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Utilities
-Bundle 'pyflakes.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-fugitive'
-Bundle 'sjl/gundo.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'ervandew/supertab'
-Bundle 'wincent/Command-T'
-"Bundle 'xolox/vim-notes'
-"Bundle 'Flex-Development-Support'
-Bundle 'ActionScript-3-Omnicomplete'
-"Bundle 'Vim-JDE'
-Bundle 'javacomplete'
+Plugin 'bling/vim-airline'
+Plugin 'chrisbra/csv.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'honza/vim-snippets'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'pyflakes.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'sirver/ultisnips'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
+
+" Colorschemes
+Plugin 'chriskempson/vim-tomorrow-theme'
 
 " Syntax highlighting
-Bundle 'tpope/vim-rails'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-liquid'
-Bundle 'itspriddle/vim-jquery'
-Bundle 'othree/html5.vim'
-Bundle 'jade.vim'
-Bundle 'haskell.vim'
-Bundle 'vim-stylus'
-Bundle 'nginx.vim'
-Bundle 'JSON.vim'
-Bundle 'groenewege/vim-less'
+Plugin 'JSON.vim'
+Plugin 'groenewege/vim-less'
+Plugin 'haskell.vim'
+Plugin 'itspriddle/vim-jquery'
+Plugin 'jade.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'nginx.vim'
+Plugin 'othree/html5.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-liquid'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-stylus'
+Plugin 'valloric/youcompleteme'
 
 " Syntactic sugar
-Bundle 'Twinside/vim-haskellConceal'
+Plugin 'Twinside/vim-haskellConceal'
 
-" Vim-JDE
-"set cfu=VjdeCompletionFun
-"let g:vjde_completion_key='<c-m>'
-"let g:vjde_lib_path="/usr/local/android/platforms/android-18/android.jar"
+set t_Co=256
+colorscheme Tomorrow-Night-Eighties
 
-" javacomplete
-"autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-"autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-"inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P>
-"let g:java_classpath="/usr/local/android/platforms/android-18/android.jar"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugin settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" ultisnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
-" NERDTree
+" ctrlp.vim
+let g:ctrlp_working_path_mode = ''
+
+" vim-markdown
+let g:vim_markdown_folding_disabled=1
+
+" vim-airline
+set statusline=1
+let g:airline_powerline_fonts=1
+let g:airline_theme='bubblegum'
+
+" tabular
+nmap <F1> :Tabularize /
+vmap <F1> :Tabularize /
+
+" nerdtree
 map <F2> :NERDTreeToggle<cr>
 
-" Supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" tagbar
+map <F8> :TagbarToggle<cr>
 
-" taglist
-let Tlist_Use_Right_Window = 1
-map <F3> :TlistToggle<cr>
-
-" Eclim
+" eclim
 let g:EclimBrowser='open'
-nnoremap <silent> <leader>i :JavaImportOrganize<cr>
-nnoremap <silent> <leader>d :JavaDocSearch -x declarations<cr>
-nnoremap <silent> <cr> :JavaSearchContext<cr>
-nnoremap <silent> <leader>c :JavaCorrect<cr>
+au BufNewFile,BufRead *.java nnoremap <silent> <leader>i :JavaImportOrganize<cr>
+au BufNewFile,BufRead *.java nnoremap <silent> <leader>d :JavaDocSearch -x declarations<cr>
+au BufNewFile,BufRead *.java nnoremap <silent> <cr> :JavaSearchContext<cr>
+au BufNewFile,BufRead *.java nnoremap <silent> <leader>c :JavaCorrect<cr>
+au BufNewFile,BufRead *.java let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+au BufNewFile,BufRead *.java set ts=4
+au BufNewFile,BufRead *.java set shiftwidth=4
 
-" Eclim + Java
-au BufNewFile,BufRead *.java    		let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
-au BufNewFile,BufRead *.java        set ts=4
-au BufNewFile,BufRead *.java        set shiftwidth=4
-
-" Syntastic
+" syntastic
 let g:syntastic_enable_signs=1
 
-" Flex Development
-au BufNewFile,BufRead *.mxml    		setfiletype mxml
-au BufNewFile,BufRead *.as          	setfiletype actionscript
-
-" Spitfire files
-au BufNewFile,BufRead *.spt    		setfiletype htmlcheetah
-
-" actionscript tags
-let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
-
 filetype plugin indent on
-set ofu=syntaxcomplete#Complete
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -115,10 +111,11 @@ highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 match ExtraWhitespace /\s\+\%#\@<!$/
 
 " 80 char per line
-highlight ColorColumn ctermbg=7
-let &colorcolumn=join(range(81,999),",")
-"set colorcolumn=80
+set colorcolumn=80
+hi ColorColumn ctermbg=237
 
+set cursorline
+set textwidth=0 wrapmargin=0
 set number
 set autoindent
 set ts=2
@@ -126,28 +123,24 @@ set shiftwidth=2
 set smartindent
 set smarttab
 syntax  on
-set nohls
-"set background=dark
+set background=dark
 set expandtab
-
 set ignorecase
 set smartcase
-
-set nohls
-
-set incsearch
-
+set incsearch		" do incremental searching
 set gdefault
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set hlsearch
+set backupdir=~/.vim/backup
+set laststatus=2
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
   set backup		" keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -157,13 +150,6 @@ map Q gq
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 set mouse=a
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -191,6 +177,8 @@ if has("autocmd")
 
   augroup END
 
+  autocmd FilterWritePre * if &diff | setlocal wrap< | endif
+
 else
 
   set autoindent		" always set autoindenting on
@@ -202,9 +190,8 @@ endif " has("autocmd")
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 	 	\ | wincmd p | diffthis
 
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :Ack
+nnoremap <leader>a :!ack 
 
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
@@ -214,34 +201,10 @@ set wmh=0
 
 nnoremap ; :
 
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
-
-function! Putclip(type, ...) range
-  let sel_save = &selection
-  let &selection = "inclusive"
-  let reg_save = @@
-  if a:type == 'n'
-    silent exe a:firstline . "," . a:lastline . "y"
-  elseif a:type == 'c'
-    silent exe a:1 . "," . a:2 . "y"
-  else
-    silent exe "normal! `<" . a:type . "`>y"
-  endif
-  call system('putclip', @@)
-  let &selection = sel_save
-  let @@ = reg_save
-endfunction
-
-vnoremap <silent> <leader>y :call Putclip(visualmode(), 1)<CR>
-nnoremap <silent> <leader>y :call Putclip('n', 1)<CR>
-
-function! Getclip()
-  let reg_save = @@
-  let @@ = system('getclip')
-  setlocal paste
-  exe 'normal p'
-  setlocal nopaste
-  let @@ = reg_save
-endfunction
-
-nnoremap <silent> <leader>p :call Getclip()<CR>
+nnoremap + <C-a>
+nnoremap - <C-x>

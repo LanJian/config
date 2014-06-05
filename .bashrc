@@ -4,6 +4,10 @@
 
 # If not running interactively, don't do anything
 if [[ -n "$PS1" ]]; then
+    
+    if [ "$TERM" == "xterm" ]; then
+      export TERM=xterm-256color
+    fi
 
     # don't put duplicate lines in the history. See bash(1) for more options
     # ... or force ignoredups and ignorespace
