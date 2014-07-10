@@ -1,0 +1,14 @@
+2014-03-31 22:15:44	jasmeet-[sl]	Hi Jack
+2014-03-31 22:28:51	jackhxs	hi
+2014-03-31 22:31:04	jasmeet-[sl]	I am not sure about the count of chinese files showing up incorrectly. But I do see frequent issues whenever I upload a ppt or doc in chinese. Its language detection is randomly chnaging. Also I doubt if its happening with other frequently used languages
+2014-03-31 22:33:59	jackhxs	so the library we use uses some randomness when detecting language, this is probably why you are getting changing results
+2014-03-31 22:34:09	jasmeet-[sl]	I see.
+2014-03-31 22:34:11	jackhxs	this should only happen when the text is short though
+2014-03-31 22:34:27	jackhxs	because it is not confident about the detected language
+2014-03-31 22:34:49	jasmeet-[sl]	Let me test with other longer files and also for other languages. I ll update the story with my observations
+2014-03-31 22:35:15	jackhxs	it would be better if we can get a rough number, then we can decide if this is a problem we need to address
+2014-03-31 22:35:37	jackhxs	one thing we can do is to lower our confidence threshold, which is set to 95% right now
+2014-03-31 22:36:43	jasmeet-[sl]	I ll add shishir to this hangout. He has more points to add.
+2014-03-31 22:36:46	jasmeet-[sl]	hold on a sec
+2014-03-31 22:37:29	jasmeet-[sl]	Lets do a quick hangout
+2014-03-31 22:38:39	jackhxs	ok one sec

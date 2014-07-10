@@ -1,0 +1,34 @@
+2014-04-08 13:59:28	-->	jackhxs (jackhxs@localhost) has joined #test
+2014-04-08 13:59:28	--	Mode #test [+t] by localhost
+2014-04-08 13:59:28	--	Channel #test: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2014-04-08 13:59:30	--	Mode #test [+t]
+2014-04-08 14:00:07	-->	jackhxs (jackhxs@localhost) has joined #test
+2014-04-08 14:00:07	--	Mode #test [+t] by localhost
+2014-04-08 14:00:07	--	Channel #test: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2014-04-08 14:00:09	--	Mode #test [+t]
+2014-04-08 14:00:15	@jackhxs	test
+2014-04-08 14:00:20	-->	jackhxs (jackhxs@localhost) has joined #test
+2014-04-08 14:00:20	--	Mode #test [+t] by localhost
+2014-04-08 14:00:20	--	Channel #test: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2014-04-08 14:00:22	--	Mode #test [+t]
+2014-04-08 14:00:41	-->	jackhxs (jackhxs@localhost) has joined #test
+2014-04-08 14:00:41	--	Mode #test [+t] by localhost
+2014-04-08 14:00:41	--	Channel #test: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2014-04-08 14:00:43	--	Mode #test [+t]
+2014-04-08 14:01:30	--	root has changed topic for #test to "BitlBee groupchat: "private-chat-1f6570b7-2106-4e7c-9055-f109ef28d540@conference.chat.facebook.com". Please keep in mind that root-commands won't work here. Have fun!"
+2014-04-08 14:02:20	@jackhxs	test?
+2014-04-08 14:02:20	@root	Cleaning up channel, bye!
+2014-04-08 14:02:20	<--	root has kicked jackhxs (Chatroom closed by server)
+2014-04-08 14:03:29	jackhxs	test?
+2014-04-08 14:03:29	--	#test: No such nick/channel
+2014-04-08 14:13:19	jackhxs	test?
+2014-04-08 14:13:58	--	#test: IM protocol does not support room invitations
+2014-04-08 14:14:32	jackhxs	test?
+2014-04-08 14:15:02	-->	jackhxs (jackhxs@localhost) has joined #test
+2014-04-08 14:15:02	--	Mode #test [+t] by localhost
+2014-04-08 14:15:02	--	Channel #test: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2014-04-08 14:15:04	--	Mode #test [+t]
+2014-04-08 14:15:19	--	root has changed topic for #test to "BitlBee groupchat: "private-chat-01514ebc-e39b-4966-80f1-7fbfad48176a@conference.chat.facebook.com". Please keep in mind that root-commands won't work here. Have fun!"
+2014-04-08 14:15:32	@jackhxs	test?
+2014-04-08 14:15:33	@root	Cleaning up channel, bye!
+2014-04-08 14:15:33	<--	root has kicked jackhxs (Chatroom closed by server)

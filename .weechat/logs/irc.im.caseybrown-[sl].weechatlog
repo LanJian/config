@@ -1,0 +1,523 @@
+2014-04-07 11:15:53	jackhxs	do we have the haproxy qps data in ganglia?
+2014-04-07 11:16:08	CaseyBrown-[sl]	we should
+2014-04-07 11:17:10	CaseyBrown-[sl]	well, it looks like something is broken
+2014-04-07 11:17:12	CaseyBrown-[sl]	https://noc.slideshare.com/ganglia/?c=Utility&h=director.sl.ss&m=load_one&r=hour&s=by%20name&hc=4&mc=2
+2014-04-07 11:17:15	CaseyBrown-[sl]	is where they should be
+2014-04-07 11:19:43	jackhxs	i dont see anything on the graphs
+2014-04-07 11:19:58	CaseyBrown-[sl]	yeah, broken
+2014-04-07 11:20:02	CaseyBrown-[sl]	i'll have a look
+2014-04-07 14:50:42	jackhxs	any update on the graphs?
+2014-04-07 14:51:59	CaseyBrown-[sl]	a number of things got messed up in the various haproxy changes
+2014-04-07 14:52:08	CaseyBrown-[sl]	fixing them one at a time
+2014-04-07 14:53:10	jackhxs	ok
+2014-04-07 14:53:30	jackhxs	i double checked the td-agent.log, the extra logging is removed now
+2014-04-07 14:53:41	CaseyBrown-[sl]	great thanks
+2014-04-07 15:31:39	CaseyBrown-[sl]	ahhhh
+2014-04-07 15:31:41	CaseyBrown-[sl]	figured it out
+2014-04-07 15:31:49	CaseyBrown-[sl]	it was a "feature" we added
+2014-04-07 18:33:38	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-04-07 23:29:28	--	irc: disconnected from server
+2014-04-08 08:17:55	--	irc: disconnected from server
+2014-04-08 10:26:48	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-08 10:39:07	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-08 10:39:13	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-08 10:46:38	--	irc: disconnected from server
+2014-04-08 14:17:01	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-04-08 14:17:12	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-08 15:05:07	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-04-08 15:06:50	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-08 15:48:35	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-04-08 16:03:15	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-08 18:09:31	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-08 18:11:20	--	irc: disconnected from server
+2014-04-08 23:34:33	--	irc: disconnected from server
+2014-04-09 09:24:26	--	irc: disconnected from server
+2014-04-09 09:24:37	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-09 10:03:07	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-04-09 10:23:57	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-09 19:09:59	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-09 19:11:49	--	irc: disconnected from server
+2014-04-10 10:59:31	jackhxs	http://ganglia01.sl.ss/gweb/ is not working for me
+2014-04-10 11:00:55	jackhxs	but https://noc.slideshare.com/ganglia is working
+2014-04-10 11:01:06	jackhxs	i thought it points to ganglia01?
+2014-04-10 11:01:08	CaseyBrown-[sl]	are you vpn'd?
+2014-04-10 11:01:41	jackhxs	ya
+2014-04-10 11:01:50	jackhxs	all i get is a blank page
+2014-04-10 11:02:01	CaseyBrown-[sl]	odd
+2014-04-10 11:04:25	jackhxs	i get a 500
+2014-04-10 11:04:29	jackhxs	but http://ganglia01.sl.ss/gweb/graph.php works
+2014-04-10 12:47:19	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-10 12:48:23	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-10 12:53:49	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-10 12:55:04	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-10 14:35:44	CaseyBrown-[sl]	ok, now we have data
+2014-04-10 14:35:50	CaseyBrown-[sl]	i'm just not sure it is quite right
+2014-04-10 17:48:25	CaseyBrown-[sl]	https://noc.slideshare.com/ganglia/?r=hour&cs=&ce=&m=load_one&c=Utility&h=director.sl.ss&tab=m&vn=&hide-hf=false&mc=2&z=medium&metric_group=ALLGROUPS
+2014-04-10 17:48:34	CaseyBrown-[sl]	metrics are working now
+2014-04-10 17:49:15	jackhxs	awesome
+2014-04-10 17:49:16	jackhxs	thanks
+2014-04-10 18:46:27	--	irc: disconnected from server
+2014-04-10 21:42:36	--	irc: disconnected from server
+2014-04-10 22:46:18	--	irc: disconnected from server
+2014-04-11 00:43:38	--	irc: disconnected from server
+2014-04-11 09:32:47	--	irc: disconnected from server
+2014-04-11 20:54:17	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-11 20:56:44	--	irc: disconnected from server
+2014-04-11 23:45:30	--	irc: disconnected from server
+2014-04-11 23:50:28	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-12 00:08:20	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-04-12 00:08:49	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-12 00:12:41	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-12 00:48:24	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-12 01:02:12	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-12 02:35:37	--	irc: disconnected from server
+2014-04-12 09:57:44	--	irc: disconnected from server
+2014-04-12 17:59:40	--	irc: disconnected from server
+2014-04-12 19:13:42	--	irc: disconnected from server
+2014-04-12 20:01:57	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-12 20:42:43	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-12 20:47:54	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-12 20:49:54	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-12 20:50:00	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-12 20:56:00	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-12 20:56:16	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-12 20:58:16	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-12 20:58:23	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-13 00:48:05	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-13 00:48:13	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-13 00:49:05	--	irc: disconnected from server
+2014-04-13 03:05:11	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-13 07:58:23	--	irc: disconnected from server
+2014-04-13 08:46:07	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-13 08:52:50	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-04-13 10:44:45	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-13 10:47:02	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-04-14 11:20:40	--	irc: disconnected from server
+2014-04-14 11:23:06	-->	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-14 14:42:25	jackhxs	what is the y-axis unit for the director.sl.ss graphs?
+2014-04-14 14:43:14	jackhxs	number/second?
+2014-04-14 14:43:58	CaseyBrown-[sl]	qps
+2014-04-14 14:47:53	jackhxs	is that the total over a 15 second internal?
+2014-04-14 14:47:58	jackhxs	or average
+2014-04-14 14:48:08	CaseyBrown-[sl]	queries per second
+2014-04-14 14:48:31	CaseyBrown-[sl]	it takes the count every 60s
+2014-04-14 14:48:49	CaseyBrown-[sl]	then divides the delta from the previous count by 60
+2014-04-14 14:50:29	jackhxs	well the ganglia interval is 15s it seems
+2014-04-14 14:50:49	jackhxs	https://noc.slideshare.com/ganglia/graph.php?r=hour&z=xlarge&title=&vl=&x=&n=&hreg[]=director&mreg[]=rails_farm__%7Crails_canary_farm__%7Capi_backend__&gtype=stack&glegend=show&aggregate=1&embed=1&_=1397153398538&csv=1
+2014-04-14 14:51:47	CaseyBrown-[sl]	ah
+2014-04-14 14:51:56	CaseyBrown-[sl]	the granularity is 15s
+2014-04-14 14:52:05	CaseyBrown-[sl]	in the rrd that stores the data
+2014-04-14 16:05:21	jackhxs	im seeing a lot more log lines in haproxy.log than what is on the ganglia graphs
+2014-04-14 16:05:21	--	[CaseyBrown-[sl]] is away: Away (Away)
+2014-04-14 16:07:06	jackhxs	could we have duplicate lines in haproxy.log?
+2014-04-14 16:21:48	CaseyBrown-[sl]	unlikely
+2014-04-14 16:22:00	CaseyBrown-[sl]	probably some of the graphs don't work
+2014-04-14 16:27:03	jackhxs	i see
+2014-04-14 16:29:19	CaseyBrown-[sl]	if you can point out graphs without data that should have data
+2014-04-14 16:29:23	CaseyBrown-[sl]	i can debug
+2014-04-14 16:29:33	CaseyBrown-[sl]	(probably they just need to be deleted/recreated)
+2014-04-14 16:37:50	jackhxs	https://noc.slideshare.com/ganglia/graph_all_periods.php?c=Utility&h=director.sl.ss&r=hour&z=default&jr=&js=&st=1397518629&v=0.0&m=api_backend__1xx_count&vl=qps&z=large
+2014-04-14 16:38:02	jackhxs	https://noc.slideshare.com/ganglia/graph_all_periods.php?c=Utility&h=director.sl.ss&r=hour&z=default&jr=&js=&st=1397518629&v=0.0&m=rails_canary_farm__1xx_count&vl=qps&z=large
+2014-04-14 16:40:57	jackhxs	so the 1xx's don't have data
+2014-04-14 16:41:15	jackhxs	the other ones are working
+2014-04-14 16:46:20	CaseyBrown-[sl]	well, there is a very low amount of data in 1xx
+2014-04-14 16:46:28	CaseyBrown-[sl]	maybe 1 per day
+2014-04-14 16:46:40	jackhxs	ya i thought that was the case
+2014-04-14 16:47:19	jackhxs	do we have a graph for just the counts instead of qps?
+2014-04-14 16:47:31	CaseyBrown-[sl]	total counts?
+2014-04-14 16:47:33	CaseyBrown-[sl]	kind of
+2014-04-14 16:47:49	jackhxs	ya, that would make it easier
+2014-04-14 16:47:52	jackhxs	and more accurate
+2014-04-14 16:48:10	jackhxs	cuz i just want a count of haproxy.log lines in a certain time period
+2014-04-14 18:45:57	<--	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-04-25 16:27:59	jackhxs	do you know what ip i need to allow in the security groups rules for monitor01 to hit ec2 machines?
+2014-04-25 16:28:21	CaseyBrown-[sl]	talk to sylvain
+2014-04-25 16:28:38	jackhxs	kk
+2014-04-26 03:03:31	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-26 03:05:26	--	irc: disconnected from server
+2014-04-27 03:40:13	--	irc: disconnected from server
+2014-04-27 12:55:33	--	irc: disconnected from server
+2014-04-28 01:46:14	--	irc: disconnected from server
+2014-04-28 09:41:45	--	irc: disconnected from server
+2014-04-28 10:17:41	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-28 16:27:58	jackhxs	how does the haproxy status page work? i cant hit my language detection haproxy status page from outside
+2014-04-28 16:28:08	jackhxs	but i can hit the director04's
+2014-04-28 16:28:27	CaseyBrown-[sl]	depends on the port it listens on
+2014-04-28 16:28:37	CaseyBrown-[sl]	er port/ip
+2014-04-28 16:29:50	jackhxs	listen haproxystatus 127.0.0.1:8080
+2014-04-28 16:30:13	jackhxs	does that mean i can only hit it from the same machine?
+2014-04-28 16:34:34	CaseyBrown-[sl]	correct
+2014-04-28 18:46:25	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-28 18:47:45	--	irc: disconnected from server
+2014-04-29 00:19:47	--	irc: disconnected from server
+2014-04-29 09:32:57	--	irc: disconnected from server
+2014-04-29 13:48:15	--	irc: disconnected from server
+2014-04-29 13:56:05	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-04-30 02:25:37	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-30 02:29:24	--	irc: disconnected from server
+2014-04-30 10:55:56	--	irc: disconnected from server
+2014-04-30 10:56:12	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-01 19:06:06	CaseyBrown-[sl]	are you still at the office?
+2014-05-01 19:06:13	jackhxs	yes
+2014-05-01 19:06:40	CaseyBrown-[sl]	just got paged for, out of disk on unoconv
+2014-05-01 19:06:54	CaseyBrown-[sl]	are you still looking at the other stuff
+2014-05-01 19:07:06	CaseyBrown-[sl]	and/or should i take action
+2014-05-01 19:10:12	jackhxs	ya can you take a look? im still looking at the haproxy stuff
+2014-05-01 19:10:32	CaseyBrown-[sl]	i'm already on it
+2014-05-01 20:07:03	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-01 20:07:10	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-01 20:07:38	--	irc: disconnected from server
+2014-05-02 02:28:03	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-02 02:29:02	--	irc: disconnected from server
+2014-05-02 10:52:51	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-02 10:54:21	--	irc: disconnected from server
+2014-05-02 13:44:31	jackhxs	i have another question, can you come explain how the stats send to fluentd gets used on ganglia?
+2014-05-02 13:45:38	CaseyBrown-[sl]	sure
+2014-05-02 14:08:32	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-02 14:08:38	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-03 19:15:07	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-03 19:15:38	--	irc: disconnected from server
+2014-05-03 22:17:00	--	irc: disconnected from server
+2014-05-04 00:28:07	--	irc: disconnected from server
+2014-05-05 02:38:13	--	irc: disconnected from server
+2014-05-05 09:00:33	--	irc: disconnected from server
+2014-05-05 09:56:46	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-05 10:22:36	jackhxs	quick question, are we using puppetmaster01 or puppetmaster?
+2014-05-05 10:22:38	jackhxs	or both?
+2014-05-05 10:24:10	CaseyBrown-[sl]	same machine
+2014-05-05 10:25:04	jackhxs	ah ok
+2014-05-05 10:48:44	jackhxs	can you take a look at http://codereview.slideshare.com/5746408594341888/
+2014-05-05 10:48:44	--	[CaseyBrown-[sl]] is away: Away (Away)
+2014-05-05 10:53:43	CaseyBrown-[sl]	yeah, i'll try and get to it this morning
+2014-05-05 12:02:38	CaseyBrown-[sl]	i think you have enough reviews on it
+2014-05-05 12:02:40	CaseyBrown-[sl]	go ahead
+2014-05-05 14:49:06	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-05 14:49:12	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-05 18:26:39	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-05 18:29:47	--	irc: disconnected from server
+2014-05-05 22:38:37	--	irc: disconnected from server
+2014-05-06 09:30:56	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-06 09:31:39	--	irc: disconnected from server
+2014-05-06 10:23:50	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-06 10:23:56	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-06 11:35:23	jackhxs	let me when you have some time, i want to deploy the response code export change together
+2014-05-06 11:36:45	CaseyBrown-[sl]	cool, maybe this afternoon?
+2014-05-06 11:36:52	CaseyBrown-[sl]	lots of meetings this morning
+2014-05-06 11:37:46	jackhxs	sure
+2014-05-06 18:18:10	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-06 18:20:50	--	irc: disconnected from server
+2014-05-06 23:15:10	--	irc: disconnected from server
+2014-05-07 09:18:17	--	irc: disconnected from server
+2014-05-07 09:27:53	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-07 09:29:38	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-07 09:37:04	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-07 15:38:26	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-07 15:42:01	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-07 15:46:12	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-07 16:22:28	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-07 17:08:19	jackhxs	hmm the response code crons are no longer running on monitor02
+2014-05-07 17:08:26	jackhxs	any ideas?
+2014-05-07 17:09:30	CaseyBrown-[sl]	monitor01?
+2014-05-07 17:10:30	jackhxs	o its running there
+2014-05-07 17:10:38	jackhxs	so is that the active one now?
+2014-05-07 17:10:42	CaseyBrown-[sl]	yep
+2014-05-07 17:10:54	jackhxs	how does that get changed?
+2014-05-07 17:11:43	CaseyBrown-[sl]	when heartbeat thinks the active one is non-responsive
+2014-05-07 17:14:07	jackhxs	ok
+2014-05-07 20:23:43	--	irc: disconnected from server
+2014-05-07 23:53:47	--	irc: disconnected from server
+2014-05-08 09:49:12	--	irc: disconnected from server
+2014-05-08 10:40:31	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-08 11:06:33	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-08 12:16:12	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-08 13:20:52	--	irc: disconnected from server
+2014-05-08 13:50:58	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-08 13:55:48	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-08 14:00:02	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-08 14:42:32	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-08 14:45:00	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-08 14:45:58	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-08 15:23:18	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-08 15:30:57	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-08 16:01:38	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-08 16:02:31	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-08 16:19:53	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-08 17:11:31	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-08 17:59:52	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-08 18:23:08	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-08 20:01:59	--	irc: disconnected from server
+2014-05-09 02:03:42	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-09 02:04:33	--	irc: disconnected from server
+2014-05-09 10:38:54	--	irc: disconnected from server
+2014-05-09 15:35:23	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-09 15:35:30	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-09 15:51:57	--	irc: disconnected from server
+2014-05-09 18:31:44	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-09 19:04:57	--	irc: disconnected from server
+2014-05-14 13:42:05	jackhxs	;q
+2014-05-14 13:42:05	--	[CaseyBrown-[sl]] is away: Away (Away)
+2014-05-14 13:42:27	jackhxs	oops wrong window
+2014-05-14 17:51:32	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-14 17:51:52	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-14 18:01:32	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-14 18:01:38	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-14 18:45:51	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-14 19:02:12	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-15 01:12:47	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-15 01:13:14	--	irc: disconnected from server
+2014-05-15 10:59:02	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-15 10:59:05	--	irc: disconnected from server
+2014-05-15 14:28:50	--	irc: disconnected from server
+2014-05-15 18:00:46	jackhxs	this will be one of the linkedin uploads graphs
+2014-05-15 18:00:48	jackhxs	https://noc.slideshare.com/ganglia/graph_all_periods.php?title=&vl=&x=&n=&hreg%5B%5D=%5Eip.*_10.*&mreg%5B%5D=upload_endpoint__2xx_count&gtype=stack&glegend=show&aggregate=1
+2014-05-15 18:00:53	jackhxs	so many hosts lol
+2014-05-15 18:02:50	CaseyBrown-[sl]	you might want a line graph
+2014-05-15 18:03:09	CaseyBrown-[sl]	but yeah, hilarious
+2014-05-15 18:41:20	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-16 01:16:24	--	irc: disconnected from server
+2014-05-16 10:51:21	--	irc: disconnected from server
+2014-05-16 10:51:33	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-16 14:40:31	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-16 14:40:31	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-16 23:41:29	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-16 23:43:07	--	irc: disconnected from server
+2014-05-17 12:31:02	--	irc: disconnected from server
+2014-05-18 00:35:49	--	irc: disconnected from server
+2014-05-18 16:39:10	--	irc: disconnected from server
+2014-05-19 17:47:48	jackhxs	the haproxy metrics goes negative whenever it's restarted
+2014-05-19 17:48:10	jackhxs	i think we need a check in the fluent plugin
+2014-05-19 17:48:37	jackhxs	if the difference is negative, then do something
+2014-05-19 17:48:49	CaseyBrown-[sl]	i kind of considered that ok, since restarts shouldn't happen that often
+2014-05-19 17:48:56	CaseyBrown-[sl]	but i guess that assumption is different in ec2
+2014-05-19 19:31:09	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-19 20:24:28	--	irc: disconnected from server
+2014-05-20 09:24:55	--	irc: disconnected from server
+2014-05-20 10:31:58	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-20 10:39:13	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-20 10:39:24	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-20 18:50:57	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-20 20:25:36	--	irc: disconnected from server
+2014-05-21 10:45:01	--	irc: disconnected from server
+2014-05-21 10:54:59	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-21 11:12:38	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-21 11:12:44	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-21 11:28:45	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-21 11:28:46	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-21 19:11:37	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-21 19:56:21	--	irc: disconnected from server
+2014-05-22 01:26:08	--	irc: disconnected from server
+2014-05-22 10:55:36	--	irc: disconnected from server
+2014-05-22 10:58:00	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-22 11:21:00	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-22 12:07:20	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-22 13:30:58	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-22 13:31:03	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-22 14:11:27	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-22 14:25:41	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-22 14:53:50	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-22 16:37:21	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-22 16:41:32	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-22 16:41:34	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-22 16:56:35	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-23 00:59:51	--	irc: disconnected from server
+2014-05-23 10:45:26	--	irc: disconnected from server
+2014-05-23 10:45:37	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-23 18:21:46	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-24 02:03:49	--	irc: disconnected from server
+2014-05-24 23:22:19	--	irc: disconnected from server
+2014-05-25 11:06:11	--	irc: disconnected from server
+2014-05-27 02:16:14	--	irc: disconnected from server
+2014-05-27 10:04:58	--	irc: disconnected from server
+2014-05-27 10:20:34	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-27 19:15:04	--	irc: disconnected from server
+2014-05-28 10:19:17	--	irc: disconnected from server
+2014-05-28 10:43:35	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-28 10:45:53	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-28 12:34:03	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-28 12:34:03	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-29 11:06:58	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-29 11:07:05	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-29 11:07:22	--	irc: disconnected from server
+2014-05-29 15:40:57	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-29 16:46:48	--	irc: disconnected from server
+2014-05-29 16:56:21	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-29 18:35:06	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-30 11:17:07	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-30 11:18:08	--	irc: disconnected from server
+2014-05-30 18:51:05	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-05-31 03:51:26	--	irc: disconnected from server
+2014-05-31 18:10:46	--	irc: disconnected from server
+2014-05-31 18:10:57	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-05-31 19:46:31	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-01 03:34:10	--	irc: disconnected from server
+2014-06-01 15:51:47	--	irc: disconnected from server
+2014-06-01 15:51:58	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-01 16:50:42	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-02 02:35:13	--	irc: disconnected from server
+2014-06-02 10:49:39	--	irc: disconnected from server
+2014-06-02 10:49:50	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-02 10:52:50	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-02 10:52:56	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-02 13:04:02	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-02 13:06:33	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-03 00:45:48	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-03 00:47:33	--	irc: disconnected from server
+2014-06-03 10:14:47	--	irc: disconnected from server
+2014-06-03 10:36:28	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-03 13:05:12	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-03 13:05:54	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-03 15:46:40	CaseyBrown-[sl]	hey viking
+2014-06-03 15:46:41	CaseyBrown-[sl]	Max disk usage is: 100 on host: ec2-54-81-153-211.compute-1.amazonaws.com of role: pdf2htmlFactoryRole in cluster: conversion 
+2014-06-03 15:50:59	jackhxs	ok
+2014-06-03 19:31:52	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-04 01:07:58	--	irc: disconnected from server
+2014-06-04 10:41:52	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-04 10:42:23	--	irc: disconnected from server
+2014-06-04 15:28:01	jackhxs	kk what did you need?
+2014-06-04 15:28:01	--	[CaseyBrown-[sl]] is away: Away (Away)
+2014-06-04 15:29:36	jackhxs	document_labeler/lib/slideshare_ugc_validation_request.rb
+2014-06-04 15:30:09	jackhxs	oops wrong chat
+2014-06-04 15:35:32	CaseyBrown-[sl]	swf conversion percentage
+2014-06-04 15:35:39	CaseyBrown-[sl]	and staging linkedin uploads
+2014-06-04 18:19:37	jackhxs	do you know how to log into https://www.linkedin-ei.com/
+2014-06-04 18:20:24	CaseyBrown-[sl]	you have to create a new account
+2014-06-04 18:20:31	CaseyBrown-[sl]	it isn't like our staging
+2014-06-04 18:20:42	CaseyBrown-[sl]	or you can use a test account
+2014-06-04 18:21:26	CaseyBrown-[sl]	https://iwww.corp.linkedin.com/wiki/cf/display/PRT/LinkedIn+Test+Accounts
+2014-06-04 19:17:59	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-04 23:41:45	--	irc: disconnected from server
+2014-06-05 10:39:24	--	irc: disconnected from server
+2014-06-05 10:58:23	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-05 11:00:56	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-05 12:43:02	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-05 14:55:28	jackhxs	curl -X POST -F "file_name=@Rings.png" -L linkedin-uploads-staging-773889481.us-east-1.elb.amazonaws.com/upload
+2014-06-05 14:55:30	CaseyBrown-[sl]	ec2-107-20-152-240.compute-1.amazonaws.com
+2014-06-05 14:56:39	jackhxs	curl -X POST -F "file_name=@Rings.png" -L ec2-107-20-152-240.compute-1.amazonaws.com/upload works
+2014-06-05 14:57:01	jackhxs	but curl -X POST -F "file_name=@Rings.png" -L https://slideshare.www.linkedin-ei.com/upload doesn't
+2014-06-05 15:00:44	CaseyBrown-[sl]	hey jack, what machines runs image_optimizer role
+2014-06-05 15:00:47	CaseyBrown-[sl]	what are they named
+2014-06-05 15:02:31	jackhxs	if you search for image_optimizer
+2014-06-05 15:02:41	jackhxs	in the linkedin uploads account
+2014-06-05 15:04:55	CaseyBrown-[sl]	ah i had the wrong account
+2014-06-05 15:04:56	CaseyBrown-[sl]	thanks
+2014-06-05 15:05:58	CaseyBrown-[sl]	curl -X POST -F "file_name=@Rings.png" -L https://ec2-107-20-152-240.compute-1.amazonaws.com/upload
+2014-06-05 15:05:58	CaseyBrown-[sl]	curl: (35) error:14077458:SSL routines:SSL23_GET_SERVER_HELLO:reason(1112)
+2014-06-05 18:39:11	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-06 02:26:44	--	irc: disconnected from server
+2014-06-06 09:06:54	--	irc: disconnected from server
+2014-06-06 09:47:10	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-07 00:45:50	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-07 00:45:57	--	irc: disconnected from server
+2014-06-09 03:34:58	--	irc: disconnected from server
+2014-06-09 10:36:23	--	irc: disconnected from server
+2014-06-09 10:36:35	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-09 14:23:29	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-09 14:23:34	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-09 15:33:44	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-09 15:33:50	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-09 17:23:23	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-09 17:23:28	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-09 17:25:28	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-09 17:25:35	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-09 18:49:05	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-10 09:34:06	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-10 09:35:41	--	irc: disconnected from server
+2014-06-10 09:43:33	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-10 10:33:53	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-10 19:00:52	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-10 20:47:24	--	irc: disconnected from server
+2014-06-19 15:01:18	jackhxs	using redismaster01
+2014-06-19 15:01:18	--	[CaseyBrown-[sl]] is away: Away (Away)
+2014-06-19 15:15:31	CaseyBrown-[sl]	ok, that is redis01
+2014-06-19 15:15:35	CaseyBrown-[sl]	should be no issues
+2014-06-19 19:08:44	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-19 19:09:49	--	irc: disconnected from server
+2014-06-20 09:33:54	--	irc: disconnected from server
+2014-06-20 10:48:33	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-20 13:18:26	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-20 13:23:32	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-20 15:13:59	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-20 15:14:05	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-20 18:38:17	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-21 07:22:12	--	irc: disconnected from server
+2014-06-21 12:16:00	--	irc: disconnected from server
+2014-06-21 20:27:52	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-21 20:48:25	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-22 02:20:56	--	irc: disconnected from server
+2014-06-22 12:33:07	--	irc: disconnected from server
+2014-06-23 01:40:30	--	irc: disconnected from server
+2014-06-23 10:46:33	--	irc: disconnected from server
+2014-06-23 10:46:45	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 11:19:48	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-23 11:19:54	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 11:34:50	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-23 12:03:08	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 12:50:04	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-23 13:31:56	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 13:32:17	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-23 13:45:50	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 13:48:06	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-23 13:49:48	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 13:50:13	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-23 13:52:37	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 15:01:08	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-23 15:17:27	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 15:19:57	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-23 15:24:56	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 15:55:15	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-23 16:21:00	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 17:08:27	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-23 17:55:42	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-23 19:24:26	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-24 00:48:04	--	irc: disconnected from server
+2014-06-24 10:02:03	--	irc: disconnected from server
+2014-06-24 11:04:23	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-24 11:41:58	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-24 11:50:47	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-24 12:08:41	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-24 12:19:33	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-24 12:30:06	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-24 13:30:55	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-24 14:15:13	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-24 15:25:51	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-24 15:26:55	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-24 15:29:23	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-24 15:58:20	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-24 16:36:19	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-24 16:40:06	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-24 16:48:59	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-24 16:57:04	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-25 02:21:30	--	irc: disconnected from server
+2014-06-25 09:11:05	--	irc: disconnected from server
+2014-06-26 00:29:49	--	irc: disconnected from server
+2014-06-26 03:04:08	--	irc: disconnected from server
+2014-06-26 10:20:57	--	irc: disconnected from server
+2014-06-26 10:49:49	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-26 10:58:04	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-26 10:58:10	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-26 19:00:16	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-27 00:05:21	--	irc: disconnected from server
+2014-06-27 09:43:29	--	irc: disconnected from server
+2014-06-27 10:07:49	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-27 10:37:13	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-27 10:39:30	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-27 11:44:41	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-27 11:44:47	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-27 16:00:48	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-27 16:08:00	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-27 16:08:45	--	irc: disconnected from server
+2014-06-27 18:00:31	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-06-28 01:31:42	--	irc: disconnected from server
+2014-06-28 06:57:36	--	irc: disconnected from server
+2014-06-28 07:37:20	--	irc: disconnected from server
+2014-06-30 22:34:29	--	irc: disconnected from server
+2014-06-30 22:54:34	▬▬▶	CaseyBrown-[sl] (casey@slideshare.com) is back on server
+2014-06-30 23:36:38	--	irc: disconnected from server
+2014-06-30 23:39:42	◀▬▬	CaseyBrown-[sl] (casey@slideshare.com) has quit (Leaving...)
+2014-07-01 19:15:34	--	irc: disconnected from server
+2014-07-01 21:24:40	--	irc: disconnected from server
+2014-07-02 23:37:40	--	irc: disconnected from server
+2014-07-03 23:20:21	--	irc: disconnected from server
+2014-07-04 09:04:38	--	irc: disconnected from server
+2014-07-04 23:10:29	--	irc: disconnected from server
+2014-07-05 16:01:52	--	irc: disconnected from server

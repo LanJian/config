@@ -1,0 +1,403 @@
+2014-04-04 11:11:55	jackhxs	do we have ganglia graphs for our webapp haproxies?
+2014-04-04 11:11:55	--	[SylvainKalache-[sl]] is away: Away (Away)
+2014-04-04 11:13:12	SylvainKalache-[sl]	probably
+2014-04-04 11:13:29	SylvainKalache-[sl]	what kind of graph do you want?
+2014-04-04 11:14:17	SylvainKalache-[sl]	what about this? https://noc.slideshare.com/ganglia/?r=hour&cs=&ce=&s=by+name&c=LoadBalancers&tab=m&vn=
+2014-04-04 11:16:22	jackhxs	do we have the number of requests? something like the linkedin uploads graphs
+2014-04-04 11:16:50	SylvainKalache-[sl]	why do you need that
+2014-04-04 11:18:19	jackhxs	i want to write a nagios alert for pageview events, which will basically compare the number of haproxy log lines to the number of events we send to LI
+2014-04-04 11:19:09	SylvainKalache-[sl]	hum
+2014-04-04 11:19:23	SylvainKalache-[sl]	and then triggers an alert on what?
+2014-04-04 11:19:39	SylvainKalache-[sl]	because it will be hard to match the exact number
+2014-04-04 11:19:46	jackhxs	if there is a significant difference
+2014-04-04 11:19:54	jackhxs	like more than 1% loss
+2014-04-04 11:20:27	SylvainKalache-[sl]	hum
+2014-04-04 11:21:00	SylvainKalache-[sl]	I
+2014-04-04 11:21:10	SylvainKalache-[sl]	am unsure this is the right way of doing
+2014-04-04 11:21:13	SylvainKalache-[sl]	but let me look
+2014-04-04 11:21:18	SylvainKalache-[sl]	we have this 
+2014-04-04 11:21:18	SylvainKalache-[sl]	https://noc.slideshare.com/haproxy_private/
+2014-04-04 11:21:52	SylvainKalache-[sl]	plus I don
+2014-04-04 11:27:20	SylvainKalache-[sl]	also we are proxying api traffic and linkedin api
+2014-04-04 11:27:31	SylvainKalache-[sl]	I guess there is no pageview count for this
+2014-04-04 11:27:36	SylvainKalache-[sl]	so numbers will be off
+2014-04-04 11:27:57	SylvainKalache-[sl]	I'm still looking, I think Casey did a script for that but can't find it in ganglia
+2014-04-04 12:08:06	jackhxs	i found this file in puppet: files/roles/monitor/usr/local/bin/response_code_export.rb
+2014-04-04 12:08:12	jackhxs	but doesnt look like its used anywhere
+2014-04-04 12:08:25	SylvainKalache-[sl]	yeah
+2014-04-04 12:08:30	SylvainKalache-[sl]	CaseyB worked on that a while ago
+2014-04-04 12:08:33	SylvainKalache-[sl]	I'd ask him
+2014-04-04 12:08:40	jackhxs	ok
+2014-04-04 12:08:40	SylvainKalache-[sl]	I haven't found anything either
+2014-04-04 14:49:37	<--	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-14 18:26:37	<--	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-16 11:13:09	jackhxs	can you help me with setting up ganglia for language detection?
+2014-04-16 11:14:19	SylvainKalache-[sl]	sure
+2014-04-16 11:14:24	SylvainKalache-[sl]	a bit later?
+2014-04-16 11:14:40	jackhxs	ok no problem
+2014-04-16 21:07:07	<--	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-16 21:09:28	--	irc: disconnected from server
+2014-04-17 01:33:46	--	irc: disconnected from server
+2014-04-17 01:33:58	-->	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-17 10:05:20	<--	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-17 10:05:26	-->	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-17 10:06:19	--	irc: disconnected from server
+2014-04-17 10:15:10	<--	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-17 10:51:13	--	irc: disconnected from server
+2014-04-17 10:51:47	--	irc: disconnected from server
+2014-04-17 10:52:34	--	irc: disconnected from server
+2014-04-17 10:52:59	-->	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-17 19:38:52	<--	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-18 10:40:49	--	irc: disconnected from server
+2014-04-18 11:01:18	-->	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-18 11:01:25	<--	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-18 11:01:36	-->	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-18 16:08:36	<--	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-19 03:29:24	--	irc: disconnected from server
+2014-04-19 16:08:21	--	irc: disconnected from server
+2014-04-23 15:48:54	SylvainKalache-[sl]	are you done building monitoring for language detection?
+2014-04-23 16:05:21	jackhxs	not yet
+2014-04-23 16:05:25	SylvainKalache-[sl]	ok
+2014-04-23 16:05:40	jackhxs	refactoring the response code export script to a gem
+2014-04-23 18:27:15	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-23 19:25:03	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-24 00:23:23	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-24 10:50:58	--	irc: disconnected from server
+2014-04-24 10:53:22	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-24 17:49:10	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-24 18:45:32	--	irc: disconnected from server
+2014-04-24 22:10:34	--	irc: disconnected from server
+2014-04-25 02:01:56	--	irc: disconnected from server
+2014-04-25 10:54:46	--	irc: disconnected from server
+2014-04-25 10:55:02	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-25 16:17:07	jackhxs	how do i allow a softlayer machine to hit ec2 machine?
+2014-04-25 16:17:29	jackhxs	like what ip do i have to add to the security rules?
+2014-04-25 16:39:52	SylvainKalache-[sl]	208.43.4.241/30
+2014-04-25 17:31:11	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-25 17:32:26	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-26 03:03:31	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-26 03:05:26	--	irc: disconnected from server
+2014-04-27 03:40:13	--	irc: disconnected from server
+2014-04-27 12:55:33	--	irc: disconnected from server
+2014-04-28 01:46:14	--	irc: disconnected from server
+2014-04-28 09:41:45	--	irc: disconnected from server
+2014-04-28 10:19:14	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-28 17:14:04	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-28 17:47:05	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-28 17:47:17	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-28 18:47:45	--	irc: disconnected from server
+2014-04-29 00:19:47	--	irc: disconnected from server
+2014-04-29 02:05:48	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-29 09:32:32	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-29 09:32:57	--	irc: disconnected from server
+2014-04-29 09:35:23	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-29 13:47:29	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-29 13:47:35	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-04-29 13:48:15	--	irc: disconnected from server
+2014-04-29 17:26:08	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-04-30 02:29:24	--	irc: disconnected from server
+2014-04-30 10:55:56	--	irc: disconnected from server
+2014-04-30 10:57:28	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-05 11:46:42	jackhxs	i came across this file -> system/EC2/puppet/manifests/ejabberd_nodes.pp
+2014-05-05 11:46:51	jackhxs	is this even used now?
+2014-05-05 11:47:28	SylvainKalache-[sl]	no
+2014-05-05 11:48:48	jackhxs	should it be removed?
+2014-05-05 11:49:41	SylvainKalache-[sl]	if you wish ^_^
+2014-05-05 14:49:06	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-05 14:49:12	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-05 16:53:00	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-05 18:29:47	--	irc: disconnected from server
+2014-05-05 22:38:37	--	irc: disconnected from server
+2014-05-06 09:31:39	--	irc: disconnected from server
+2014-05-06 14:52:54	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-06 18:18:10	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-06 18:20:50	--	irc: disconnected from server
+2014-05-06 23:15:10	--	irc: disconnected from server
+2014-05-07 09:18:17	--	irc: disconnected from server
+2014-05-07 09:18:29	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-07 10:13:52	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-07 10:14:05	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-07 10:16:40	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-07 10:18:44	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-07 20:23:43	--	irc: disconnected from server
+2014-05-07 23:53:47	--	irc: disconnected from server
+2014-05-08 09:49:12	--	irc: disconnected from server
+2014-05-08 13:20:52	--	irc: disconnected from server
+2014-05-08 14:10:15	jackhxs	can you take a quick look at http://codereview.slideshare.com/6022919561936896/?
+2014-05-08 14:10:32	jackhxs	i want to deploy this together today
+2014-05-08 14:11:52	jackhxs	the softlayer part is already deployed and working
+2014-05-08 14:13:53	SylvainKalache-[sl]	lloking at it
+2014-05-08 14:14:02	jackhxs	thanks
+2014-05-08 14:24:41	SylvainKalache-[sl]	check_ganglia_sums_percentage.rb
+2014-05-08 14:24:41	SylvainKalache-[sl]	is something you wrote
+2014-05-08 14:24:44	SylvainKalache-[sl]	or got from the Internet?
+2014-05-08 14:24:52	jackhxs	i wrote
+2014-05-08 14:24:56	SylvainKalache-[sl]	ok
+2014-05-08 14:25:45	SylvainKalache-[sl]	so
+2014-05-08 14:25:48	SylvainKalache-[sl]	you get a sum
+2014-05-08 14:25:51	SylvainKalache-[sl]	and then compute a %
+2014-05-08 14:25:54	SylvainKalache-[sl]	% of what
+2014-05-08 14:26:44	jackhxs	it depends on the expression passed in
+2014-05-08 14:27:37	SylvainKalache-[sl]	I think you should provide an example
+2014-05-08 14:27:44	SylvainKalache-[sl]	idk if it's only me 
+2014-05-08 14:27:47	SylvainKalache-[sl]	but to make it more clear
+2014-05-08 14:28:01	jackhxs	i have an example in the script
+2014-05-08 14:28:02	jackhxs	at the top
+2014-05-08 14:28:13	SylvainKalache-[sl]	right
+2014-05-08 14:28:19	SylvainKalache-[sl]	but explaining
+2014-05-08 14:28:42	SylvainKalache-[sl]	like a sentence to explain what you example does
+2014-05-08 14:28:53	jackhxs	ok ill add it
+2014-05-08 14:29:01	SylvainKalache-[sl]	I got it
+2014-05-08 14:29:11	SylvainKalache-[sl]	but it can save some time to help people understand
+2014-05-08 14:29:21	SylvainKalache-[sl]	just a quick sentence nothing fanct
+2014-05-08 14:29:23	SylvainKalache-[sl]	fancy*
+2014-05-08 14:29:44	SylvainKalache-[sl]	cool that you wrote that :)
+2014-05-08 14:29:53	SylvainKalache-[sl]	the goal was to no write that as we should use ingraph
+2014-05-08 14:29:57	SylvainKalache-[sl]	but I think we are not there yet
+2014-05-08 14:34:46	SylvainKalache-[sl]	so
+2014-05-08 14:34:49	SylvainKalache-[sl]	what is Thor
+2014-05-08 14:34:55	SylvainKalache-[sl]	how do you require it?
+2014-05-08 14:40:20	jackhxs	Thor is a gem for writing command line tools
+2014-05-08 14:40:35	jackhxs	its included in matt's ss_nagios gem
+2014-05-08 14:40:53	jackhxs	so my script extends SSNagios::CLI
+2014-05-08 14:40:58	SylvainKalache-[sl]	yes
+2014-05-08 14:41:06	SylvainKalache-[sl]	it's included inside this?
+2014-05-08 14:41:13	jackhxs	yep
+2014-05-08 14:41:19	SylvainKalache-[sl]	ok
+2014-05-08 14:59:55	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-08 15:00:01	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-08 15:15:10	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-08 15:15:16	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-08 18:21:23	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-08 20:01:59	--	irc: disconnected from server
+2014-05-09 02:04:33	--	irc: disconnected from server
+2014-05-09 10:38:54	--	irc: disconnected from server
+2014-05-09 10:41:20	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-09 14:03:45	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-09 14:03:49	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-09 15:35:23	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-09 15:35:30	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-09 15:51:57	--	irc: disconnected from server
+2014-05-09 19:04:57	--	irc: disconnected from server
+2014-05-13 14:42:45	jackhxs	hi
+2014-05-13 14:42:55	SylvainKalache-[sl]	yo
+2014-05-13 14:43:08	jackhxs	the crons on ec2 dont have /usr/local/bin in its path
+2014-05-13 14:43:12	jackhxs	how do i add that?
+2014-05-13 14:43:44	SylvainKalache-[sl]	for what do you need that?
+2014-05-13 14:44:02	SylvainKalache-[sl]	my answer would rather be specify it where it's needed
+2014-05-13 14:44:12	SylvainKalache-[sl]	instead of using the system path
+2014-05-13 14:45:21	jackhxs	ah ok
+2014-05-14 02:15:20	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-14 02:16:55	--	irc: disconnected from server
+2014-05-14 10:48:04	--	irc: disconnected from server
+2014-05-14 10:58:21	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-14 17:51:01	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-14 17:52:43	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-14 18:01:32	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-14 18:01:38	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-14 18:48:59	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-15 01:13:14	--	irc: disconnected from server
+2014-05-15 10:59:02	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-15 10:59:05	--	irc: disconnected from server
+2014-05-15 11:00:09	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-15 11:02:54	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-15 12:11:05	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-15 14:28:50	--	irc: disconnected from server
+2014-05-15 14:34:05	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-16 01:15:44	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-16 01:16:24	--	irc: disconnected from server
+2014-05-16 10:51:21	--	irc: disconnected from server
+2014-05-16 10:51:33	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-16 14:07:51	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-16 14:08:06	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-16 14:17:48	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-16 14:17:53	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-16 14:58:31	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-16 14:59:12	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-16 20:10:58	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-16 23:41:35	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-16 23:43:07	--	irc: disconnected from server
+2014-05-17 12:29:26	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-17 12:29:33	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-17 12:31:02	--	irc: disconnected from server
+2014-05-18 00:33:57	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-18 00:35:49	--	irc: disconnected from server
+2014-05-18 16:39:10	--	irc: disconnected from server
+2014-05-18 16:49:10	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-18 17:47:37	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-19 17:28:24	jackhxs	http://codereview.slideshare.com/5468784458465280/
+2014-05-19 17:30:59	SylvainKalache-[sl]	I'm almost sure something like that was already in the code
+2014-05-19 17:31:13	SylvainKalache-[sl]	wait I need to look at something and then I'll look for your change
+2014-05-19 20:22:23	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-19 20:24:28	--	irc: disconnected from server
+2014-05-20 09:24:55	--	irc: disconnected from server
+2014-05-20 09:25:07	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-20 09:58:55	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-20 10:29:00	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-20 10:36:43	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-20 10:36:59	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-20 10:39:17	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-20 10:43:54	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-20 11:22:55	SylvainKalache-[sl]	probably something here http://sourceforge.net/apps/trac/ganglia/wiki/ganglia-web-2/AuthSystem
+2014-05-20 15:04:47	jackhxs	you added manifests/classes/slideshare_users.pp?
+2014-05-20 15:05:07	jackhxs	we should delete all other slideshare user declerations then?
+2014-05-20 15:06:57	SylvainKalache-[sl]	corerct
+2014-05-20 15:07:10	SylvainKalache-[sl]	is there still ?
+2014-05-20 15:07:53	jackhxs	language detection has:
+2014-05-20 15:07:56	jackhxs	  $user = 'slideshare'
+2014-05-20 15:07:56	jackhxs	  user { $user:
+2014-05-20 15:07:56	jackhxs	    ensure     => present,
+2014-05-20 15:07:56	jackhxs	    home       => $home_dir,
+2014-05-20 15:07:56	jackhxs	    managehome => true,
+2014-05-20 15:07:56	jackhxs	    shell      => '/bin/bash',
+2014-05-20 15:07:56	jackhxs	  }
+2014-05-20 15:07:57	SylvainKalache-[sl]	hum ok
+2014-05-20 15:09:02	jackhxs	but the decleration in slideshare_users.pp doesnt have home, managehome, and shell
+2014-05-20 15:09:36	SylvainKalache-[sl]	there are default values
+2014-05-20 15:09:49	SylvainKalache-[sl]	if I'm not mistaken
+2014-05-20 15:12:03	jackhxs	managehome is default to false
+2014-05-20 15:12:20	SylvainKalache-[sl]	ok
+2014-05-20 15:12:28	SylvainKalache-[sl]	I guess it shall true
+2014-05-20 15:16:22	jackhxs	whats user::create? i find documentation on it
+2014-05-20 15:17:00	jackhxs	i cant find*
+2014-05-20 15:17:16	SylvainKalache-[sl]	documentation
+2014-05-20 15:17:23	SylvainKalache-[sl]	it might be a fonction we made
+2014-05-20 15:19:16	jackhxs	ok i see
+2014-05-20 17:14:43	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-20 20:25:36	--	irc: disconnected from server
+2014-05-21 10:45:01	--	irc: disconnected from server
+2014-05-21 10:45:12	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-21 11:12:38	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-21 11:12:44	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-21 19:53:59	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-21 19:56:21	--	irc: disconnected from server
+2014-05-22 01:26:08	--	irc: disconnected from server
+2014-05-22 10:55:36	--	irc: disconnected from server
+2014-05-22 10:58:00	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-22 13:30:58	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-22 13:31:03	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-22 17:07:40	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-23 00:59:51	--	irc: disconnected from server
+2014-05-23 10:45:26	--	irc: disconnected from server
+2014-05-23 10:45:37	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-23 15:33:24	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-23 15:34:30	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-24 02:02:04	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-24 02:03:49	--	irc: disconnected from server
+2014-05-24 23:22:19	--	irc: disconnected from server
+2014-05-25 11:06:11	--	irc: disconnected from server
+2014-05-27 02:16:14	--	irc: disconnected from server
+2014-05-27 10:04:58	--	irc: disconnected from server
+2014-05-27 10:07:51	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-27 13:42:03	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-27 13:52:01	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-27 13:59:12	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-27 14:00:23	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-27 19:15:04	--	irc: disconnected from server
+2014-05-28 10:19:17	--	irc: disconnected from server
+2014-05-28 10:22:00	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-28 10:52:33	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-28 11:08:17	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-28 11:10:37	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-28 13:53:20	jackhxs	are you working on egress servers?
+2014-05-28 13:53:31	SylvainKalache-[sl]	no
+2014-05-28 13:53:43	SylvainKalache-[sl]	Toby sent a code review about it this morning
+2014-05-28 17:48:14	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-29 11:07:05	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-29 11:07:22	--	irc: disconnected from server
+2014-05-29 15:36:25	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-05-29 15:52:39	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-05-29 16:46:48	--	irc: disconnected from server
+2014-05-30 11:17:01	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-30 11:18:08	--	irc: disconnected from server
+2014-05-31 03:51:26	--	irc: disconnected from server
+2014-05-31 18:10:46	--	irc: disconnected from server
+2014-06-01 03:34:10	--	irc: disconnected from server
+2014-06-01 15:51:47	--	irc: disconnected from server
+2014-06-02 02:35:13	--	irc: disconnected from server
+2014-06-02 10:49:39	--	irc: disconnected from server
+2014-06-02 10:49:50	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-02 10:52:50	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-02 10:52:56	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-02 11:24:12	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-02 11:26:13	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-02 11:45:22	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-02 13:15:58	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-02 13:16:00	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-02 13:16:04	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-02 13:33:03	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-02 13:42:18	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-02 18:57:15	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-03 00:47:33	--	irc: disconnected from server
+2014-06-03 10:14:47	--	irc: disconnected from server
+2014-06-03 14:38:14	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-03 15:30:13	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-03 15:32:32	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-03 20:10:00	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-04 01:07:58	--	irc: disconnected from server
+2014-06-04 10:41:52	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-04 10:42:23	--	irc: disconnected from server
+2014-06-05 12:05:31	jackhxs	can you help me with something? i get this error when running puppet on linkedin uploads
+2014-06-05 12:05:33	jackhxs	err: Could not retrieve catalog from remote server: Error 400 on SERVER: Duplicate declaration: File[/etc/sudoers] is already declared in file /etc/puppet/modules/sudo/manifests/init.pp at line 116; cannot redeclare at /etc/puppet/manifests/roles/linkedinUploadWebApp.pp:152 on node ip-10-184-45-217.ec2.internal
+2014-06-05 12:05:46	SylvainKalache-[sl]	I have a lunch plan like now
+2014-06-05 12:05:48	SylvainKalache-[sl]	but after it yes
+2014-06-05 12:05:55	jackhxs	ok
+2014-06-05 15:21:35	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-05 15:21:41	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-05 18:44:33	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-06 02:25:43	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-06 02:26:44	--	irc: disconnected from server
+2014-06-06 09:04:55	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-06 09:06:54	--	irc: disconnected from server
+2014-06-06 10:52:33	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-07 00:45:50	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-07 00:45:57	--	irc: disconnected from server
+2014-06-09 03:34:58	--	irc: disconnected from server
+2014-06-09 10:36:23	--	irc: disconnected from server
+2014-06-09 10:36:35	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-09 14:23:29	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-09 14:23:34	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-09 15:33:44	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-09 15:33:50	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-09 17:23:23	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-09 17:23:28	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-09 17:25:28	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-09 17:25:34	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-09 18:08:16	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-09 18:08:22	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-10 09:34:00	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-10 09:34:06	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-10 09:35:41	--	irc: disconnected from server
+2014-06-10 17:38:48	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-10 20:47:24	--	irc: disconnected from server
+2014-06-11 17:43:32	SylvainKalache-[sl]	yo
+2014-06-11 18:08:19	jackhxs	yo
+2014-06-12 10:05:33	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-12 10:07:19	--	irc: disconnected from server
+2014-06-13 08:44:56	--	irc: disconnected from server
+2014-06-13 10:45:19	SylvainKalache-[sl]	is that you that deleted a graph in a ganglia view?
+2014-06-13 10:46:15	jackhxs	no
+2014-06-13 10:46:28	jackhxs	which one
+2014-06-13 10:46:34	SylvainKalache-[sl]	it
+2014-06-13 10:46:47	SylvainKalache-[sl]	is just that I recalled you did that for the linkedinupload views
+2014-06-13 10:46:52	SylvainKalache-[sl]	or conversion view
+2014-06-13 10:47:30	jackhxs	i didnt create the conversion view
+2014-06-13 10:47:40	jackhxs	i changed the linkedinupload view a while back
+2014-06-13 10:47:48	jackhxs	and added the language detection vie
+2014-06-13 10:47:50	jackhxs	view
+2014-06-13 10:48:03	SylvainKalache-[sl]	ok my question is just: did you ever removed a graph from a view
+2014-06-13 10:48:30	jackhxs	no never removed anything
+2014-06-13 10:48:33	SylvainKalache-[sl]	ok
+2014-06-13 10:48:36	SylvainKalache-[sl]	thks ^_^
+2014-06-13 13:40:35	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-13 13:58:56	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-13 14:12:33	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-13 14:17:17	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-13 14:41:08	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-13 15:31:50	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-13 16:31:32	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-13 16:43:23	▬▬▶	SylvainKalache-[sl] (sylvain@slideshare.com) is back on server
+2014-06-13 16:46:59	◀▬▬	SylvainKalache-[sl] (sylvain@slideshare.com) has quit (Leaving...)
+2014-06-14 04:32:38	--	irc: disconnected from server
+2014-06-14 14:07:53	--	irc: disconnected from server
+2014-06-14 14:16:59	--	irc: disconnected from server

@@ -1,0 +1,26 @@
+2014-04-04 13:05:03	jackhxs	so i aliased louis's ls to sl
+2014-04-04 13:05:03	--	[OmarAlaouf-[sl]] is away: Away
+2014-04-04 13:09:01	OmarAlaouf-[sl]	LOOOOOL
+2014-04-04 13:09:28	OmarAlaouf-[sl]	 will see how long it will tke him
+2014-04-04 14:49:37	<--	OmarAlaouf-[sl] (omar@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-29 16:03:20	OmarAlaouf-[sl]	Yo ! Did you have time to take a look at the alert ?
+2014-04-29 16:03:58	jackhxs	the windows factory?
+2014-04-29 16:04:09	OmarAlaouf-[sl]	no the one i sent you later
+2014-04-29 16:04:19	OmarAlaouf-[sl]	Host
+2014-04-29 16:04:19	OmarAlaouf-[sl]	ssslavedb01
+2014-04-29 16:04:19	OmarAlaouf-[sl]	Service
+2014-04-29 16:04:19	OmarAlaouf-[sl]	IMAGE_CONVERSION_PERCENTAGE
+2014-04-29 16:04:19	OmarAlaouf-[sl]	State
+2014-04-29 16:04:19	OmarAlaouf-[sl]	CRITICAL
+2014-04-29 16:04:19	OmarAlaouf-[sl]	Service Output
+2014-04-29 16:04:19	OmarAlaouf-[sl]	QUERY CRITICAL: 'SELECT SUM(IF(image_status=2,1,0))/COUNT(id) FROM slideshare_production.slideshow_conversions WHERE created_at > now() - INTERVAL 2 HOUR' returned 0.849000
+2014-04-29 16:04:51	jackhxs	ya, we just resolved it
+2014-04-29 16:04:56	jackhxs	its going back up now
+2014-04-29 16:05:00	OmarAlaouf-[sl]	ok thanks man
+2014-04-29 16:05:01	jackhxs	ill sent out a email
+2014-04-29 16:05:17	OmarAlaouf-[sl]	I am doing all the alert handleing… on call suxx
+2014-04-29 16:07:40	jackhxs	viking duty sucks too
+2014-04-30 02:25:37	◀▬▬	OmarAlaouf-[sl] (omar@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-30 02:29:24	--	irc: disconnected from server
+2014-04-30 10:55:56	--	irc: disconnected from server
+2014-04-30 10:56:12	▬▬▶	OmarAlaouf-[sl] (omar@slideshare.com) is back on server

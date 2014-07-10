@@ -1,0 +1,517 @@
+2014-03-31 15:16:16	NishantRayan-[sl]	hey Jack.
+2014-03-31 15:16:38	NishantRayan-[sl]	do you have a few minutes to touch base on the page view events
+2014-03-31 15:16:38	NishantRayan-[sl]	debugging
+2014-03-31 15:58:28	jackhxs	ya lets sync up
+2014-03-31 15:58:35	jackhxs	should i go over?
+2014-03-31 15:58:38	NishantRayan-[sl]	give me 5 mins
+2014-03-31 15:58:42	NishantRayan-[sl]	let me finish up something.
+2014-03-31 15:58:46	jackhxs	ok
+2014-03-31 15:58:49	NishantRayan-[sl]	i will ping you once I am done
+2014-03-31 16:09:53	NishantRayan-[sl]	i am free now
+2014-03-31 16:09:58	NishantRayan-[sl]	do you want me to come over
+2014-03-31 16:10:01	NishantRayan-[sl]	or can you come over
+2014-03-31 16:41:02	NishantRayan-[sl]	do you have a pivotal story for this investigation
+2014-03-31 16:41:13	jackhxs	yep
+2014-03-31 16:41:15	jackhxs	one sec
+2014-03-31 16:41:20	NishantRayan-[sl]	cool. send me
+2014-03-31 16:41:33	jackhxs	https://www.pivotaltracker.com/s/projects/67699/stories/68591976
+2014-03-31 21:19:56	<--	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-03-31 21:20:02	-->	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-03-31 21:21:36	--	irc: disconnected from server
+2014-03-31 23:04:49	<--	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-03-31 23:04:55	-->	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-04-01 13:02:45	jackhxs	did you deploy the config change you made?
+2014-04-01 13:02:45	--	[NishantRayan-[sl]] is away: Away
+2014-04-01 13:03:07	NishantRayan-[sl]	Not yet
+2014-04-01 13:03:17	NishantRayan-[sl]	Will do soon
+2014-04-01 13:03:58	jackhxs	ok cool let me know when its done, hope this fixes the data loss
+2014-04-01 13:04:41	NishantRayan-[sl]	huh. well. its a long shot
+2014-04-01 13:04:44	NishantRayan-[sl]	lets hope
+2014-04-01 14:19:22	NishantRayan-[sl]	deployed the change
+2014-04-01 14:19:28	NishantRayan-[sl]	[root@log03 td-agent]$ grep BufferQueueLimitError td-agent.log | cut -d":" -f1 | sort | uniq -c
+2014-04-01 14:19:28	NishantRayan-[sl]	   8167 2014-04-01 08
+2014-04-01 14:19:28	NishantRayan-[sl]	  67063 2014-04-01 09
+2014-04-01 14:19:28	NishantRayan-[sl]	  44506 2014-04-01 10
+2014-04-01 14:19:28	NishantRayan-[sl]	  29511 2014-04-01 11
+2014-04-01 14:19:28	NishantRayan-[sl]	  22611 2014-04-01 12
+2014-04-01 14:19:28	NishantRayan-[sl]	  13311 2014-04-01 13
+2014-04-01 14:19:28	NishantRayan-[sl]	    560 2014-04-01 14
+2014-04-01 14:19:34	NishantRayan-[sl]	lets monitor this
+2014-04-01 14:35:40	NishantRayan-[sl]	can you send me all the scripts you have written so far for analyzing page view events count
+2014-04-01 14:35:47	NishantRayan-[sl]	comment them as needed so i can understand
+2014-04-01 14:35:57	NishantRayan-[sl]	i want to proof read it
+2014-04-01 14:36:03	NishantRayan-[sl]	and run it for specific times myself
+2014-04-01 14:37:39	jackhxs	ok
+2014-04-01 14:38:57	jackhxs	btw i have not seen the BufferQueueLimitError yet
+2014-04-01 14:39:10	NishantRayan-[sl]	no it stopped one hour before i deployed
+2014-04-01 14:39:29	NishantRayan-[sl]	i happens one every 5-10 mins
+2014-04-01 14:39:38	NishantRayan-[sl]	it did not happen in 15 hour
+2014-04-01 14:39:42	NishantRayan-[sl]	it happened in 14 hour
+2014-04-01 14:39:54	NishantRayan-[sl]	and i deployed around 16*
+2014-04-01 14:40:17	NishantRayan-[sl]	so I want to see how the data in 15 was
+2014-04-01 16:12:50	NishantRayan-[sl]	0.5 % loss in 15th hour
+2014-04-01 16:12:54	NishantRayan-[sl]	CDT of today
+2014-04-01 16:21:03	jackhxs	ok thats before you deployed your change right
+2014-04-01 16:21:11	NishantRayan-[sl]	yup
+2014-04-01 16:21:29	NishantRayan-[sl]	but also means that if there are no BufferQueueLimitExceeded errors the loss is low
+2014-04-01 16:21:34	NishantRayan-[sl]	but 0.5 is still high
+2014-04-01 16:21:57	NishantRayan-[sl]	but better than 5%
+2014-04-01 16:22:05	NishantRayan-[sl]	I want to give it a day before concluding
+2014-04-01 16:25:24	jackhxs	yep 0.5 is still high, i've seen it fluctuate between like 0 to 5% if you only look at like an hour of data
+2014-04-01 16:27:20	jackhxs	so i see the original count is still incorrect, is that another issue?
+2014-04-01 16:27:35	NishantRayan-[sl]	what is "original" count?
+2014-04-01 16:28:55	jackhxs	the count in the amqp_chunked gem
+2014-04-01 16:29:04	NishantRayan-[sl]	vs ?
+2014-04-01 16:29:13	NishantRayan-[sl]	i don't understand
+2014-04-01 16:30:00	jackhxs	 Fluent::AmqpChunkedOutput sent 1633|1619 records
+2014-04-01 16:30:23	jackhxs	the first count is still wrong
+2014-04-01 16:30:35	NishantRayan-[sl]	thats fine.
+2014-04-01 16:30:39	NishantRayan-[sl]	we know its wrong
+2014-04-01 16:30:46	NishantRayan-[sl]	and I only look at the second some for comparison
+2014-04-01 16:30:50	NishantRayan-[sl]	that needs to be fixed
+2014-04-01 17:20:32	NishantRayan-[sl]	I think I made a mistake
+2014-04-01 17:20:45	NishantRayan-[sl]	i compared queue consumer and fluentd second parameter
+2014-04-01 17:20:54	NishantRayan-[sl]	I should be comparing haproxy log lines to fluentd second count
+2014-04-01 17:20:56	NishantRayan-[sl]	duh
+2014-04-01 17:21:02	NishantRayan-[sl]	let me do that and see
+2014-04-04 14:04:55	jackhxs	where are we for the meeting?
+2014-04-04 14:04:55	--	[NishantRayan-[sl]] is away: Away
+2014-04-04 14:05:13	NishantRayan-[sl]	Rashmi's room
+2014-04-04 14:05:41	jackhxs	should we join you there?
+2014-04-04 14:05:49	NishantRayan-[sl]	can you come to Rashmi's room
+2014-04-04 14:06:14	NishantRayan-[sl]	Already on call
+2014-04-04 14:49:37	<--	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-07 11:31:16	NishantRayan-[sl]	hi Jack.
+2014-04-07 11:31:21	NishantRayan-[sl]	i need to run spam report
+2014-04-07 11:31:36	NishantRayan-[sl]	Chris told me you might be the best person to teach me how to do it.
+2014-04-07 11:31:40	NishantRayan-[sl]	can you help me out.
+2014-04-07 11:31:46	NishantRayan-[sl]	if you have time can you come over
+2014-04-07 11:32:32	jackhxs	ya give me 5 minutes
+2014-04-07 11:32:32	--	[NishantRayan-[sl]] is away: Away
+2014-04-07 11:32:36	NishantRayan-[sl]	sure
+2014-04-07 11:37:26	jackhxs	matt is sending you some notes and the history.csv, which you will need
+2014-04-07 11:37:34	NishantRayan-[sl]	ok.
+2014-04-07 11:37:36	jackhxs	you need to check out the spam_reports repo
+2014-04-07 11:37:47	NishantRayan-[sl]	let me do that
+2014-04-07 11:59:13	jackhxs	echo "urls separated by \n" | xargs /usr/bin/open -a "/Applications/Google Chrome.app"
+2014-04-07 13:33:42	NishantRayan-[sl]	does the report look good
+2014-04-07 13:34:39	jackhxs	can you also attach the csv file?
+2014-04-07 13:35:42	NishantRayan-[sl]	just did
+2014-04-07 13:39:53	NishantRayan-[sl]	any thoughts?
+2014-04-07 13:41:10	jackhxs	ya looks good
+2014-04-07 13:41:32	jackhxs	forward this to backend
+2014-04-07 14:33:41	NishantRayan-[sl]	hi Jack
+2014-04-07 14:33:49	NishantRayan-[sl]	do you have context on reupload handler?
+2014-04-07 14:45:30	jackhxs	a little
+2014-04-07 14:45:54	NishantRayan-[sl]	ok. no worries. i think its recovering automatically
+2014-04-07 14:46:11	jackhxs	ok
+2014-04-07 23:27:38	<--	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-07 23:29:28	--	irc: disconnected from server
+2014-04-08 08:17:55	--	irc: disconnected from server
+2014-04-08 08:18:07	-->	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-04-08 10:39:07	<--	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-08 10:39:13	-->	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-04-08 10:46:38	--	irc: disconnected from server
+2014-04-08 18:09:31	<--	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-08 18:11:20	--	irc: disconnected from server
+2014-04-08 23:34:33	--	irc: disconnected from server
+2014-04-09 09:24:26	--	irc: disconnected from server
+2014-04-09 09:24:37	-->	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-04-09 11:37:41	NishantRayan-[sl]	do you have a story for Nagios alert that you are working on
+2014-04-09 11:39:15	jackhxs	https://www.pivotaltracker.com/s/projects/1050778/stories/68592042
+2014-04-09 11:42:20	NishantRayan-[sl]	made myself the requester
+2014-04-09 11:42:27	NishantRayan-[sl]	as I can quickly check the alert and track it
+2014-04-09 11:42:49	NishantRayan-[sl]	also.. please make sure QPS number matches the haproxy log lines that are generated
+2014-04-09 11:42:52	NishantRayan-[sl]	just to be doubly sure
+2014-04-09 11:44:04	jackhxs	ok
+2014-04-09 11:44:08	jackhxs	i dont have the numbers yet
+2014-04-09 11:44:15	jackhxs	casey is fixing the graphs
+2014-04-09 11:44:34	NishantRayan-[sl]	k.
+2014-04-09 19:09:59	<--	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-09 19:11:49	--	irc: disconnected from server
+2014-04-14 16:28:08	jackhxs	hey, did you deploy the pageview events consumer ganglia graphs?
+2014-04-14 16:28:08	--	[NishantRayan-[sl]] is away: Away
+2014-04-14 16:54:30	NishantRayan-[sl]	haven't deployed yet
+2014-04-17 15:24:32	NishantRayan-[sl]	hey Jack
+2014-04-17 15:24:38	NishantRayan-[sl]	what was the regex tool you used before
+2014-04-17 15:24:40	NishantRayan-[sl]	to analyze matchers
+2014-04-17 15:24:44	NishantRayan-[sl]	cnan you send me the url
+2014-04-17 18:22:33	NishantRayan-[sl]	ha ha.nvm
+2014-04-17 18:22:35	NishantRayan-[sl]	;)
+2014-04-17 18:22:38	NishantRayan-[sl]	thanks anyway
+2014-04-17 18:22:39	NishantRayan-[sl]	how are you 
+2014-04-18 10:40:49	--	irc: disconnected from server
+2014-04-19 03:27:46	<--	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-19 03:27:52	-->	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-04-19 03:29:24	--	irc: disconnected from server
+2014-04-19 16:08:21	--	irc: disconnected from server
+2014-04-22 14:10:02	NishantRayan-[sl]	is this spam ? http://www.slideshare.net/BuyProactolOnline
+2014-04-22 14:10:07	NishantRayan-[sl]	any thoughts?
+2014-04-22 14:27:04	jackhxs	o you already suspended
+2014-04-22 14:27:04	--	[NishantRayan-[sl]] is away: Away
+2014-04-22 14:27:13	NishantRayan-[sl]	yes. Matt said yes.
+2014-04-22 14:27:14	jackhxs	ya sounds like spam just from the title
+2014-04-22 14:27:17	NishantRayan-[sl]	ok.
+2014-04-22 14:27:20	NishantRayan-[sl]	cool. thanks for looking
+2014-04-22 14:27:33	NishantRayan-[sl]	do you know if I need to change the history.csv
+2014-04-22 14:27:51	NishantRayan-[sl]	before generating the report
+2014-04-22 14:28:54	jackhxs	if you want to generate an updated report, then you can just delete the last line history.csv
+2014-04-22 14:29:28	jackhxs	then run the report again
+2014-04-22 17:03:16	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-22 18:11:15	--	irc: disconnected from server
+2014-04-23 01:16:36	--	irc: disconnected from server
+2014-04-23 10:23:35	--	irc: disconnected from server
+2014-04-23 10:27:06	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-04-24 10:50:58	--	irc: disconnected from server
+2014-04-24 18:43:42	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-24 18:45:32	--	irc: disconnected from server
+2014-04-24 22:10:34	--	irc: disconnected from server
+2014-04-25 01:58:58	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-04-25 02:01:56	--	irc: disconnected from server
+2014-04-25 10:54:08	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-04-25 10:54:46	--	irc: disconnected from server
+2014-04-25 10:55:02	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-12 15:07:41	jackhxs	C:\Users\Administrator> cd  C:\pptfactory\windows-factory
+2014-05-12 15:07:41	jackhxs	C:\pptfactory\windows-factory>  ruby -rubygems -I .\..\util\ruby .\windows_factory.rb -e production
+2014-05-12 15:07:41	--	[NishantRayan-[sl]] is away: Away
+2014-05-12 23:57:12	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-12 23:57:26	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-12 23:57:51	--	irc: disconnected from server
+2014-05-13 09:33:18	--	irc: disconnected from server
+2014-05-13 10:42:30	--	irc: disconnected from server
+2014-05-13 11:04:17	jackhxs	what building are you in?
+2014-05-13 11:24:30	NishantRayan-[sl]	We are in front of 2051
+2014-05-13 11:24:35	NishantRayan-[sl]	Cafeteria
+2014-05-13 11:30:08	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-13 11:30:14	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-13 12:08:41	--	irc: disconnected from server
+2014-05-13 13:20:42	--	irc: disconnected from server
+2014-05-14 02:15:20	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-14 02:15:26	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-14 02:16:55	--	irc: disconnected from server
+2014-05-14 10:48:04	--	irc: disconnected from server
+2014-05-14 18:01:32	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-14 18:01:38	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-15 01:12:47	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-15 01:12:53	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-15 01:13:14	--	irc: disconnected from server
+2014-05-15 10:56:41	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-15 10:59:02	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-15 10:59:05	--	irc: disconnected from server
+2014-05-15 14:28:50	--	irc: disconnected from server
+2014-05-16 01:15:44	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-16 01:15:51	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-16 01:16:24	--	irc: disconnected from server
+2014-05-16 10:50:33	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-16 10:51:21	--	irc: disconnected from server
+2014-05-16 10:51:33	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-16 23:41:29	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-16 23:41:35	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-16 23:43:07	--	irc: disconnected from server
+2014-05-17 12:29:26	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-17 12:29:33	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-17 12:31:02	--	irc: disconnected from server
+2014-05-18 00:33:57	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-18 00:35:49	--	irc: disconnected from server
+2014-05-18 16:39:10	--	irc: disconnected from server
+2014-05-18 16:39:21	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-28 14:23:48	jackhxs	do you know what is the bcookie?
+2014-05-28 14:23:48	--	[NishantRayan-[sl]] is away: Away
+2014-05-28 14:24:28	NishantRayan-[sl]	not entirely no
+2014-05-29 11:06:58	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-29 11:07:05	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-29 11:07:22	--	irc: disconnected from server
+2014-05-29 16:46:48	--	irc: disconnected from server
+2014-05-30 11:17:01	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-30 11:17:06	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-30 11:18:08	--	irc: disconnected from server
+2014-05-31 03:50:04	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-31 03:50:11	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-05-31 03:51:26	--	irc: disconnected from server
+2014-05-31 18:08:37	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-05-31 18:10:46	--	irc: disconnected from server
+2014-05-31 18:10:57	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-01 03:31:24	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-01 03:34:10	--	irc: disconnected from server
+2014-06-01 15:51:47	--	irc: disconnected from server
+2014-06-01 15:51:58	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-02 02:34:47	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-02 02:35:13	--	irc: disconnected from server
+2014-06-02 10:49:39	--	irc: disconnected from server
+2014-06-02 10:49:50	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-02 10:52:50	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-02 10:52:56	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-02 11:24:43	NishantRayan-[sl]	do you have a few minutes to talk about conversion code.. I am trying to list down all the files we upload to s3
+2014-06-02 11:24:49	NishantRayan-[sl]	while converting slideshow
+2014-06-03 00:45:48	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-03 00:47:33	--	irc: disconnected from server
+2014-06-03 10:14:47	--	irc: disconnected from server
+2014-06-03 10:14:59	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-03 16:43:58	NishantRayan-[sl]	forgot to tell you
+2014-06-03 16:44:07	NishantRayan-[sl]	did you upgrade your slideshare_urn gem to 1.0
+2014-06-03 16:44:11	NishantRayan-[sl]	because you changed the interface
+2014-06-03 16:44:16	NishantRayan-[sl]	of initialization
+2014-06-04 01:07:58	--	irc: disconnected from server
+2014-06-04 10:41:50	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-04 10:41:52	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-04 10:42:23	--	irc: disconnected from server
+2014-06-16 11:32:02	NishantRayan-[sl]	hey Jack
+2014-06-16 11:32:13	NishantRayan-[sl]	just curiosu. can you send me link to the spam report document
+2014-06-16 11:32:23	NishantRayan-[sl]	that documents the steps for generating spam report
+2014-06-16 11:32:26	NishantRayan-[sl]	just want to have a look
+2014-06-16 11:32:57	jackhxs	you wrote it lol -> https://docs.google.com/a/slideshare.com/document/d/1ZF0zLFLWQOvBMS03qZMNlJrvgtPv1M7TNC_x_q2DaNc/edit
+2014-06-16 11:32:57	--	[NishantRayan-[sl]] is away: Away
+2014-06-16 11:33:02	NishantRayan-[sl]	i know
+2014-06-16 11:33:05	NishantRayan-[sl]	couldn't find the link
+2014-06-16 11:33:09	NishantRayan-[sl]	do you use it
+2014-06-16 11:33:12	NishantRayan-[sl]	and is it up to date
+2014-06-16 11:33:18	jackhxs	yep its useful
+2014-06-16 11:33:24	jackhxs	ya its up to date
+2014-06-16 11:33:29	NishantRayan-[sl]	cool. thanks.
+2014-06-16 15:58:23	NishantRayan-[sl]	Chris thinks that all slideshow in https://www.slideshare.net/ssadmin/show_slideshows_for_domain?domain=googlredirect.appspot.com
+2014-06-16 15:58:26	NishantRayan-[sl]	are spammy
+2014-06-16 15:58:29	NishantRayan-[sl]	can you take a look
+2014-06-16 18:17:22	--	irc: disconnected from server
+2014-06-17 00:35:03	--	irc: disconnected from server
+2014-06-17 09:15:08	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-17 09:15:14	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-17 09:16:04	--	irc: disconnected from server
+2014-06-17 14:38:16	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-17 14:38:22	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-17 16:25:21	NishantRayan-[sl]	CHECK_AMI_EC2_PRODUCTION
+2014-06-17 16:25:28	NishantRayan-[sl]	is a nagios alert that is firing
+2014-06-17 19:25:16	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-17 19:25:21	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-17 19:26:05	--	irc: disconnected from server
+2014-06-18 09:16:18	--	irc: disconnected from server
+2014-06-18 10:02:30	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-18 10:02:36	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-18 13:05:59	NishantRayan-[sl]	did you fix the issue with pdf2html factory
+2014-06-18 13:06:08	NishantRayan-[sl]	did puppet run and cap deploy work?
+2014-06-18 13:17:59	jackhxs	there is problem with deploy script
+2014-06-18 13:18:05	NishantRayan-[sl]	is it fixable
+2014-06-18 13:18:05	NishantRayan-[sl]	?
+2014-06-18 13:18:08	NishantRayan-[sl]	by us
+2014-06-18 20:22:33	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-18 20:22:39	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-18 20:23:09	--	irc: disconnected from server
+2014-06-19 09:17:18	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-19 09:17:24	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-19 09:18:15	--	irc: disconnected from server
+2014-06-19 09:50:42	NishantRayan-[sl]	hey Jack
+2014-06-19 09:50:44	NishantRayan-[sl]	are you there?
+2014-06-19 09:50:54	jackhxs	yes
+2014-06-19 09:51:00	NishantRayan-[sl]	did Vlad talk to you yesterday
+2014-06-19 09:51:06	NishantRayan-[sl]	over the phone. he was asking me for your number
+2014-06-19 09:51:15	NishantRayan-[sl]	I don't think your number in Company directory was correct
+2014-06-19 09:51:32	NishantRayan-[sl]	he wanted to talk to you about linkedin image content creation event
+2014-06-19 09:53:12	jackhxs	wait when was this
+2014-06-19 09:53:25	NishantRayan-[sl]	yesterday eve
+2014-06-19 09:53:34	NishantRayan-[sl]	I am on the bus.. so network might be flaky
+2014-06-19 09:53:54	NishantRayan-[sl]	don't worry.. we still don't have to do any work for linkedin upload image 
+2014-06-19 09:54:15	NishantRayan-[sl]	he was just walking me through the flow ovee the phone
+2014-06-19 09:54:25	NishantRayan-[sl]	I am going to be in MTV
+2014-06-19 09:54:28	NishantRayan-[sl]	today.
+2014-06-19 09:54:38	NishantRayan-[sl]	I can be your messenger ;)
+2014-06-19 09:54:48	jackhxs	haha ok
+2014-06-19 09:54:57	jackhxs	ya my phone is on company directory
+2014-06-19 09:55:06	NishantRayan-[sl]	i don't think its valid
+2014-06-19 09:55:12	jackhxs	4153166398
+2014-06-19 09:55:14	NishantRayan-[sl]	he had a digit missing and Vlad was confused
+2014-06-19 09:56:30	NishantRayan-[sl]	do you want me to facilitate a call with you , me and Vlad ?
+2014-06-19 09:56:47	jackhxs	ya sure
+2014-06-19 10:01:27	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-19 10:01:33	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-19 10:21:15	NishantRayan-[sl]	have you pushed ths change: http://codereview.slideshare.com/5079326689067008/
+2014-06-19 10:21:48	jackhxs	yep
+2014-06-19 10:23:03	NishantRayan-[sl]	are these the CRs you are working on http://codereview.slideshare.com/4511920304422912/ 
+2014-06-19 10:26:31	jackhxs	ya
+2014-06-19 10:26:37	NishantRayan-[sl]	ok cool.
+2014-06-19 10:26:42	jackhxs	also working on the consumer for ips
+2014-06-19 10:26:46	jackhxs	not in CR yet
+2014-06-19 10:26:52	NishantRayan-[sl]	yeah
+2014-06-19 10:26:56	NishantRayan-[sl]	actually
+2014-06-19 10:27:02	NishantRayan-[sl]	lets get on a call on 11 ?
+2014-06-19 10:27:07	NishantRayan-[sl]	are u free
+2014-06-19 10:27:18	NishantRayan-[sl]	Vlad spoke to me about this yesterday
+2014-06-19 10:27:28	NishantRayan-[sl]	briefly
+2014-06-19 10:27:33	jackhxs	ok
+2014-06-19 10:27:43	jackhxs	is this gonna be about image uploads
+2014-06-19 10:27:43	NishantRayan-[sl]	if I am not able to find Vlad
+2014-06-19 10:27:47	NishantRayan-[sl]	we can talk 
+2014-06-19 10:27:56	NishantRayan-[sl]	even otherwise I want some more context
+2014-06-19 10:28:04	NishantRayan-[sl]	no.. its about slideshow
+2014-06-19 10:28:12	NishantRayan-[sl]	lets talk at 11
+2014-06-19 10:28:30	NishantRayan-[sl]	I will give you an overview of what they are trying to accomplish
+2014-06-19 10:29:03	jackhxs	ok
+2014-06-19 11:05:52	NishantRayan-[sl]	can we do a hangout
+2014-06-19 11:06:11	jackhxs	ya one sec let me grab a room
+2014-06-19 11:23:03	jackhxs	http://codereview.slideshare.com/4511920304422912/
+2014-06-19 11:41:22	NishantRayan-[sl]	http://aws.amazon.com/elasticache/
+2014-06-19 12:15:57	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-19 12:16:02	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-19 14:16:03	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-19 14:16:09	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-19 19:08:44	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-19 19:08:50	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-19 19:09:49	--	irc: disconnected from server
+2014-06-20 09:32:55	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-20 09:33:02	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-20 09:33:54	--	irc: disconnected from server
+2014-06-20 13:18:26	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-20 13:23:32	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-20 13:52:54	NishantRayan-[sl]	2002d7b2-f8bb-11e3-b101-12313d275d6d-140620154034
+2014-06-20 15:13:59	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-20 15:14:05	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-21 07:22:12	--	irc: disconnected from server
+2014-06-21 12:15:07	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost twitter.localhost)
+2014-06-21 12:15:14	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-21 12:16:00	--	irc: disconnected from server
+2014-06-22 02:20:55	--	irc: disconnected from server
+2014-06-22 12:33:07	--	irc: disconnected from server
+2014-06-23 01:39:37	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-23 01:39:44	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-23 01:40:30	--	irc: disconnected from server
+2014-06-23 10:46:33	--	irc: disconnected from server
+2014-06-23 11:19:48	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-23 11:19:54	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-23 15:31:16	jackhxs	are you joining the alcatraz standup meeting?
+2014-06-23 15:31:25	NishantRayan-[sl]	yes. i am talking to Vlad right now
+2014-06-23 15:31:30	NishantRayan-[sl]	I am on 20th floor
+2014-06-23 15:31:35	jackhxs	ok
+2014-06-23 15:31:36	NishantRayan-[sl]	I will join in or you guys can come over
+2014-06-23 15:31:45	NishantRayan-[sl]	20th floor next to the caffeteria
+2014-06-23 15:33:28	jackhxs	we are in the big room here on 17
+2014-06-23 15:33:33	NishantRayan-[sl]	ok
+2014-06-23 15:33:35	jackhxs	you should come here
+2014-06-23 15:33:55	NishantRayan-[sl]	i can come over
+2014-06-23 16:02:54	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-23 16:03:00	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-24 00:47:21	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-24 00:47:28	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-24 00:48:04	--	irc: disconnected from server
+2014-06-24 10:01:04	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-24 10:01:10	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-24 10:02:03	--	irc: disconnected from server
+2014-06-24 10:30:14	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-24 10:30:20	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-24 16:00:47	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-24 16:04:07	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-25 02:20:40	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-25 02:20:45	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-25 02:21:30	--	irc: disconnected from server
+2014-06-25 09:11:05	--	irc: disconnected from server
+2014-06-25 15:21:18	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-25 15:21:24	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-25 16:00:37	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-25 16:01:50	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-25 16:30:36	NishantRayan-[sl]	<script>parent.postMessage('{"method":"SlideshareUploaderss7920501403735703419","payload":{"content_type":"image/jpeg","available_sizes":{"medium":[543,305],"large":[1024,576],"original":[1280,720],"small":[160,90]},"file_key":"066e4140-fcbe-11e3-bb33-22000ab31218.jpeg"},"type":"slidesharestatus"}', window.location.protocol + '//www.linkedin-ei.com');</script>
+2014-06-25 16:30:40	NishantRayan-[sl]	from: Husaifa
+2014-06-26 00:27:30	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-26 00:27:36	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-26 00:29:49	--	irc: disconnected from server
+2014-06-26 03:03:09	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-26 03:03:15	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-26 03:04:08	--	irc: disconnected from server
+2014-06-26 10:19:12	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-26 10:19:17	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-26 10:20:57	--	irc: disconnected from server
+2014-06-26 10:26:06	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-26 10:26:12	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-26 10:58:04	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-26 10:58:10	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-27 00:04:17	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-27 00:04:23	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-27 00:05:21	--	irc: disconnected from server
+2014-06-27 09:42:30	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-27 09:42:36	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-27 09:43:29	--	irc: disconnected from server
+2014-06-27 11:44:41	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-27 11:44:47	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-27 14:53:20	jackhxs	i am going to pass slideshare environment as production-ss, or staging-ss
+2014-06-27 14:54:40	NishantRayan-[sl]	wait why?
+2014-06-27 14:54:56	NishantRayan-[sl]	why do you need slideshare environment
+2014-06-27 14:55:55	jackhxs	we dont need it now, but could be needed later if we have staging conversion
+2014-06-27 14:56:07	NishantRayan-[sl]	well.. I wouldn't put it there now
+2014-06-27 14:56:13	NishantRayan-[sl]	jsut extra values you have to deal with
+2014-06-27 14:56:23	NishantRayan-[sl]	take a call.
+2014-06-27 16:00:48	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-27 16:08:00	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-27 16:08:45	--	irc: disconnected from server
+2014-06-27 16:27:23	NishantRayan-[sl]	94126ae6-fe51-11e3-86a8-22000a901256.pptx
+2014-06-27 16:31:29	NishantRayan-[sl]	http://www.fir3net.com/General-UNIX/how-to-display-http-headers-using-tcpdump.html
+2014-06-27 19:00:01	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-27 19:00:08	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-28 01:30:55	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-28 01:31:02	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-28 01:31:42	--	irc: disconnected from server
+2014-06-28 06:57:36	--	irc: disconnected from server
+2014-06-28 07:14:38	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-28 07:37:20	--	irc: disconnected from server
+2014-06-28 07:37:32	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-30 22:32:31	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-06-30 22:34:29	--	irc: disconnected from server
+2014-06-30 22:54:34	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-06-30 23:36:38	--	irc: disconnected from server
+2014-07-01 19:15:34	--	irc: disconnected from server
+2014-07-01 21:22:31	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost twitter.localhost)
+2014-07-01 21:22:20	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-01 21:24:40	--	irc: disconnected from server
+2014-07-02 23:37:13	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-02 23:37:28	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-02 23:37:40	--	irc: disconnected from server
+2014-07-02 23:44:53	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-02 23:45:00	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-02 23:46:00	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-02 23:46:09	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-03 23:19:40	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-03 23:20:21	--	irc: disconnected from server
+2014-07-03 23:22:11	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-03 23:38:49	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-04 09:04:38	--	irc: disconnected from server
+2014-07-04 23:10:29	--	irc: disconnected from server
+2014-07-05 16:01:52	--	irc: disconnected from server
+2014-07-05 16:02:06	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-08 11:08:04	jackhxs	hey
+2014-07-08 11:08:31	jackhxs	are you the person to talk to about new_newsfeed_generator?
+2014-07-08 11:10:13	NishantRayan-[sl]	yes. give me few minutes
+2014-07-08 11:10:37	jackhxs	ok
+2014-07-08 11:10:51	NishantRayan-[sl]	i will come to your desk
+2014-07-08 11:29:18	NishantRayan-[sl]	/usr/bin/env JBOSS_USER=slideshare JBOSS_HOME=/home/slideshare/torquebox/jboss /home/slideshare/torquebox/jboss/bin/init.d/jboss-as-standalone.sh stop
+2014-07-08 11:29:18	NishantRayan-[sl]	 
+2014-07-08 11:29:18	NishantRayan-[sl]	/usr/bin/env JBOSS_USER=slideshare JBOSS_HOME=/home/slideshare/torquebox/jboss /home/slideshare/torquebox/jboss/bin/init.d/jboss-as-standalone.sh start
+2014-07-08 13:03:56	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-08 13:07:51	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-08 13:51:18	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-08 13:51:22	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-08 16:38:19	NishantRayan-[sl]	the newsfeed event issu
+2014-07-08 16:38:21	NishantRayan-[sl]	has been fixed
+2014-07-08 16:38:53	NishantRayan-[sl]	filed a story against Ajay's team to figure out long term fix
+2014-07-08 16:38:54	NishantRayan-[sl]	https://www.pivotaltracker.com/s/projects/1050778/stories/74639406
+2014-07-08 18:20:39	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-08 18:20:45	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-08 18:22:26	--	irc: disconnected from server
+2014-07-09 01:32:02	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-09 01:32:07	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-09 01:32:59	--	irc: disconnected from server
+2014-07-09 10:22:24	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-09 10:23:20	--	irc: disconnected from server
+2014-07-09 10:23:31	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-09 13:17:35	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-09 13:17:41	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-09 13:52:37	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-09 13:52:46	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-09 15:38:57	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-09 15:39:03	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-09 20:04:28	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-09 20:04:37	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-10 03:12:15	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-10 03:12:19	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-10 03:12:57	--	irc: disconnected from server
+2014-07-10 10:57:16	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-10 10:58:11	--	irc: disconnected from server
+2014-07-10 10:58:22	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-10 11:06:22	◀▬▬	NishantRayan-[sl] (nishant@slideshare.com) has quit (bitlbee.localhost slideshare.com)
+2014-07-10 11:06:28	▬▬▶	NishantRayan-[sl] (nishant@slideshare.com) is back on server
+2014-07-10 11:30:53	NishantRayan-[sl]	feel free to add more details to the ticekt if you see any such instance
+2014-07-10 11:30:54	NishantRayan-[sl]	https://www.pivotaltracker.com/s/projects/1050778/stories/74639406
