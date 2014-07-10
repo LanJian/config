@@ -1,0 +1,30 @@
+alias be="bundle exec"
+alias less="less -F -X"
+alias tree='tree -Csh'
+alias gethead="curl -I $1"
+alias myip="curl http://ip.appspot.com"
+alias time_curl="curl -s -w '\nConnect %{time_connect}: Transfer %{time_starttransfer}: Total %{time_total}\n'"
+alias switchdbtostaging="ln -sf ~/slideshare/slideshare_web_app/config/database.yml.staging ~/slideshare/slideshare_web_app/config/database.yml"
+alias switchdbtodev="ln -sf ~/slideshare/slideshare_web_app/config/database.yml.development ~/slideshare/slideshare_web_app/config/database.yml"
+
+alias mysql_staging="mysql -h stgpassivemasterdb.sl.ss -u slideshare_RO -p0jzWV1yy slideshare_production"
+alias mysql_dev="mysql -h localhost -u root -proot123 slideshare_development"
+alias mysql_prod="mysql -h ssstandbydb01.sl.ss -u slideshare_RO -p0jzWV1yy -D slideshare_production"
+alias mysql_write="mysql -h ssmasterdb01.sl.ss -u slideshare -pslideshare12345 -D slideshare_production"
+alias mysql_transcript='mysql -u slideshare_RO -p0jzWV1yy -h tsslavedb01.sl.ss -D transcripts_production'
+alias mysql_hits='mysql -h hitsslavedb01.sl.ss -u slideshare_RO -p0jzWV1yy -D hits'
+alias mysql_binding='mysql -h apimasterdb01.sl.ss -u slideshare_RO -p0jzWV1yy -D bindingstore_production'
+
+alias svd='svn diff --diff-cmd=diff | vim -R -'
+alias svdiff='svn diff --diff-cmd=svndiffwrap'
+alias svs='svn st'
+alias sva='svn add'
+alias svr='svn revert'
+alias svc='svn ci'
+alias svo='svn co'
+alias svu='svn up'
+alias svl='svn log | less'
+
+alias gcal='gcalcli'
+
+alias mount_shared='sudo mount -t vboxsf -o uid=$UID,gid=$GID shared ~/shared'
