@@ -9019,3 +9019,275 @@
 2014-07-10 10:58:21	--	End of MOTD
 2014-07-10 10:58:21	--	User mode [+s] by jackhxs
 2014-07-10 10:58:21	--	User mode [+R] by jackhxs
+2014-07-10 23:10:09	=!=	Closing link: Ping Timeout: 21407 seconds
+2014-07-10 23:10:09	=!=	irc: reading data on socket: error 1 (connection closed by peer)
+2014-07-10 23:10:09	--	irc: disconnecting from server...
+2014-07-10 23:10:09	--	irc: disconnected from server
+2014-07-10 23:10:09	--	irc: reconnecting to server in 10 seconds
+2014-07-10 23:10:19	--	irc: reconnecting to server...
+2014-07-10 23:10:19	--	irc: connecting to server localhost/6667...
+2014-07-10 23:10:19	--	irc: connected to localhost/6667 (127.0.0.1)
+2014-07-10 23:10:19	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-07-10 23:10:19	--	Welcome to the BitlBee gateway, jackhxs
+2014-07-10 23:10:19	--	Host localhost is running BitlBee 3.2.1+otr4+20140430+devel+1016-1 Linux/x86_64.
+2014-07-10 23:10:19	--	BitlBee <http://www.bitlbee.org/>
+2014-07-10 23:10:19	--	localhost 3.2.1+otr4+20140430+devel+1016-1 abiswRo ntC
+2014-07-10 23:10:19	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-07-10 23:10:19	--	- localhost Message Of The Day -
+2014-07-10 23:10:19	--	- Welcome to the BitlBee server at localhost.
+2014-07-10 23:10:19	--	-
+2014-07-10 23:10:19	--	- This server is running BitlBee version 3.2.1+otr4+20140430+devel+1016-1.
+2014-07-10 23:10:19	--	- The newest version can be found on http://www.bitlbee.org/
+2014-07-10 23:10:19	--	-
+2014-07-10 23:10:19	--	- You are getting this message because the server administrator has not
+2014-07-10 23:10:19	--	- yet had the time (or need) to change it.
+2014-07-10 23:10:19	--	-
+2014-07-10 23:10:19	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-07-10 23:10:19	--	- Relay Chat server. Please see the site mentioned above for more
+2014-07-10 23:10:19	--	- information.
+2014-07-10 23:10:19	--	-
+2014-07-10 23:10:19	--	- The developers of the Bee hope you have a buzzing time.
+2014-07-10 23:10:19	--	- -- BitlBee development team.
+2014-07-10 23:10:19	--	-
+2014-07-10 23:10:19	--	- ... Buzzing, haha, get it?
+2014-07-10 23:10:19	--	End of MOTD
+2014-07-10 23:10:19	--	User mode [+s] by jackhxs
+2014-07-10 23:10:19	--	User mode [+R] by jackhxs
+2014-07-11 10:47:40	=!=	Closing link: Ping Timeout: 37161 seconds
+2014-07-11 10:47:40	=!=	irc: reading data on socket: error 0 (connection closed by peer)
+2014-07-11 10:47:40	--	irc: disconnecting from server...
+2014-07-11 10:47:40	--	irc: disconnected from server
+2014-07-11 10:47:40	--	irc: reconnecting to server in 10 seconds
+2014-07-11 10:47:50	--	irc: reconnecting to server...
+2014-07-11 10:47:50	--	irc: connecting to server localhost/6667...
+2014-07-11 10:47:50	--	irc: connected to localhost/6667 (127.0.0.1)
+2014-07-11 10:47:50	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-07-11 10:47:50	--	Welcome to the BitlBee gateway, jackhxs
+2014-07-11 10:47:50	--	Host localhost is running BitlBee 3.2.1+otr4+20140430+devel+1016-1 Linux/x86_64.
+2014-07-11 10:47:50	--	BitlBee <http://www.bitlbee.org/>
+2014-07-11 10:47:50	--	localhost 3.2.1+otr4+20140430+devel+1016-1 abiswRo ntC
+2014-07-11 10:47:50	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-07-11 10:47:50	--	- localhost Message Of The Day -
+2014-07-11 10:47:50	--	- Welcome to the BitlBee server at localhost.
+2014-07-11 10:47:50	--	-
+2014-07-11 10:47:50	--	- This server is running BitlBee version 3.2.1+otr4+20140430+devel+1016-1.
+2014-07-11 10:47:50	--	- The newest version can be found on http://www.bitlbee.org/
+2014-07-11 10:47:50	--	-
+2014-07-11 10:47:50	--	- You are getting this message because the server administrator has not
+2014-07-11 10:47:50	--	- yet had the time (or need) to change it.
+2014-07-11 10:47:50	--	-
+2014-07-11 10:47:50	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-07-11 10:47:50	--	- Relay Chat server. Please see the site mentioned above for more
+2014-07-11 10:47:50	--	- information.
+2014-07-11 10:47:50	--	-
+2014-07-11 10:47:50	--	- The developers of the Bee hope you have a buzzing time.
+2014-07-11 10:47:50	--	- -- BitlBee development team.
+2014-07-11 10:47:50	--	-
+2014-07-11 10:47:50	--	- ... Buzzing, haha, get it?
+2014-07-11 10:47:50	--	End of MOTD
+2014-07-11 10:47:50	--	User mode [+s] by jackhxs
+2014-07-11 10:47:50	--	User mode [+R] by jackhxs
+2014-07-12 04:19:18	=!=	Closing link: Ping Timeout: 26727 seconds
+2014-07-12 04:19:18	=!=	irc: reading data on socket: error 0 (connection closed by peer)
+2014-07-12 04:19:18	--	irc: disconnecting from server...
+2014-07-12 04:19:18	--	irc: disconnected from server
+2014-07-12 04:19:18	--	irc: reconnecting to server in 10 seconds
+2014-07-12 04:19:28	--	irc: reconnecting to server...
+2014-07-12 04:19:28	--	irc: connecting to server localhost/6667...
+2014-07-12 04:19:28	--	irc: connected to localhost/6667 (127.0.0.1)
+2014-07-12 04:19:28	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-07-12 04:19:28	--	Welcome to the BitlBee gateway, jackhxs
+2014-07-12 04:19:28	--	Host localhost is running BitlBee 3.2.1+otr4+20140430+devel+1016-1 Linux/x86_64.
+2014-07-12 04:19:28	--	BitlBee <http://www.bitlbee.org/>
+2014-07-12 04:19:28	--	localhost 3.2.1+otr4+20140430+devel+1016-1 abiswRo ntC
+2014-07-12 04:19:28	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-07-12 04:19:28	--	- localhost Message Of The Day -
+2014-07-12 04:19:28	--	- Welcome to the BitlBee server at localhost.
+2014-07-12 04:19:28	--	-
+2014-07-12 04:19:28	--	- This server is running BitlBee version 3.2.1+otr4+20140430+devel+1016-1.
+2014-07-12 04:19:28	--	- The newest version can be found on http://www.bitlbee.org/
+2014-07-12 04:19:28	--	-
+2014-07-12 04:19:28	--	- You are getting this message because the server administrator has not
+2014-07-12 04:19:28	--	- yet had the time (or need) to change it.
+2014-07-12 04:19:28	--	-
+2014-07-12 04:19:28	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-07-12 04:19:28	--	- Relay Chat server. Please see the site mentioned above for more
+2014-07-12 04:19:28	--	- information.
+2014-07-12 04:19:28	--	-
+2014-07-12 04:19:28	--	- The developers of the Bee hope you have a buzzing time.
+2014-07-12 04:19:28	--	- -- BitlBee development team.
+2014-07-12 04:19:28	--	-
+2014-07-12 04:19:28	--	- ... Buzzing, haha, get it?
+2014-07-12 04:19:28	--	End of MOTD
+2014-07-12 04:19:28	--	User mode [+s] by jackhxs
+2014-07-12 04:19:28	--	User mode [+R] by jackhxs
+2014-07-13 22:08:16	=!=	Closing link: Ping Timeout: 147829 seconds
+2014-07-13 22:08:16	=!=	irc: reading data on socket: error 1 (connection closed by peer)
+2014-07-13 22:08:16	--	irc: disconnecting from server...
+2014-07-13 22:08:16	--	irc: disconnected from server
+2014-07-13 22:08:16	--	irc: reconnecting to server in 10 seconds
+2014-07-13 22:08:26	--	irc: reconnecting to server...
+2014-07-13 22:08:26	--	irc: connecting to server localhost/6667...
+2014-07-13 22:08:26	--	irc: connected to localhost/6667 (127.0.0.1)
+2014-07-13 22:08:26	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-07-13 22:08:26	--	Welcome to the BitlBee gateway, jackhxs
+2014-07-13 22:08:26	--	Host localhost is running BitlBee 3.2.1+otr4+20140430+devel+1016-1 Linux/x86_64.
+2014-07-13 22:08:26	--	BitlBee <http://www.bitlbee.org/>
+2014-07-13 22:08:26	--	localhost 3.2.1+otr4+20140430+devel+1016-1 abiswRo ntC
+2014-07-13 22:08:26	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-07-13 22:08:26	--	- localhost Message Of The Day -
+2014-07-13 22:08:26	--	- Welcome to the BitlBee server at localhost.
+2014-07-13 22:08:26	--	-
+2014-07-13 22:08:26	--	- This server is running BitlBee version 3.2.1+otr4+20140430+devel+1016-1.
+2014-07-13 22:08:26	--	- The newest version can be found on http://www.bitlbee.org/
+2014-07-13 22:08:26	--	-
+2014-07-13 22:08:26	--	- You are getting this message because the server administrator has not
+2014-07-13 22:08:26	--	- yet had the time (or need) to change it.
+2014-07-13 22:08:26	--	-
+2014-07-13 22:08:26	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-07-13 22:08:26	--	- Relay Chat server. Please see the site mentioned above for more
+2014-07-13 22:08:26	--	- information.
+2014-07-13 22:08:26	--	-
+2014-07-13 22:08:26	--	- The developers of the Bee hope you have a buzzing time.
+2014-07-13 22:08:26	--	- -- BitlBee development team.
+2014-07-13 22:08:26	--	-
+2014-07-13 22:08:26	--	- ... Buzzing, haha, get it?
+2014-07-13 22:08:26	--	End of MOTD
+2014-07-13 22:08:26	--	User mode [+s] by jackhxs
+2014-07-13 22:08:26	--	User mode [+R] by jackhxs
+2014-07-14 02:46:42	=!=	Closing link: Ping Timeout: 8596 seconds
+2014-07-14 02:46:42	=!=	irc: reading data on socket: error 110 (connection closed by peer)
+2014-07-14 02:46:42	--	irc: disconnecting from server...
+2014-07-14 02:46:42	--	irc: disconnected from server
+2014-07-14 02:46:42	--	irc: reconnecting to server in 10 seconds
+2014-07-14 02:46:52	--	irc: reconnecting to server...
+2014-07-14 02:46:52	--	irc: connecting to server localhost/6667...
+2014-07-14 02:46:52	--	irc: connected to localhost/6667 (127.0.0.1)
+2014-07-14 02:46:52	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-07-14 02:46:52	--	Welcome to the BitlBee gateway, jackhxs
+2014-07-14 02:46:52	--	Host localhost is running BitlBee 3.2.1+otr4+20140430+devel+1016-1 Linux/x86_64.
+2014-07-14 02:46:52	--	BitlBee <http://www.bitlbee.org/>
+2014-07-14 02:46:52	--	localhost 3.2.1+otr4+20140430+devel+1016-1 abiswRo ntC
+2014-07-14 02:46:52	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-07-14 02:46:52	--	- localhost Message Of The Day -
+2014-07-14 02:46:52	--	- Welcome to the BitlBee server at localhost.
+2014-07-14 02:46:52	--	-
+2014-07-14 02:46:52	--	- This server is running BitlBee version 3.2.1+otr4+20140430+devel+1016-1.
+2014-07-14 02:46:52	--	- The newest version can be found on http://www.bitlbee.org/
+2014-07-14 02:46:52	--	-
+2014-07-14 02:46:52	--	- You are getting this message because the server administrator has not
+2014-07-14 02:46:52	--	- yet had the time (or need) to change it.
+2014-07-14 02:46:52	--	-
+2014-07-14 02:46:52	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-07-14 02:46:52	--	- Relay Chat server. Please see the site mentioned above for more
+2014-07-14 02:46:52	--	- information.
+2014-07-14 02:46:52	--	-
+2014-07-14 02:46:52	--	- The developers of the Bee hope you have a buzzing time.
+2014-07-14 02:46:52	--	- -- BitlBee development team.
+2014-07-14 02:46:52	--	-
+2014-07-14 02:46:52	--	- ... Buzzing, haha, get it?
+2014-07-14 02:46:52	--	End of MOTD
+2014-07-14 02:46:52	--	User mode [+s] by jackhxs
+2014-07-14 02:46:52	--	User mode [+R] by jackhxs
+2014-07-14 10:46:36	=!=	Closing link: Ping Timeout: 27344 seconds
+2014-07-14 10:46:36	=!=	irc: reading data on socket: error 1 (connection closed by peer)
+2014-07-14 10:46:36	--	irc: disconnecting from server...
+2014-07-14 10:46:36	--	irc: disconnected from server
+2014-07-14 10:46:36	--	irc: reconnecting to server in 10 seconds
+2014-07-14 10:46:46	--	irc: reconnecting to server...
+2014-07-14 10:46:46	--	irc: connecting to server localhost/6667...
+2014-07-14 10:46:46	--	irc: connected to localhost/6667 (127.0.0.1)
+2014-07-14 10:46:46	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-07-14 10:46:46	--	Welcome to the BitlBee gateway, jackhxs
+2014-07-14 10:46:46	--	Host localhost is running BitlBee 3.2.1+otr4+20140430+devel+1016-1 Linux/x86_64.
+2014-07-14 10:46:46	--	BitlBee <http://www.bitlbee.org/>
+2014-07-14 10:46:46	--	localhost 3.2.1+otr4+20140430+devel+1016-1 abiswRo ntC
+2014-07-14 10:46:46	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-07-14 10:46:46	--	- localhost Message Of The Day -
+2014-07-14 10:46:46	--	- Welcome to the BitlBee server at localhost.
+2014-07-14 10:46:46	--	-
+2014-07-14 10:46:46	--	- This server is running BitlBee version 3.2.1+otr4+20140430+devel+1016-1.
+2014-07-14 10:46:46	--	- The newest version can be found on http://www.bitlbee.org/
+2014-07-14 10:46:46	--	-
+2014-07-14 10:46:46	--	- You are getting this message because the server administrator has not
+2014-07-14 10:46:46	--	- yet had the time (or need) to change it.
+2014-07-14 10:46:46	--	-
+2014-07-14 10:46:46	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-07-14 10:46:46	--	- Relay Chat server. Please see the site mentioned above for more
+2014-07-14 10:46:46	--	- information.
+2014-07-14 10:46:46	--	-
+2014-07-14 10:46:46	--	- The developers of the Bee hope you have a buzzing time.
+2014-07-14 10:46:46	--	- -- BitlBee development team.
+2014-07-14 10:46:46	--	-
+2014-07-14 10:46:46	--	- ... Buzzing, haha, get it?
+2014-07-14 10:46:46	--	End of MOTD
+2014-07-14 10:46:46	--	User mode [+s] by jackhxs
+2014-07-14 10:46:46	--	User mode [+R] by jackhxs
+2014-07-14 21:00:03	=!=	Closing link: Ping Timeout: 3316 seconds
+2014-07-14 21:00:03	=!=	irc: reading data on socket: error 11 (connection closed by peer)
+2014-07-14 21:00:03	--	irc: disconnecting from server...
+2014-07-14 21:00:03	--	irc: disconnected from server
+2014-07-14 21:00:03	--	irc: reconnecting to server in 10 seconds
+2014-07-14 21:00:13	--	irc: reconnecting to server...
+2014-07-14 21:00:13	--	irc: connecting to server localhost/6667...
+2014-07-14 21:00:13	--	irc: connected to localhost/6667 (127.0.0.1)
+2014-07-14 21:00:13	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-07-14 21:00:13	--	Welcome to the BitlBee gateway, jackhxs
+2014-07-14 21:00:13	--	Host localhost is running BitlBee 3.2.1+otr4+20140430+devel+1016-1 Linux/x86_64.
+2014-07-14 21:00:13	--	BitlBee <http://www.bitlbee.org/>
+2014-07-14 21:00:13	--	localhost 3.2.1+otr4+20140430+devel+1016-1 abiswRo ntC
+2014-07-14 21:00:13	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-07-14 21:00:13	--	- localhost Message Of The Day -
+2014-07-14 21:00:13	--	- Welcome to the BitlBee server at localhost.
+2014-07-14 21:00:13	--	-
+2014-07-14 21:00:13	--	- This server is running BitlBee version 3.2.1+otr4+20140430+devel+1016-1.
+2014-07-14 21:00:13	--	- The newest version can be found on http://www.bitlbee.org/
+2014-07-14 21:00:13	--	-
+2014-07-14 21:00:13	--	- You are getting this message because the server administrator has not
+2014-07-14 21:00:13	--	- yet had the time (or need) to change it.
+2014-07-14 21:00:13	--	-
+2014-07-14 21:00:13	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-07-14 21:00:13	--	- Relay Chat server. Please see the site mentioned above for more
+2014-07-14 21:00:13	--	- information.
+2014-07-14 21:00:13	--	-
+2014-07-14 21:00:13	--	- The developers of the Bee hope you have a buzzing time.
+2014-07-14 21:00:13	--	- -- BitlBee development team.
+2014-07-14 21:00:13	--	-
+2014-07-14 21:00:13	--	- ... Buzzing, haha, get it?
+2014-07-14 21:00:13	--	End of MOTD
+2014-07-14 21:00:13	--	User mode [+s] by jackhxs
+2014-07-14 21:00:13	--	User mode [+R] by jackhxs
+2014-07-14 22:58:48	=!=	Closing link: Ping Timeout: 6215 seconds
+2014-07-14 22:58:48	=!=	irc: reading data on socket: error 0 (connection closed by peer)
+2014-07-14 22:58:48	--	irc: disconnecting from server...
+2014-07-14 22:58:48	--	irc: disconnected from server
+2014-07-14 22:58:48	--	irc: reconnecting to server in 10 seconds
+2014-07-14 22:58:58	--	irc: reconnecting to server...
+2014-07-14 22:58:58	--	irc: connecting to server localhost/6667...
+2014-07-14 22:58:58	--	irc: connected to localhost/6667 (127.0.0.1)
+2014-07-14 22:58:58	--	localhost (localhost): BitlBee-IRCd initialized, please go on
+2014-07-14 22:58:58	--	Welcome to the BitlBee gateway, jackhxs
+2014-07-14 22:58:58	--	Host localhost is running BitlBee 3.2.1+otr4+20140430+devel+1016-1 Linux/x86_64.
+2014-07-14 22:58:58	--	BitlBee <http://www.bitlbee.org/>
+2014-07-14 22:58:58	--	localhost 3.2.1+otr4+20140430+devel+1016-1 abiswRo ntC
+2014-07-14 22:58:58	--	PREFIX=(ohv)@%+ CHANTYPES=&# CHANMODES=,,,ntC NICKLEN=23 CHANNELLEN=23 NETWORK=BitlBee SAFELIST CASEMAPPING=rfc1459 MAXTARGETS=1 WATCH=128 FLOOD=0/9999 :are supported by this server
+2014-07-14 22:58:58	--	- localhost Message Of The Day -
+2014-07-14 22:58:58	--	- Welcome to the BitlBee server at localhost.
+2014-07-14 22:58:58	--	-
+2014-07-14 22:58:58	--	- This server is running BitlBee version 3.2.1+otr4+20140430+devel+1016-1.
+2014-07-14 22:58:58	--	- The newest version can be found on http://www.bitlbee.org/
+2014-07-14 22:58:58	--	-
+2014-07-14 22:58:58	--	- You are getting this message because the server administrator has not
+2014-07-14 22:58:58	--	- yet had the time (or need) to change it.
+2014-07-14 22:58:58	--	-
+2014-07-14 22:58:58	--	- For those who don't know it yet, this is not quite a regular Internet
+2014-07-14 22:58:58	--	- Relay Chat server. Please see the site mentioned above for more
+2014-07-14 22:58:58	--	- information.
+2014-07-14 22:58:58	--	-
+2014-07-14 22:58:58	--	- The developers of the Bee hope you have a buzzing time.
+2014-07-14 22:58:58	--	- -- BitlBee development team.
+2014-07-14 22:58:58	--	-
+2014-07-14 22:58:58	--	- ... Buzzing, haha, get it?
+2014-07-14 22:58:58	--	End of MOTD
+2014-07-14 22:58:58	--	User mode [+s] by jackhxs
+2014-07-14 22:58:58	--	User mode [+R] by jackhxs

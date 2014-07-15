@@ -3086,3 +3086,4 @@
 2014-07-07 10:05:05		fifo: removing old fifo pipe "/home/jackhxs/.weechat/weechat_fifo_2920"
 2014-07-07 10:05:05		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer
 2014-07-07 10:05:07		script: 279 scripts for WeeChat 0.4.3
+2014-07-14 23:00:23		fifo: pipe closed

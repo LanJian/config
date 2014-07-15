@@ -10536,3 +10536,353 @@
 2014-07-10 11:06:51	--	Current Global Users: 31  Max: 43
 2014-07-10 11:06:51	--	MOTD File is missing
 2014-07-10 11:06:51	--	User mode [+ixz] by Jack
+2014-07-10 23:08:29	=!=	irc: reading data on socket: error -9 A TLS packet with unexpected length was received.
+2014-07-10 23:08:29	--	irc: disconnecting from server...
+2014-07-10 23:08:29	--	irc: disconnected from server
+2014-07-10 23:08:29	--	irc: reconnecting to server in 10 seconds
+2014-07-10 23:08:39	--	irc: reconnecting to server...
+2014-07-10 23:08:39	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-10 23:08:39	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2014-07-10 23:08:39	--	gnutls: receiving 1 certificate
+2014-07-10 23:08:39	--	 - certificate[1] info:
+2014-07-10 23:08:39	--	   - subject `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', issuer `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', RSA key 1024 bits, signed using RSA-SHA1, activated `2012-05-09 13:26:37 UTC', expires `2013-05-09 13:26:37 UTC', SHA-1 fingerprint `e721c8dbd146d394ae008785c87ee107c0568f4c'
+2014-07-10 23:08:39	=!=	gnutls: certificate has expired
+2014-07-10 23:08:39	=!=	gnutls: peer's certificate is NOT trusted
+2014-07-10 23:08:39	=!=	gnutls: peer's certificate issuer is unknown
+2014-07-10 23:08:39	--	irc: connected to chat.slideshare.net/46664 (173.45.226.80)
+2014-07-10 23:08:39	--	chat01.slideshare.net (chat01.slideshare.net): *** Looking up your hostname...
+2014-07-10 23:08:39	--	chat01.slideshare.net (chat01.slideshare.net): *** Found your hostname
+2014-07-10 23:08:39	--	Welcome to the Slideshare IRC Network Jack!jackhxs@c-76-103-15-217.hsd1.ca.comcast.net
+2014-07-10 23:08:39	--	Your host is chat01.slideshare.net, running version Unreal3.2.9
+2014-07-10 23:08:39	--	This server was created Wed May 9 2012 at 13:27:14 UTC
+2014-07-10 23:08:39	--	chat01.slideshare.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+2014-07-10 23:08:39	--	UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+2014-07-10 23:08:39	--	WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=Slideshare CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+2014-07-10 23:08:39	--	EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2014-07-10 23:08:39	--	chat01.slideshare.net (chat01.slideshare.net): *** You are connected to chat01.slideshare.net with TLSv1-AES128-SHA-128bits
+2014-07-10 23:08:40	--	There are 1 users and 27 invisible on 1 servers
+2014-07-10 23:08:40	--	1 :unknown connection(s)
+2014-07-10 23:08:40	--	13 :channels formed
+2014-07-10 23:08:40	--	I have 28 clients and 0 servers
+2014-07-10 23:08:40	--	Current Local Users: 28  Max: 43
+2014-07-10 23:08:40	--	Current Global Users: 28  Max: 43
+2014-07-10 23:08:40	--	MOTD File is missing
+2014-07-10 23:08:40	--	User mode [+ixz] by Jack
+2014-07-11 10:45:20	=!=	irc: reading data on socket: error -9 A TLS packet with unexpected length was received.
+2014-07-11 10:45:20	--	irc: disconnecting from server...
+2014-07-11 10:45:20	--	irc: disconnected from server
+2014-07-11 10:45:20	--	irc: reconnecting to server in 10 seconds
+2014-07-11 10:45:30	--	irc: reconnecting to server...
+2014-07-11 10:45:30	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-11 10:45:50	=!=	irc: address "chat.slideshare.net" not found
+2014-07-11 10:45:50	=!=	irc: error: No address associated with hostname
+2014-07-11 10:45:50	--	irc: reconnecting to server in 20 seconds
+2014-07-11 10:46:10	--	irc: reconnecting to server...
+2014-07-11 10:46:10	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-11 10:46:10	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2014-07-11 10:46:10	--	gnutls: receiving 1 certificate
+2014-07-11 10:46:10	--	 - certificate[1] info:
+2014-07-11 10:46:10	--	   - subject `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', issuer `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', RSA key 1024 bits, signed using RSA-SHA1, activated `2012-05-09 13:26:37 UTC', expires `2013-05-09 13:26:37 UTC', SHA-1 fingerprint `e721c8dbd146d394ae008785c87ee107c0568f4c'
+2014-07-11 10:46:10	=!=	gnutls: certificate has expired
+2014-07-11 10:46:10	=!=	gnutls: peer's certificate is NOT trusted
+2014-07-11 10:46:10	=!=	gnutls: peer's certificate issuer is unknown
+2014-07-11 10:46:10	--	irc: connected to chat.slideshare.net/46664 (173.45.226.80)
+2014-07-11 10:46:10	--	chat01.slideshare.net (chat01.slideshare.net): *** Looking up your hostname...
+2014-07-11 10:46:10	--	chat01.slideshare.net (chat01.slideshare.net): *** Found your hostname (cached)
+2014-07-11 10:46:10	--	Welcome to the Slideshare IRC Network Jack!jackhxs@206-80-0-91.static.twtelecom.net
+2014-07-11 10:46:10	--	Your host is chat01.slideshare.net, running version Unreal3.2.9
+2014-07-11 10:46:10	--	This server was created Wed May 9 2012 at 13:27:14 UTC
+2014-07-11 10:46:10	--	chat01.slideshare.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+2014-07-11 10:46:10	--	UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+2014-07-11 10:46:10	--	WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=Slideshare CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+2014-07-11 10:46:10	--	EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2014-07-11 10:46:10	--	chat01.slideshare.net (chat01.slideshare.net): *** You are connected to chat01.slideshare.net with TLSv1-AES128-SHA-128bits
+2014-07-11 10:46:10	--	There are 1 users and 29 invisible on 1 servers
+2014-07-11 10:46:10	--	8 :channels formed
+2014-07-11 10:46:10	--	I have 30 clients and 0 servers
+2014-07-11 10:46:10	--	Current Local Users: 30  Max: 43
+2014-07-11 10:46:10	--	Current Global Users: 30  Max: 43
+2014-07-11 10:46:10	--	MOTD File is missing
+2014-07-11 10:46:10	--	User mode [+ixz] by Jack
+2014-07-11 11:28:30	=!=	irc: reading data on socket: error -9 A TLS packet with unexpected length was received.
+2014-07-11 11:28:30	--	irc: disconnecting from server...
+2014-07-11 11:28:30	--	irc: disconnected from server
+2014-07-11 11:28:30	--	irc: reconnecting to server in 10 seconds
+2014-07-11 11:28:40	--	irc: reconnecting to server...
+2014-07-11 11:28:40	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-11 11:28:40	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2014-07-11 11:28:40	--	gnutls: receiving 1 certificate
+2014-07-11 11:28:40	--	 - certificate[1] info:
+2014-07-11 11:28:40	--	   - subject `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', issuer `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', RSA key 1024 bits, signed using RSA-SHA1, activated `2012-05-09 13:26:37 UTC', expires `2013-05-09 13:26:37 UTC', SHA-1 fingerprint `e721c8dbd146d394ae008785c87ee107c0568f4c'
+2014-07-11 11:28:40	=!=	gnutls: certificate has expired
+2014-07-11 11:28:40	=!=	gnutls: peer's certificate is NOT trusted
+2014-07-11 11:28:40	=!=	gnutls: peer's certificate issuer is unknown
+2014-07-11 11:28:41	--	irc: connected to chat.slideshare.net/46664 (173.45.226.80)
+2014-07-11 11:28:41	--	chat01.slideshare.net (chat01.slideshare.net): *** Looking up your hostname...
+2014-07-11 11:28:41	--	chat01.slideshare.net (chat01.slideshare.net): *** Found your hostname (cached)
+2014-07-11 11:28:41	--	Welcome to the Slideshare IRC Network Jack!jackhxs@206-80-0-91.static.twtelecom.net
+2014-07-11 11:28:41	--	Your host is chat01.slideshare.net, running version Unreal3.2.9
+2014-07-11 11:28:41	--	This server was created Wed May 9 2012 at 13:27:14 UTC
+2014-07-11 11:28:41	--	chat01.slideshare.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+2014-07-11 11:28:41	--	UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+2014-07-11 11:28:41	--	WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=Slideshare CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+2014-07-11 11:28:41	--	EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2014-07-11 11:28:41	--	chat01.slideshare.net (chat01.slideshare.net): *** You are connected to chat01.slideshare.net with TLSv1-AES128-SHA-128bits
+2014-07-11 11:28:41	--	There are 1 users and 35 invisible on 1 servers
+2014-07-11 11:28:41	--	11 :channels formed
+2014-07-11 11:28:41	--	I have 36 clients and 0 servers
+2014-07-11 11:28:41	--	Current Local Users: 36  Max: 43
+2014-07-11 11:28:41	--	Current Global Users: 36  Max: 43
+2014-07-11 11:28:41	--	MOTD File is missing
+2014-07-11 11:28:41	--	User mode [+ixz] by Jack
+2014-07-11 12:54:59	=!=	irc: reading data on socket: error -9 A TLS packet with unexpected length was received.
+2014-07-11 12:54:59	--	irc: disconnecting from server...
+2014-07-11 12:54:59	--	irc: disconnected from server
+2014-07-11 12:54:59	--	irc: reconnecting to server in 10 seconds
+2014-07-11 12:55:09	--	irc: reconnecting to server...
+2014-07-11 12:55:09	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-11 12:55:09	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2014-07-11 12:55:09	--	gnutls: receiving 1 certificate
+2014-07-11 12:55:09	--	 - certificate[1] info:
+2014-07-11 12:55:09	--	   - subject `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', issuer `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', RSA key 1024 bits, signed using RSA-SHA1, activated `2012-05-09 13:26:37 UTC', expires `2013-05-09 13:26:37 UTC', SHA-1 fingerprint `e721c8dbd146d394ae008785c87ee107c0568f4c'
+2014-07-11 12:55:09	=!=	gnutls: certificate has expired
+2014-07-11 12:55:09	=!=	gnutls: peer's certificate is NOT trusted
+2014-07-11 12:55:09	=!=	gnutls: peer's certificate issuer is unknown
+2014-07-11 12:55:09	--	irc: connected to chat.slideshare.net/46664 (173.45.226.80)
+2014-07-11 12:55:09	--	chat01.slideshare.net (chat01.slideshare.net): *** Looking up your hostname...
+2014-07-11 12:55:09	--	chat01.slideshare.net (chat01.slideshare.net): *** Found your hostname (cached)
+2014-07-11 12:55:09	--	Welcome to the Slideshare IRC Network Jack!jackhxs@206-80-0-91.static.twtelecom.net
+2014-07-11 12:55:09	--	Your host is chat01.slideshare.net, running version Unreal3.2.9
+2014-07-11 12:55:09	--	This server was created Wed May 9 2012 at 13:27:14 UTC
+2014-07-11 12:55:09	--	chat01.slideshare.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+2014-07-11 12:55:09	--	UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+2014-07-11 12:55:09	--	WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=Slideshare CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+2014-07-11 12:55:09	--	EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2014-07-11 12:55:09	--	chat01.slideshare.net (chat01.slideshare.net): *** You are connected to chat01.slideshare.net with TLSv1-AES128-SHA-128bits
+2014-07-11 12:55:09	--	There are 1 users and 34 invisible on 1 servers
+2014-07-11 12:55:09	--	9 :channels formed
+2014-07-11 12:55:09	--	I have 35 clients and 0 servers
+2014-07-11 12:55:09	--	Current Local Users: 35  Max: 43
+2014-07-11 12:55:09	--	Current Global Users: 35  Max: 43
+2014-07-11 12:55:09	--	MOTD File is missing
+2014-07-11 12:55:09	--	User mode [+ixz] by Jack
+2014-07-11 20:15:45	=!=	irc: reading data on socket: error -9 A TLS packet with unexpected length was received.
+2014-07-11 20:15:45	--	irc: disconnecting from server...
+2014-07-11 20:15:45	--	irc: disconnected from server
+2014-07-11 20:15:45	--	irc: reconnecting to server in 10 seconds
+2014-07-11 20:15:55	--	irc: reconnecting to server...
+2014-07-11 20:15:55	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-11 20:15:57	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2014-07-11 20:15:57	--	gnutls: receiving 1 certificate
+2014-07-11 20:15:57	--	 - certificate[1] info:
+2014-07-11 20:15:57	--	   - subject `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', issuer `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', RSA key 1024 bits, signed using RSA-SHA1, activated `2012-05-09 13:26:37 UTC', expires `2013-05-09 13:26:37 UTC', SHA-1 fingerprint `e721c8dbd146d394ae008785c87ee107c0568f4c'
+2014-07-11 20:15:57	=!=	gnutls: certificate has expired
+2014-07-11 20:15:57	=!=	gnutls: peer's certificate is NOT trusted
+2014-07-11 20:15:57	=!=	gnutls: peer's certificate issuer is unknown
+2014-07-11 20:15:58	--	irc: connected to chat.slideshare.net/46664 (173.45.226.80)
+2014-07-11 20:15:58	--	chat01.slideshare.net (chat01.slideshare.net): *** Looking up your hostname...
+2014-07-11 20:15:58	--	chat01.slideshare.net (chat01.slideshare.net): *** Found your hostname
+2014-07-11 20:15:58	--	Welcome to the Slideshare IRC Network Jack!jackhxs@206-80-0-91.static.twtelecom.net
+2014-07-11 20:15:58	--	Your host is chat01.slideshare.net, running version Unreal3.2.9
+2014-07-11 20:15:58	--	This server was created Wed May 9 2012 at 13:27:14 UTC
+2014-07-11 20:15:58	--	chat01.slideshare.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+2014-07-11 20:15:58	--	UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+2014-07-11 20:15:58	--	WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=Slideshare CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+2014-07-11 20:15:58	--	EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2014-07-11 20:15:58	--	chat01.slideshare.net (chat01.slideshare.net): *** You are connected to chat01.slideshare.net with TLSv1-AES128-SHA-128bits
+2014-07-11 20:15:58	--	There are 1 users and 14 invisible on 1 servers
+2014-07-11 20:15:58	--	8 :channels formed
+2014-07-11 20:15:58	--	I have 15 clients and 0 servers
+2014-07-11 20:15:58	--	Current Local Users: 15  Max: 43
+2014-07-11 20:15:58	--	Current Global Users: 15  Max: 43
+2014-07-11 20:15:58	--	MOTD File is missing
+2014-07-11 20:15:58	--	User mode [+ixz] by Jack
+2014-07-11 20:55:15	=!=	irc: reading data on socket: error -9 A TLS packet with unexpected length was received.
+2014-07-11 20:55:15	--	irc: disconnecting from server...
+2014-07-11 20:55:15	--	irc: disconnected from server
+2014-07-11 20:55:15	--	irc: reconnecting to server in 10 seconds
+2014-07-11 20:55:25	--	irc: reconnecting to server...
+2014-07-11 20:55:25	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-11 20:55:26	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2014-07-11 20:55:26	--	gnutls: receiving 1 certificate
+2014-07-11 20:55:26	--	 - certificate[1] info:
+2014-07-11 20:55:26	--	   - subject `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', issuer `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', RSA key 1024 bits, signed using RSA-SHA1, activated `2012-05-09 13:26:37 UTC', expires `2013-05-09 13:26:37 UTC', SHA-1 fingerprint `e721c8dbd146d394ae008785c87ee107c0568f4c'
+2014-07-11 20:55:26	=!=	gnutls: certificate has expired
+2014-07-11 20:55:26	=!=	gnutls: peer's certificate is NOT trusted
+2014-07-11 20:55:26	=!=	gnutls: peer's certificate issuer is unknown
+2014-07-11 20:55:26	--	irc: connected to chat.slideshare.net/46664 (173.45.226.80)
+2014-07-11 20:55:26	--	chat01.slideshare.net (chat01.slideshare.net): *** Looking up your hostname...
+2014-07-11 20:55:26	--	chat01.slideshare.net (chat01.slideshare.net): *** Found your hostname
+2014-07-11 20:55:26	--	Welcome to the Slideshare IRC Network Jack!jackhxs@206-80-0-91.static.twtelecom.net
+2014-07-11 20:55:26	--	Your host is chat01.slideshare.net, running version Unreal3.2.9
+2014-07-11 20:55:26	--	This server was created Wed May 9 2012 at 13:27:14 UTC
+2014-07-11 20:55:26	--	chat01.slideshare.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+2014-07-11 20:55:26	--	UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+2014-07-11 20:55:26	--	WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=Slideshare CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+2014-07-11 20:55:26	--	EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2014-07-11 20:55:26	--	chat01.slideshare.net (chat01.slideshare.net): *** You are connected to chat01.slideshare.net with TLSv1-AES128-SHA-128bits
+2014-07-11 20:55:26	--	There are 1 users and 13 invisible on 1 servers
+2014-07-11 20:55:26	--	8 :channels formed
+2014-07-11 20:55:26	--	I have 14 clients and 0 servers
+2014-07-11 20:55:26	--	Current Local Users: 14  Max: 43
+2014-07-11 20:55:26	--	Current Global Users: 14  Max: 43
+2014-07-11 20:55:26	--	MOTD File is missing
+2014-07-11 20:55:26	--	User mode [+ixz] by Jack
+2014-07-12 04:50:14	=!=	irc: reading data on socket: error -9 A TLS packet with unexpected length was received.
+2014-07-12 04:50:14	--	irc: disconnecting from server...
+2014-07-12 04:50:14	--	irc: disconnected from server
+2014-07-12 04:50:14	--	irc: reconnecting to server in 10 seconds
+2014-07-12 04:50:24	--	irc: reconnecting to server...
+2014-07-12 04:50:24	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-12 04:50:24	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2014-07-12 04:50:24	--	gnutls: receiving 1 certificate
+2014-07-12 04:50:24	--	 - certificate[1] info:
+2014-07-12 04:50:24	--	   - subject `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', issuer `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', RSA key 1024 bits, signed using RSA-SHA1, activated `2012-05-09 13:26:37 UTC', expires `2013-05-09 13:26:37 UTC', SHA-1 fingerprint `e721c8dbd146d394ae008785c87ee107c0568f4c'
+2014-07-12 04:50:24	=!=	gnutls: certificate has expired
+2014-07-12 04:50:24	=!=	gnutls: peer's certificate is NOT trusted
+2014-07-12 04:50:24	=!=	gnutls: peer's certificate issuer is unknown
+2014-07-12 04:50:25	--	irc: connected to chat.slideshare.net/46664 (173.45.226.80)
+2014-07-12 04:50:25	--	chat01.slideshare.net (chat01.slideshare.net): *** Looking up your hostname...
+2014-07-12 04:50:25	--	chat01.slideshare.net (chat01.slideshare.net): *** Found your hostname
+2014-07-12 04:50:25	--	Welcome to the Slideshare IRC Network Jack!jackhxs@c-76-103-15-217.hsd1.ca.comcast.net
+2014-07-12 04:50:25	--	Your host is chat01.slideshare.net, running version Unreal3.2.9
+2014-07-12 04:50:25	--	This server was created Wed May 9 2012 at 13:27:14 UTC
+2014-07-12 04:50:25	--	chat01.slideshare.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+2014-07-12 04:50:25	--	UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+2014-07-12 04:50:25	--	WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=Slideshare CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+2014-07-12 04:50:25	--	EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2014-07-12 04:50:25	--	chat01.slideshare.net (chat01.slideshare.net): *** You are connected to chat01.slideshare.net with TLSv1-AES128-SHA-128bits
+2014-07-12 04:50:25	--	There are 1 users and 10 invisible on 1 servers
+2014-07-12 04:50:25	--	6 :channels formed
+2014-07-12 04:50:25	--	I have 11 clients and 0 servers
+2014-07-12 04:50:25	--	Current Local Users: 11  Max: 43
+2014-07-12 04:50:25	--	Current Global Users: 11  Max: 43
+2014-07-12 04:50:25	--	MOTD File is missing
+2014-07-12 04:50:25	--	User mode [+ixz] by Jack
+2014-07-12 13:00:27	=!=	irc: reading data on socket: error -9 A TLS packet with unexpected length was received.
+2014-07-12 13:00:27	--	irc: disconnecting from server...
+2014-07-12 13:00:27	--	irc: disconnected from server
+2014-07-12 13:00:27	--	irc: reconnecting to server in 10 seconds
+2014-07-13 22:06:52	--	irc: reconnecting to server...
+2014-07-13 22:06:52	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 22:06:52	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 22:06:52	=!=	irc: error: Name or service not known
+2014-07-13 22:06:52	--	irc: reconnecting to server in 20 seconds
+2014-07-13 22:07:12	--	irc: reconnecting to server...
+2014-07-13 22:07:12	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 22:07:12	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 22:07:12	=!=	irc: error: Name or service not known
+2014-07-13 22:07:12	--	irc: reconnecting to server in 40 seconds
+2014-07-13 22:07:52	--	irc: reconnecting to server...
+2014-07-13 22:07:52	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 22:07:52	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 22:07:52	=!=	irc: error: Name or service not known
+2014-07-13 22:07:52	--	irc: reconnecting to server in 1 minute, 20 seconds
+2014-07-13 22:09:12	--	irc: reconnecting to server...
+2014-07-13 22:09:12	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 22:09:12	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 22:09:12	=!=	irc: error: Name or service not known
+2014-07-13 22:09:12	--	irc: reconnecting to server in 2 minutes, 40 seconds
+2014-07-13 22:11:52	--	irc: reconnecting to server...
+2014-07-13 22:11:52	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 22:11:52	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 22:11:52	=!=	irc: error: Name or service not known
+2014-07-13 22:11:52	--	irc: reconnecting to server in 5 minutes, 20 seconds
+2014-07-13 22:17:12	--	irc: reconnecting to server...
+2014-07-13 22:17:12	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 22:17:12	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 22:17:12	=!=	irc: error: Name or service not known
+2014-07-13 22:17:12	--	irc: reconnecting to server in 10 minutes, 40 seconds
+2014-07-13 22:27:52	--	irc: reconnecting to server...
+2014-07-13 22:27:52	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 22:27:52	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 22:27:52	=!=	irc: error: Name or service not known
+2014-07-13 22:27:52	--	irc: reconnecting to server in 21 minutes, 20 seconds
+2014-07-13 22:49:12	--	irc: reconnecting to server...
+2014-07-13 22:49:12	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 22:49:12	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 22:49:12	=!=	irc: error: Name or service not known
+2014-07-13 22:49:12	--	irc: reconnecting to server in 30 minutes
+2014-07-13 23:19:12	--	irc: reconnecting to server...
+2014-07-13 23:19:12	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 23:19:12	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 23:19:12	=!=	irc: error: Name or service not known
+2014-07-13 23:19:12	--	irc: reconnecting to server in 30 minutes
+2014-07-13 23:49:12	--	irc: reconnecting to server...
+2014-07-13 23:49:12	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-13 23:49:12	=!=	irc: address "chat.slideshare.net" not found
+2014-07-13 23:49:12	=!=	irc: error: Name or service not known
+2014-07-13 23:49:12	--	irc: reconnecting to server in 30 minutes
+2014-07-14 00:19:12	--	irc: reconnecting to server...
+2014-07-14 00:19:12	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-14 00:19:12	=!=	irc: address "chat.slideshare.net" not found
+2014-07-14 00:19:12	=!=	irc: error: Name or service not known
+2014-07-14 00:19:12	--	irc: reconnecting to server in 30 minutes
+2014-07-14 02:43:49	--	irc: reconnecting to server...
+2014-07-14 02:43:49	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-14 02:43:49	=!=	irc: address "chat.slideshare.net" not found
+2014-07-14 02:43:49	=!=	irc: error: Name or service not known
+2014-07-14 02:43:49	--	irc: reconnecting to server in 30 minutes
+2014-07-14 10:45:13	--	irc: reconnecting to server...
+2014-07-14 10:45:13	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-14 10:45:13	=!=	irc: address "chat.slideshare.net" not found
+2014-07-14 10:45:13	=!=	irc: error: Name or service not known
+2014-07-14 10:45:13	--	irc: reconnecting to server in 30 minutes
+2014-07-14 11:15:13	--	irc: reconnecting to server...
+2014-07-14 11:15:13	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-14 11:15:14	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2014-07-14 11:15:14	--	gnutls: receiving 1 certificate
+2014-07-14 11:15:14	--	 - certificate[1] info:
+2014-07-14 11:15:14	--	   - subject `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', issuer `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', RSA key 1024 bits, signed using RSA-SHA1, activated `2012-05-09 13:26:37 UTC', expires `2013-05-09 13:26:37 UTC', SHA-1 fingerprint `e721c8dbd146d394ae008785c87ee107c0568f4c'
+2014-07-14 11:15:14	=!=	gnutls: certificate has expired
+2014-07-14 11:15:14	=!=	gnutls: peer's certificate is NOT trusted
+2014-07-14 11:15:14	=!=	gnutls: peer's certificate issuer is unknown
+2014-07-14 11:15:15	--	irc: connected to chat.slideshare.net/46664 (173.45.226.80)
+2014-07-14 11:15:15	--	chat01.slideshare.net (chat01.slideshare.net): *** Looking up your hostname...
+2014-07-14 11:15:15	--	chat01.slideshare.net (chat01.slideshare.net): *** Found your hostname
+2014-07-14 11:15:15	--	Welcome to the Slideshare IRC Network Jack!jackhxs@206-80-0-91.static.twtelecom.net
+2014-07-14 11:15:15	--	Your host is chat01.slideshare.net, running version Unreal3.2.9
+2014-07-14 11:15:15	--	This server was created Wed May 9 2012 at 13:27:14 UTC
+2014-07-14 11:15:15	--	chat01.slideshare.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+2014-07-14 11:15:15	--	UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+2014-07-14 11:15:15	--	WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=Slideshare CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+2014-07-14 11:15:15	--	EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2014-07-14 11:15:15	--	chat01.slideshare.net (chat01.slideshare.net): *** You are connected to chat01.slideshare.net with TLSv1-AES128-SHA-128bits
+2014-07-14 11:15:15	--	There are 1 users and 28 invisible on 1 servers
+2014-07-14 11:15:15	--	7 :channels formed
+2014-07-14 11:15:15	--	I have 29 clients and 0 servers
+2014-07-14 11:15:15	--	Current Local Users: 29  Max: 43
+2014-07-14 11:15:15	--	Current Global Users: 29  Max: 43
+2014-07-14 11:15:15	--	MOTD File is missing
+2014-07-14 11:15:15	--	User mode [+ixz] by Jack
+2014-07-14 20:59:45	=!=	irc: reading data on socket: error -9 A TLS packet with unexpected length was received.
+2014-07-14 20:59:45	--	irc: disconnecting from server...
+2014-07-14 20:59:45	--	irc: disconnected from server
+2014-07-14 20:59:45	--	irc: reconnecting to server in 10 seconds
+2014-07-14 20:59:55	--	irc: reconnecting to server...
+2014-07-14 20:59:55	--	irc: connecting to server chat.slideshare.net/46664 (SSL)...
+2014-07-14 20:59:55	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2014-07-14 20:59:55	--	gnutls: receiving 1 certificate
+2014-07-14 20:59:55	--	 - certificate[1] info:
+2014-07-14 20:59:55	--	   - subject `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', issuer `C=US,ST=San Francisco,L=San Francisco,O=SlideShare Inc.,OU=GeekHouse,CN=chat.slideshare.net', RSA key 1024 bits, signed using RSA-SHA1, activated `2012-05-09 13:26:37 UTC', expires `2013-05-09 13:26:37 UTC', SHA-1 fingerprint `e721c8dbd146d394ae008785c87ee107c0568f4c'
+2014-07-14 20:59:55	=!=	gnutls: certificate has expired
+2014-07-14 20:59:55	=!=	gnutls: peer's certificate is NOT trusted
+2014-07-14 20:59:55	=!=	gnutls: peer's certificate issuer is unknown
+2014-07-14 20:59:55	--	irc: connected to chat.slideshare.net/46664 (173.45.226.80)
+2014-07-14 20:59:55	--	chat01.slideshare.net (chat01.slideshare.net): *** Looking up your hostname...
+2014-07-14 20:59:55	--	chat01.slideshare.net (chat01.slideshare.net): *** Found your hostname
+2014-07-14 20:59:55	--	Welcome to the Slideshare IRC Network Jack!jackhxs@c-76-103-15-217.hsd1.ca.comcast.net
+2014-07-14 20:59:55	--	Your host is chat01.slideshare.net, running version Unreal3.2.9
+2014-07-14 20:59:55	--	This server was created Wed May 9 2012 at 13:27:14 UTC
+2014-07-14 20:59:55	--	chat01.slideshare.net Unreal3.2.9 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGjZ
+2014-07-14 20:59:55	--	UHNAMES NAMESX SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 :are supported by this server
+2014-07-14 20:59:55	--	WALLCHOPS WATCH=128 WATCHOPTS=A SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVCuzNSMTGZ NETWORK=Slideshare CASEMAPPING=ascii EXTBAN=~,qjncrR ELIST=MNUCT STATUSMSG=~&@%+ :are supported by this server
+2014-07-14 20:59:55	--	EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2014-07-14 20:59:55	--	chat01.slideshare.net (chat01.slideshare.net): *** You are connected to chat01.slideshare.net with TLSv1-AES128-SHA-128bits
+2014-07-14 20:59:55	--	There are 1 users and 13 invisible on 1 servers
+2014-07-14 20:59:55	--	6 :channels formed
+2014-07-14 20:59:55	--	I have 14 clients and 0 servers
+2014-07-14 20:59:55	--	Current Local Users: 14  Max: 43
+2014-07-14 20:59:55	--	Current Global Users: 14  Max: 43
+2014-07-14 20:59:55	--	MOTD File is missing
+2014-07-14 20:59:55	--	User mode [+ixz] by Jack

@@ -371,3 +371,8 @@
 2014-07-04 09:04:38	--	irc: disconnected from server
 2014-07-04 23:10:29	--	irc: disconnected from server
 2014-07-05 16:01:52	--	irc: disconnected from server
+2014-07-14 14:33:18	TobyHsieh-[sl]	do you have any objections to me changing your ss_response_code_metrics gem so that it only takes an option for the stats URI?
+2014-07-14 14:33:39	TobyHsieh-[sl]	then if that URI is http, use the stats page, if the URI scheme is file, use the Unix socket?
+2014-07-14 19:36:59	◀▬▬	TobyHsieh-[sl] (toby@slideshare.com) has quit (Leaving...)
+2014-07-14 21:00:03	--	irc: disconnected from server
+2014-07-14 22:58:48	--	irc: disconnected from server
