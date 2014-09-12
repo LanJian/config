@@ -8,8 +8,8 @@ endif
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 Plugin 'gmarik/vundle'
 
 " Utilities
@@ -30,9 +30,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'myusuf3/numbers.vim'
 
 " Colorschemes
 Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'morhetz/gruvbox'
 
 " Syntax highlighting
 Plugin 'JSON.vim'
@@ -54,8 +56,13 @@ Plugin 'valloric/youcompleteme'
 " Syntactic sugar
 Plugin 'Twinside/vim-haskellConceal'
 
+call vundle#end()
+
 set t_Co=256
-colorscheme Tomorrow-Night-Eighties
+"colorscheme Tomorrow-Night-Eighties
+let g:gruvbox_contrast = 'hard'
+let g:gruvbox_italic = 0
+colorscheme gruvbox
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugin settings
@@ -127,23 +134,26 @@ set background=dark
 set expandtab
 set ignorecase
 set smartcase
-set incsearch		" do incremental searching
+set incsearch    " do incremental searching
 set gdefault
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+set history=50    " keep 50 lines of command line history
+set ruler    " show the cursor position all the time
+set showcmd    " display incomplete commands
 set hlsearch
 set backupdir=~/.vim/backup
 set laststatus=2
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
-endif
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+set guifont=Deja\ Vu\ Sans\ Mono\ For\ Powerline\ 10
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
+if has("vms")
+  set nobackup    " do not keep a backup file, use versions instead
+else
+  set backup    " keep a backup file
+endif
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -181,16 +191,16 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
+  set autoindent    " always set autoindenting on
 
 endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-	 	\ | wincmd p | diffthis
+     \ | wincmd p | diffthis
 
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+"let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :!ack 
 
 nmap <c-h> <c-w>h
@@ -208,3 +218,7 @@ map <right> <nop>
 
 nnoremap + <C-a>
 nnoremap - <C-x>
+
+" show invisible characters
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+nnoremap <leader>i :set list!<cr>

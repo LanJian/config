@@ -4,9 +4,14 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , position = TopW L 100
        , lowerOnStart = True
        , commands = [ Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
+                    , Run Memory ["-t", "Mem: <usedratio>%"] 10
+                    , Run Com "sh" ["/home/jahuang/.scripts/vpnstatus"] "vpns" 20
+                    , Run Com "sh" ["/home/jahuang/.scripts/volume"] "volume" 1
+                    , Run Com "tail" ["-1", "/tmp/xmobar-chats"] "chat" 10
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% }{ %chat% | %memory% | VPN: %vpns% - %eth0% | Vol: %volume% | <fc=#ee9a00>%date%</fc>"
        }

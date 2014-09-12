@@ -18,7 +18,7 @@ theme_precmd () {
 }
 
 setopt prompt_subst
-PROMPT='%(?.%B%F{142}恩.%B%F{196}仇)%B%F{167} %c %(?.%B%F{142}.%B%F{196})❯ %f'
+PROMPT='%(?.%B%F{142}龍.%B%F{196}鳳)%B%F{167} %c %(?.%B%F{142}.%B%F{196})❯ %f'
 RPROMPT='%B%F{142}${vcs_info_msg_0_}%B%F{magenta}(ruby-$(rbenv version-name))%{$reset_color%}'
 
 autoload -U add-zsh-hook

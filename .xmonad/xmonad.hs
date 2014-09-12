@@ -48,7 +48,7 @@ myTopicConfig = defaultTopicConfig
         [ ("web", spawn "google-chrome")
         , ("code", spawn "subl")
         , ("remotes", spawn "gnome-terminal --profile ec2")
-        , ("cli", spawn "gnome-terminal --working-directory=/home/jackhxs/slideshare" >*> 4)
+        , ("cli", spawn "gnome-terminal --working-directory=$HOME/slideshare" >*> 4)
         ]
     }
 
@@ -62,7 +62,7 @@ layout = onWorkspace "web" (noBorders Full ||| tiled ||| Mirror tiled ||| OneBig
          onWorkspace "code" (noBorders Full ||| tiled ||| Mirror tiled ||| Grid ||| Accordion) $
          onWorkspace "cli" primaryCli $
          onWorkspace "cssh" (Grid ||| tiled ||| Mirror tiled ||| noBorders Full) $
-         onWorkspace "pidgin" (withIM (1%7) (Role "buddy_list") Grid ||| Full ||| tiled ||| Mirror tiled) $
+         onWorkspace "chat" (withIM (1%7) (Role "buddy_list") Grid ||| Full ||| tiled ||| Mirror tiled) $
          def
     where
         def = tiled ||| Mirror tiled ||| noBorders Full ||| Grid ||| Accordion
@@ -76,16 +76,25 @@ layout = onWorkspace "web" (noBorders Full ||| tiled ||| Mirror tiled ||| OneBig
         delta = 3/100
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList
-        [ ((modm .|. shiftMask, xK_g), windowPromptGoto defaultXPConfig { autoComplete = Just 500000 } )
+        ([ ((modm .|. shiftMask, xK_g), windowPromptGoto defaultXPConfig { autoComplete = Just 500000 } )
         , ((modm .|. shiftMask, xK_b), windowPromptBring defaultXPConfig { autoComplete = Just 500000 } )
         , ((modm .|. controlMask, xK_x), shellPrompt defaultXPConfig)
         , ((modm .|. shiftMask, xK_u), sendMessage Shrink) -- since apple still masks cmd-h
         , ((modm .|. shiftMask, xK_o), spawn "gnome-terminal --profile ec2")
         , ((modm .|. shiftMask, xK_i), spawn "gnome-terminal --profile important")
+        , ((modm .|. controlMask, xK_l), spawn "gnome-screensaver-command -l")
         , ((modm, xK_a), currentTopicAction myTopicConfig)
         , ((modm, xK_g), promptedGoto)
         , ((modm .|. shiftMask, xK_g), promptedGoto)
+        , ((0, 0x1008FF12), spawn "amixer set Master toggle")
+        , ((0, 0x1008FF11), spawn "amixer set Master 5%-")
+        , ((0, 0x1008FF13), spawn "amixer set Master 5%+")
         ]
+        ++
+        [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
+            | (key, sc) <- zip [xK_w, xK_e, xK_r] [1,0,2]
+            , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]])
+
 
 goto :: Topic -> X ()
 goto = switchTopic myTopicConfig
@@ -111,7 +120,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 main :: IO ()
 main = do
     checkTopicConfig myTopics myTopicConfig
-    xmproc <- spawnPipe "/usr/bin/xmobar /home/jackhxs/.xmobarrc"
+    xmproc <- spawnPipe "$HOME/.cabal/bin/xmobar $HOME/.xmobarrc"
     xmonad $ defaultConfig
         { terminal = "gnome-terminal"
         , workspaces = myTopics

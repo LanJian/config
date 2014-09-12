@@ -57,7 +57,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-source $HOME/.paths
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -84,7 +83,7 @@ eval "$(rbenv init -)"
 
 export N_PREFIX=$HOME/.node
 
-ruby /home/jackhxs/projects/poems/print_random_poem.rb /home/jackhxs/projects/poems/poems.json
+#ruby /home/jackhxs/projects/poems/print_random_poem.rb /home/jackhxs/projects/poems/poems.json
 
 #foo () {r=$(( $RANDOM % 50 )); if [ $r -eq 5 ]; then sl; else ls; fi}
 #alias ls=foo

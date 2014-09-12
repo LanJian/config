@@ -1,0 +1,9 @@
+colo zenburn
+
+set hintkeys=fjdkghsla
+set hlfind
+
+nmap -builtin j 3j
+nmap -builtin k 3k
+nmap -builtin ; :
+nmap <A-i> gi

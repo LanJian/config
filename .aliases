@@ -25,6 +25,5 @@ alias svo='svn co'
 alias svu='svn up'
 alias svl='svn log | less'
 
+alias gopen='gnome-open'
 alias gcal='gcalcli'
-
-alias mount_shared='sudo mount -t vboxsf -o uid=$UID,gid=$GID shared ~/shared'

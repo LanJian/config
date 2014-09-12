@@ -1,3 +1,5 @@
 nnoremap j 3j
 nnoremap k 3k
 nnoremap ; :
+set gui=nonavigation
+colorscheme jackhxs
