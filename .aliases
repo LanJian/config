@@ -27,3 +27,5 @@ alias svl='svn log | less'
 
 alias gopen='gnome-open'
 alias gcal='gcalcli'
+
+alias pretty_json='python -mjson.tool'
