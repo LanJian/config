@@ -83,7 +83,8 @@ eval "$(rbenv init -)"
 
 export N_PREFIX=$HOME/.node
 
-#ruby /home/jackhxs/projects/poems/print_random_poem.rb /home/jackhxs/projects/poems/poems.json
+(cd $HOME/project/tangshi && bundle exec ruby print_random_poem.rb)
+#chdir $HOME
 
 #foo () {r=$(( $RANDOM % 50 )); if [ $r -eq 5 ]; then sl; else ls; fi}
 #alias ls=foo

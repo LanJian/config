@@ -38,6 +38,7 @@ Plugin 'morhetz/gruvbox'
 
 " Syntax highlighting
 Plugin 'JSON.vim'
+Plugin 'fatih/vim-go'
 Plugin 'groenewege/vim-less'
 Plugin 'haskell.vim'
 Plugin 'itspriddle/vim-jquery'
@@ -50,8 +51,8 @@ Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-liquid'
 Plugin 'tpope/vim-rails'
-Plugin 'vim-stylus'
 Plugin 'valloric/youcompleteme'
+Plugin 'vim-stylus'
 
 " Syntactic sugar
 Plugin 'Twinside/vim-haskellConceal'
@@ -107,6 +108,7 @@ au BufNewFile,BufRead *.java set shiftwidth=4
 
 " syntastic
 let g:syntastic_enable_signs=1
+let g:syntastic_ruby_checkers=['rubocop', 'mri']
 
 filetype plugin indent on
 
