@@ -53,6 +53,7 @@ Plugin 'tpope/vim-liquid'
 Plugin 'tpope/vim-rails'
 Plugin 'valloric/youcompleteme'
 Plugin 'vim-stylus'
+Plugin 'markcornick/vim-terraform'
 
 " Syntactic sugar
 Plugin 'Twinside/vim-haskellConceal'
