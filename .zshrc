@@ -14,6 +14,7 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+
 # Set this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -83,8 +84,13 @@ eval "$(rbenv init -)"
 
 export N_PREFIX=$HOME/.node
 
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 (cd $HOME/project/tangshi && bundle exec ruby print_random_poem.rb)
 #chdir $HOME
 
 #foo () {r=$(( $RANDOM % 50 )); if [ $r -eq 5 ]; then sl; else ls; fi}
-#alias ls=foo
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

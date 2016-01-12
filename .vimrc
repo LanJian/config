@@ -8,17 +8,26 @@ endif
 set nocompatible
 filetype off
 
+" stop those stupid python deprecation warnings
+python << EOF
+import warnings
+warnings.simplefilter("ignore", DeprecationWarning)
+EOF
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " Utilities
+Plugin 'ashisha/image.vim'
 Plugin 'bling/vim-airline'
 Plugin 'chrisbra/csv.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
+Plugin 'junkblocker/patchreview-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'myusuf3/numbers.vim'
 Plugin 'pyflakes.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -27,17 +36,18 @@ Plugin 'sirver/ultisnips'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'valloric/youcompleteme'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'will133/vim-dirdiff'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
-Plugin 'myusuf3/numbers.vim'
 
 " Colorschemes
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'morhetz/gruvbox'
 
 " Syntax highlighting
-Plugin 'JSON.vim'
+Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Plugin 'groenewege/vim-less'
 Plugin 'haskell.vim'
@@ -51,7 +61,6 @@ Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-liquid'
 Plugin 'tpope/vim-rails'
-Plugin 'valloric/youcompleteme'
 Plugin 'vim-stylus'
 Plugin 'markcornick/vim-terraform'
 
@@ -62,13 +71,16 @@ call vundle#end()
 
 set t_Co=256
 "colorscheme Tomorrow-Night-Eighties
-let g:gruvbox_contrast = 'hard'
+let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_italic = 0
 colorscheme gruvbox
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"

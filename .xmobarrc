@@ -8,7 +8,7 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     , Run Memory ["-t", "Mem: <usedratio>%"] 10
                     , Run Com "sh" ["/home/jahuang/.scripts/vpnstatus"] "vpns" 20
                     , Run Com "sh" ["/home/jahuang/.scripts/volume"] "volume" 1
-                    , Run Com "tail" ["-1", "/tmp/xmobar-chats"] "chat" 10
+                    , Run Com "tail" ["-1", "/tmp/weechat-notify"] "chat" 10
                     , Run StdinReader
                     ]
        , sepChar = "%"

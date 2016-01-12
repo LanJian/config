@@ -1,6 +1,6 @@
 [user]
   name = Jack Huang
-  email = jackhxs@gmail.com
+  email = jackhxs@slideshare.com
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
@@ -14,8 +14,8 @@
   status = auto
   branch = auto
   diff = auto
-[diff]
-  external = gitdiffwrap
+;[diff]
+  ;external = gitdiffwrap
 [alias]
   ci = commit
   up = update
