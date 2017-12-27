@@ -1,6 +1,6 @@
 [user]
   name = Jack Huang
-  email = jackhxs@slideshare.com
+  email = jahuang@linkedin.com
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
@@ -26,11 +26,21 @@
   di = diff
   lg = log -p
   gl = log --graph --decorate
-  glp = log --graph --oneline --abbrev-commit --decorate
+  log = log --graph --oneline --abbrev-commit --decorate
   rl = reflog
   who = shortlog -s --
   llog = log --date=local
   ol = log --oneline
   w = whatchanged
+  p = pull --rebase
+  rt = review create -g richmedia-reviewers --testing-done 'zeus plan' -p
+  rv = review create -g richmedia-reviewers --testing-done 'unit and integ tests' -p
 [credential]
 	helper = cache --timeout=3600
+
+# Use this to automatically rebase when you make a commit BEFORE you run `git pull..`
+# so that you don't have a ton of merge commits when you commit then pull
+# You also need to add `rebase = true` to the [branch "some_branch"] section in .git/config
+# of each repo for whatever branch (This setting will add that for you for new repos I believe)
+[branch]
+  autosetuprebase = always

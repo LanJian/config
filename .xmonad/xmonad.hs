@@ -82,7 +82,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList
         , ((modm .|. shiftMask, xK_u), sendMessage Shrink) -- since apple still masks cmd-h
         , ((modm .|. shiftMask, xK_o), spawn "gnome-terminal --profile ec2")
         , ((modm .|. shiftMask, xK_i), spawn "gnome-terminal --profile important")
-        , ((modm .|. controlMask, xK_l), spawn "gnome-screensaver-command -l")
+        , ((modm .|. controlMask, xK_l), spawn "xscreensaver-command -lock")
         , ((modm, xK_a), currentTopicAction myTopicConfig)
         , ((modm, xK_g), promptedGoto)
         , ((modm .|. shiftMask, xK_g), promptedGoto)

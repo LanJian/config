@@ -8,66 +8,60 @@ endif
 set nocompatible
 filetype off
 
-" stop those stupid python deprecation warnings
-python << EOF
-import warnings
-warnings.simplefilter("ignore", DeprecationWarning)
-EOF
+" Load vim-plug
+if empty(glob("~/.vim/autoload/plug.vim"))
+  execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Utilities
-Plugin 'ashisha/image.vim'
-Plugin 'bling/vim-airline'
-Plugin 'chrisbra/csv.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
-Plugin 'junkblocker/patchreview-vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'pyflakes.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'sirver/ultisnips'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'valloric/youcompleteme'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'will133/vim-dirdiff'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
+Plug 'airblade/vim-gitgutter'
+Plug 'chrisbra/csv.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
+Plug 'myusuf3/numbers.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'sirver/ultisnips'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ruby/vim-ruby'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Colorschemes
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'morhetz/gruvbox'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'morhetz/gruvbox'
 
 " Syntax highlighting
-Plugin 'elzr/vim-json'
-Plugin 'fatih/vim-go'
-Plugin 'groenewege/vim-less'
-Plugin 'haskell.vim'
-Plugin 'itspriddle/vim-jquery'
-Plugin 'jade.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'nginx.vim'
-Plugin 'othree/html5.vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'puppetlabs/puppet-syntax-vim'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-liquid'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-stylus'
-Plugin 'markcornick/vim-terraform'
+Plug 'elzr/vim-json'
+Plug 'fatih/vim-go'
+Plug 'groenewege/vim-less'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'itspriddle/vim-jquery'
+Plug 'kchmck/vim-coffee-script'
+Plug 'chr4/nginx.vim'
+Plug 'othree/html5.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'puppetlabs/puppet-syntax-vim'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-rails'
+Plug 'hashivim/vim-terraform'
 
 " Syntactic sugar
-Plugin 'Twinside/vim-haskellConceal'
+Plug 'Twinside/vim-haskellConceal'
 
-call vundle#end()
+call plug#end()
 
 set t_Co=256
 "colorscheme Tomorrow-Night-Eighties
@@ -78,7 +72,6 @@ colorscheme gruvbox
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " vim-json
 let g:vim_json_syntax_conceal = 0
 
@@ -87,9 +80,6 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-
-" ctrlp.vim
-let g:ctrlp_working_path_mode = ''
 
 " vim-markdown
 let g:vim_markdown_folding_disabled=1
@@ -109,15 +99,16 @@ map <F2> :NERDTreeToggle<cr>
 " tagbar
 map <F8> :TagbarToggle<cr>
 
+" fzf
+nmap <C-p> :FZF<cr>
+
 " eclim
-let g:EclimBrowser='open'
+let g:EclimBrowser='gopen'
 au BufNewFile,BufRead *.java nnoremap <silent> <leader>i :JavaImportOrganize<cr>
 au BufNewFile,BufRead *.java nnoremap <silent> <leader>d :JavaDocSearch -x declarations<cr>
 au BufNewFile,BufRead *.java nnoremap <silent> <cr> :JavaSearchContext<cr>
 au BufNewFile,BufRead *.java nnoremap <silent> <leader>c :JavaCorrect<cr>
-au BufNewFile,BufRead *.java let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
-au BufNewFile,BufRead *.java set ts=4
-au BufNewFile,BufRead *.java set shiftwidth=4
+let g:EclimCompletionMethod = 'omnifunc'
 
 " syntastic
 let g:syntastic_enable_signs=1
@@ -157,6 +148,7 @@ set showcmd    " display incomplete commands
 set hlsearch
 set backupdir=~/.vim/backup
 set laststatus=2
+set synmaxcol=200
 
 set guioptions-=m
 set guioptions-=T
@@ -216,7 +208,7 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
      \ | wincmd p | diffthis
 
 "let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :!ack 
+nnoremap <leader>a :!ag 
 
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l

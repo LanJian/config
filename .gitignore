@@ -1,3 +1,9 @@
 *~
 *.swp
 .weechat/logs
+.pentadactyl/info/
+.xmonad/history
+.xmonad/xmonad-x86_64-linux
+.xmonad/xmonad.errors
+.xmonad/xmonad.hi
+.xmonad/xmonad.o

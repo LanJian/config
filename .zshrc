@@ -52,7 +52,7 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,18 +79,31 @@ source $ZSH/oh-my-zsh.sh
 if [ "$TERM"=="xterm" ]; then
   export TERM=xterm-256color
 fi
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-export N_PREFIX=$HOME/.node
+#export N_PREFIX=$HOME/.node
+#
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+bindkey \^U backward-kill-line
 
-(cd $HOME/project/tangshi && bundle exec ruby print_random_poem.rb)
-#chdir $HOME
-
-#foo () {r=$(( $RANDOM % 50 )); if [ $r -eq 5 ]; then sl; else ls; fi}
+##(cd $HOME/project/tangshi && bundle exec ruby print_random_poem.rb)
+#
+##foo () {r=$(( $RANDOM % 50 )); if [ $r -eq 5 ]; then sl; else ls; fi}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#eval "$(thefuck --alias)"
+
+if [[ -z "$TMUX" ]]
+then
+  exec tmux new-session
+fi
+
+autoload -U compinit && compinit
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
