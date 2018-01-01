@@ -1,0 +1,36 @@
+alias vi='vim'
+alias vim='vim --servername vim'
+
+alias be="bundle exec"
+alias less="less -F -X"
+alias tree='tree -Csh'
+alias gethead="curl -I $1"
+alias myip="curl http://ip.appspot.com"
+alias time_curl="curl -s -w '\nConnect %{time_connect}: Transfer %{time_starttransfer}: Total %{time_total}\n'"
+
+alias svd='svn diff --diff-cmd=diff | vim -R -'
+alias svdiff='svn diff --diff-cmd=svndiffwrap'
+alias svs='svn st'
+alias sva='svn add'
+alias svr='svn revert'
+alias svc='svn ci'
+alias svo='svn co'
+alias svu='svn up'
+alias svl='svn log | less'
+
+alias gitdiff='GIT_EXTERNAL_DIFF=gitdiffwrap git diff'
+
+alias gopen='gnome-open'
+alias gcal='gcalcli'
+
+alias pretty_json='python -mjson.tool'
+
+alias ne='PATH=$(npm bin):$PATH'
+
+alias weather="curl 'wttr.in/sf?m'"
+
+alias copy="xclip -selection clipboard"
+
+alias sudosaws="AWS_PROFILE=sudo saws"
+
+alias dewhitespace="tr -d ' \t\n\r\f' <"

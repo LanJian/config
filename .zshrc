@@ -14,6 +14,10 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+if [ -f ~/.work_aliases ]; then
+  . ~/.work_aliases
+fi
+
 
 # Set this to use case-sensitive completion
 # CASE_SENSITIVE="true"
