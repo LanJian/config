@@ -120,7 +120,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 main :: IO ()
 main = do
     checkTopicConfig myTopics myTopicConfig
-    xmproc <- spawnPipe "$HOME/.cabal/bin/xmobar $HOME/.xmobarrc"
+    xmproc <- spawnPipe "xmobar $HOME/.xmobarrc"
     xmonad $ defaultConfig
         { terminal = "gnome-terminal"
         , workspaces = myTopics
