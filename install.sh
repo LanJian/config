@@ -9,5 +9,5 @@ ln -s -f $PWD/.tmux.conf $HOME/.tmux.conf
 ln -s -f $PWD/.pentadactylrc $HOME/.pentadactylrc
 ln -s -f $PWD/jackhxs.zsh-theme $HOME/.oh-my-zsh/themes/jackhxs.zsh-theme
 
-ln -s -f $PWD/.xmonad $HOME/.xmonad
-ln -s -f $PWD/.pentadactyl $HOME/.pentadactyl
+ln -s -f -n $PWD/.xmonad $HOME/.xmonad
+ln -s -f -n $PWD/.pentadactyl $HOME/.pentadactyl
