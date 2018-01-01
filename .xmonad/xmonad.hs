@@ -128,6 +128,7 @@ main = do
         , focusedBorderColor = "#cd8b00"
         , normalBorderColor = "#555555"
         , layoutHook = avoidStruts $ layout
+        , handleEventHook = docksEventHook
         , logHook = dynamicLogWithPP xmobarPP
             { ppOutput = hPutStrLn xmproc
             , ppTitle = xmobarColor "orange" "" .shorten 100
