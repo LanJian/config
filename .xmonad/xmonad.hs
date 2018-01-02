@@ -86,7 +86,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList
         , ((modm, xK_a), currentTopicAction myTopicConfig)
         , ((modm, xK_g), promptedGoto)
         , ((modm .|. shiftMask, xK_g), promptedGoto)
-        , ((0, 0x1008FF12), spawn "amixer set Master toggle")
+        , ((0, 0x1008FF12), spawn "amixer -D pulse set Master toggle")
         , ((0, 0x1008FF11), spawn "amixer set Master 5%-")
         , ((0, 0x1008FF13), spawn "amixer set Master 5%+")
         ]
