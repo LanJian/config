@@ -4,8 +4,15 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , position = TopW L 100
        , lowerOnStart = True
        , commands = [ Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
-                    , Run Weather "KSFO" ["-t", "<tempC>C, <skyCondition>, RH <rh>%", "-L","15","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
-                    , Run DynNetwork ["-L","0","-H","32","--normal","green","--high","red"] 10
+                    , Run Weather "KSFO" [
+                      "-t", "<tempC>C, <skyCondition>, RH <rh>%",
+                      "-L", "15", "-H", "25",
+                      "--normal", "green", "--high", "red", "--low", "lightblue"
+                    ] 36000
+                    , Run DynNetwork [
+                      "-L", "0", "-H", "32",
+                      "--normal", "green", "--high", "red"
+                    ] 10
                     , Run Battery [
                       "-t", "<acstatus>: <left>% - <timeleft>",
                       "-H", "75", "-h", "green",
@@ -14,9 +21,16 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                       "-O", "AC",
                       "-o", "Bat"
                     ] 50
-                    , Run Memory ["-t", "Mem: <usedratio>%", "-L","0","-H","50","--normal","green","--high","red"] 10
-                    , Run Cpu ["-L","0","-H","50","--normal","green","--high","red"] 10
-                    , Run Com "sh" ["/home/jahuang/.scripts/volume"] "volume" 1
+                    , Run Memory [
+                      "-t", "Mem: <usedratio>%",
+                      "-L", "0", "-H", "50",
+                      "--normal", "green", "--high", "red"
+                    ] 10
+                    , Run Cpu [
+                      "-L", "0", "-H", "50",
+                      "--normal", "green", "--high", "red"
+                    ] 10
+                    , Run Com "sh" ["-c", "$HOME/.scripts/volume"] "volume" 1
                     , Run StdinReader
                     ]
        , sepChar = "%"
