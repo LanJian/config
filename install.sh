@@ -12,3 +12,6 @@ ln -s -f $PWD/jackhxs.zsh-theme $HOME/.oh-my-zsh/themes/jackhxs.zsh-theme
 
 ln -s -f -n $PWD/.xmonad $HOME/.xmonad
 ln -s -f -n $PWD/.pentadactyl $HOME/.pentadactyl
+
+mkdir -p $HOME/.scripts
+ln -s -f $PWD/.scripts/* $HOME/.scripts/
