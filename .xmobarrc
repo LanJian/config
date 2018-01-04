@@ -10,9 +10,13 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                       "--normal", "green", "--high", "red", "--low", "lightblue"
                     ] 36000
                     , Run DynNetwork [
+                      "-t", "<rx>KB|<tx>KB",
                       "-L", "0", "-H", "32",
                       "--normal", "green", "--high", "red"
                     ] 10
+                    , Run Com "sh" [
+                      "-c", "$HOME/.scripts/wireless wlp58s0"
+                    ] "wireless" 10
                     , Run Battery [
                       "-t", "<acstatus>: <left>% - <timeleft>",
                       "-H", "75", "-h", "green",
@@ -30,10 +34,10 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                       "-L", "0", "-H", "50",
                       "--normal", "green", "--high", "red"
                     ] 10
-                    , Run Com "sh" ["-c", "$HOME/.scripts/volume"] "volume" 1
+                    , Run Com "sh" ["-c", "$HOME/.scripts/volume"] "volume" 10
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %KSFO% | %cpu% %memory% | %dynnetwork% | %battery% | Vol: %volume% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% }{ %KSFO% | %cpu% %memory% | %wireless% %dynnetwork% | %battery% | Vol: %volume% | <fc=#ee9a00>%date%</fc>"
        }
