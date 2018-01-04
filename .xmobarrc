@@ -34,7 +34,7 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                       "-L", "0", "-H", "50",
                       "--normal", "green", "--high", "red"
                     ] 10
-                    , Run Com "sh" ["-c", "$HOME/.scripts/volume"] "volume" 10
+                    , Run Com "sh" ["-c", "$HOME/.scripts/volume"] "volume" 1
                     , Run StdinReader
                     ]
        , sepChar = "%"
