@@ -45,6 +45,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'rust-lang/rust.vim'
 
 " Colorschemes
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -108,6 +110,9 @@ map <F8> :TagbarToggle<cr>
 
 " fzf
 nmap <C-p> :FZF<cr>
+
+" python-mode
+let g:pymode_python = 'python3'
 
 " eclim
 let g:EclimBrowser='gopen'
@@ -217,8 +222,11 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 "let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :!ag 
 
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
+nmap <c-h> gT
+nmap <c-l> gt
+
+"nmap <c-h> <c-w>h
+"nmap <c-l> <c-w>l
 map <C-K> <C-W>k<C-W>_
 map <C-J> <C-W>j<C-W>_
 set wmh=0
