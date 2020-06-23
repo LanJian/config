@@ -20,7 +20,7 @@ alias svl='svn log | less'
 
 alias gitdiff='GIT_EXTERNAL_DIFF=gitdiffwrap git diff'
 
-alias gopen='gnome-open'
+alias xopen='xdg-open'
 alias gcal='gcalcli'
 
 alias pretty_json='python -mjson.tool'
@@ -34,3 +34,7 @@ alias copy="xclip -selection clipboard"
 alias sudosaws="AWS_PROFILE=sudo saws"
 
 alias dewhitespace="tr -d ' \t\n\r\f' <"
+
+alias pass='gopass'
+
+alias tldr='tldr --theme ocean'

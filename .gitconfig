@@ -1,13 +1,13 @@
 [user]
   name = Jack Huang
-  email = jahuang@linkedin.com
+  email = jack@ubiquity6.com
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
 [pager]
   diff = cat
 [github]
-  user = LanJian
+  user = jack-u6
 [apply]
   whitespace = fix
 [color]
@@ -36,7 +36,7 @@
   rt = review create -g richmedia-reviewers --testing-done 'zeus plan' -p
   rv = review create -g richmedia-reviewers --testing-done 'unit and integ tests' -p
 [credential]
-	helper = cache --timeout=3600
+        helper = cache --timeout=3600
 
 # Use this to automatically rebase when you make a commit BEFORE you run `git pull..`
 # so that you don't have a ton of merge commits when you commit then pull
@@ -44,3 +44,5 @@
 # of each repo for whatever branch (This setting will add that for you for new repos I believe)
 [branch]
   autosetuprebase = always
+[url "git@github.com:"]
+	insteadOf = https://github.com/

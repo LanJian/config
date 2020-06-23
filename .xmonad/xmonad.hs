@@ -1,18 +1,12 @@
 import qualified Data.Map as M
 import Data.Ratio ((%))
 import XMonad
-import XMonad.Actions.TopicSpace
 import XMonad.Actions.SpawnOn
+import XMonad.Actions.TopicSpace
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
-import XMonad.Prompt
-import XMonad.Prompt.AppendFile
-import XMonad.Prompt.Shell
-import XMonad.Prompt.Window
-import XMonad.Prompt.Workspace
-import XMonad.Util.Run(spawnPipe)
-import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Layout.Accordion
 import XMonad.Layout.Column
 import XMonad.Layout.Combo
@@ -21,6 +15,14 @@ import XMonad.Layout.IM
 import XMonad.Layout.NoBorders
 import XMonad.Layout.OneBig
 import XMonad.Layout.PerWorkspace
+import XMonad.Prompt
+import XMonad.Prompt.AppendFile
+import XMonad.Prompt.Pass
+import XMonad.Prompt.Shell
+import XMonad.Prompt.Window
+import XMonad.Prompt.Workspace
+import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.Run(spawnPipe)
 import qualified XMonad.StackSet as W
 import System.IO
 
@@ -83,6 +85,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList
         , ((modm .|. shiftMask, xK_o), spawn "gnome-terminal --profile ec2")
         , ((modm .|. shiftMask, xK_i), spawn "gnome-terminal --profile important")
         , ((modm .|. controlMask, xK_l), spawn "xscreensaver-command -lock")
+        , ((modm, xK_p), spawn "rofi -combi-modi window,drun -show combi -modi combi -show-icons")
+        , ((modm .|. shiftMask, xK_p), spawn "$HOME/.scripts/passmenu --type")
         , ((modm, xK_a), currentTopicAction myTopicConfig)
         , ((modm, xK_g), promptedGoto)
         , ((modm .|. shiftMask, xK_g), promptedGoto)
@@ -121,12 +125,13 @@ main :: IO ()
 main = do
     checkTopicConfig myTopics myTopicConfig
     xmproc <- spawnPipe "xmobar $HOME/.xmobarrc"
-    xmonad $ defaultConfig
+    --xmonad $ ewmh def
+    xmonad $ ewmh def
         { terminal = "gnome-terminal"
         , workspaces = myTopics
-        , borderWidth = 3
-        , focusedBorderColor = "#cd8b00"
-        , normalBorderColor = "#555555"
+        , borderWidth = 4
+        , focusedBorderColor = "#CB07B0"
+        , normalBorderColor = "#333333"
         , layoutHook = avoidStruts $ layout
         , handleEventHook = docksEventHook
         , logHook = dynamicLogWithPP xmobarPP

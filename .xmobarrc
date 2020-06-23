@@ -1,4 +1,4 @@
-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { font = "xft:Bitstream Vera Sans Mono:size=7:antialias=true"
        , bgColor = "black"
        , fgColor = "grey"
        , position = TopW L 100

@@ -34,7 +34,7 @@ Plug 'mattn/emmet-vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'sirver/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
@@ -44,13 +44,17 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --rust-completer' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'rust-lang/rust.vim'
+Plug 'dense-analysis/ale'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-speeddating'
 
 " Colorschemes
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
+Plug 'tyrannicaltoucan/vim-quantum'
 
 " Syntax highlighting
 Plug 'elzr/vim-json'
@@ -66,17 +70,25 @@ Plug 'puppetlabs/puppet-syntax-vim'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails'
 Plug 'hashivim/vim-terraform'
+Plug 'pangloss/vim-javascript'
+Plug 'google/vim-jsonnet'
+Plug 'jparise/vim-graphql'
+Plug 'leafgarland/typescript-vim'
 
 " Syntactic sugar
 Plug 'Twinside/vim-haskellConceal'
 
 call plug#end()
 
-set t_Co=256
+"set t_Co=256
 "colorscheme Tomorrow-Night-Eighties
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_italic = 0
-colorscheme gruvbox
+"let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_italic = 0
+"colorscheme gruvbox
+set background=dark
+set termguicolors
+let g:quantum_black=1
+colorscheme quantum
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugin settings
@@ -96,7 +108,7 @@ let g:vim_markdown_folding_disabled=1
 " vim-airline
 set statusline=1
 let g:airline_powerline_fonts=1
-let g:airline_theme='bubblegum'
+let g:airline_theme='quantum'
 
 " tabular
 nmap <F1> :Tabularize /
@@ -122,9 +134,33 @@ au BufNewFile,BufRead *.java nnoremap <silent> <cr> :JavaSearchContext<cr>
 au BufNewFile,BufRead *.java nnoremap <silent> <leader>c :JavaCorrect<cr>
 let g:EclimCompletionMethod = 'omnifunc'
 
+" youcompleteme
+let g:ycm_rust_src_path = $RUST_SRC_PATH
+" disable javascript linting, this is done by ALE now
+let g:ycm_filter_diagnostics = { 'javascript': { 'regex': [ '.*' ] } }
+
 " syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_ruby_checkers=['rubocop', 'mri']
+"let g:syntastic_enable_signs=1
+"let g:syntastic_ruby_checkers=['rubocop', 'mri']
+
+" vim-javascript
+let g:javascript_plugin_flow = 1
+
+" ale 
+let g:ale_completion_enabled = 1
+let g:ale_linters = { 
+  \'javascript': ['eslint', 'flow'],
+  \'typescript': ['tsserver'],
+  \'rust': ['cargo'],
+\}
+
+" rust.vim
+"let g:syntastic_rust_checkers = []
+
+" ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 filetype plugin indent on
 
@@ -161,6 +197,7 @@ set hlsearch
 set backupdir=~/.vim/backup
 set laststatus=2
 set synmaxcol=200
+set tabpagemax=100
 
 set guioptions-=m
 set guioptions-=T
@@ -208,6 +245,8 @@ if has("autocmd")
 
   autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 
+  autocmd FileType rust setlocal colorcolumn=100
+
 else
 
   set autoindent    " always set autoindenting on
@@ -227,9 +266,9 @@ nmap <c-l> gt
 
 "nmap <c-h> <c-w>h
 "nmap <c-l> <c-w>l
-map <C-K> <C-W>k<C-W>_
-map <C-J> <C-W>j<C-W>_
-set wmh=0
+map <C-K> <C-W>k
+map <C-J> <C-W>j
+"set wmh=0
 
 nnoremap ; :
 
@@ -244,3 +283,7 @@ nnoremap - <C-x>
 " show invisible characters
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 nnoremap <leader>i :set list!<cr>
+
+" insert date
+:nnoremap <F5> "=strftime("%m/%d/%Y")<CR>P
+:inoremap <F5> <C-R>=strftime("%m/%d/%Y")<CR>
