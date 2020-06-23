@@ -1,0 +1,10 @@
+sanitise tridactyllocal tridactylsync
+
+colors dark
+
+bind ,<Space> nohlsearch
+bind ; fillcmdline_notrail
+bind <C-j> tabnext_gt
+bind <C-k> tabprev
+
+alias downloads tabopen about:downloads

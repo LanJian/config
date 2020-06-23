@@ -1,0 +1,64 @@
+/*@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");*/
+
+/*@import url("/path/to/firefox-csshacks/chrome/window_control_placeholder_support.css");*/
+/*@import url("/path/to/firefox-csshacks/chrome/linux_gtk_window_control_patch.css");*/
+/*@import url("/path/to/firefox-csshacks/chrome/urlbar_full_width.css");*/
+/*@import url("/path/to/firefox-csshacks/chrome/navbar_tabs_oneliner.css");*/
+
+@import url("/path/to/firefox-csshacks/chrome/window_control_placeholder_support.css");
+@import url("/path/to/firefox-csshacks/chrome/linux_gtk_window_control_patch.css");
+@import url("/path/to/firefox-csshacks/chrome/urlbar_full_width.css");
+@import url("/path/to/firefox-csshacks/chrome/navbar_tabs_oneliner.css");
+
+#back-button,
+#forward-button,
+#PanelUI-button,
+.tab-close-button,
+.tabs-newtab-button {
+  display: none !important;
+}
+
+#TabsToolbar {
+  visibility: collapse;
+}
+
+#navigator-toolbox,#TabsToolbar,#PersonalToolbar{position: fixed !important; bottom: 0; display: block; z-index:100 }
+#nav-bar,#TabsToolbar{vertical-align: bottom !important;}
+#TabsToolbar-customization-target, #nav-bar-customization-target{ width: 100vw}
+:root:not([inDOMFullscreen]) #browser{ margin-bottom: var(--tab-min-height) }
+
+
+[uidensity="compact"]:root {
+  --tab-line-color: transparent !important;
+  --tab-min-height: 18px !important;
+  --nav-min-height: 18px !important;
+  --newtab-margin: -3px 0 -3px -3px !important;
+}
+
+#nav-bar {
+  padding-top: 1px !important;
+  padding-bottom: 0 !important;
+  max-height: 18px !important;
+}
+
+.identity-box,
+#urlbar {
+  border: none !important;
+  font-family: monospace !important;
+  font-size: 11px !important;
+  /*margin-top: -6px !important;*/
+  /*margin-bottom: -3px !important;*/
+  max-height: 18px !important;
+}
+
+.toolbarbutton-1 {
+  margin: -18px 0 -5px -5px !important;
+}
+
+statuspanel,
+#statuspanel {
+  right: 53px !important;
+  bottom: 21px !important;*/
+  display: inline !important;
+}
+

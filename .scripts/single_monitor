@@ -1,0 +1,2 @@
+xrandr --dpi 168 --fb 3840x2160 --output DP-2 --mode 3840x2160
+xrandr --output DP-2 --brightness 0.7
