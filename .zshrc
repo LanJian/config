@@ -136,8 +136,6 @@ bashcompinit
 
 source <(gopass completion zsh | head -n -1 | tail -n +2)
 
-eval "$(jira --completion-script-zsh)"
-
 compdef _gopass gopass
 
 export YVM_DIR=/home/jackhxs/.yvm
