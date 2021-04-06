@@ -38,3 +38,5 @@ alias dewhitespace="tr -d ' \t\n\r\f' <"
 alias pass='gopass'
 
 alias tldr='tldr --theme ocean'
+
+alias cat='bat -p'

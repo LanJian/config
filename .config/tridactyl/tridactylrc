@@ -1,6 +1,6 @@
 sanitise tridactyllocal tridactylsync
 
-colors dark
+colors jackhxs
 
 bind ,<Space> nohlsearch
 bind ; fillcmdline_notrail

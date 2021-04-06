@@ -1,4 +1,4 @@
-:root.TridactylThemeDark {
+:root.TridactylThemeJackhxs {
     /* {{{ photon-colours */
 
     /* From https://github.com/overdodactyl/ShadowFox/blob/7dbe9343da87bde804e8fb88dd3b5eaaeb4817b2/css/common-files/color_variables.css */
@@ -241,9 +241,9 @@
     /* --tridactyl-header-second-bg: var(--tridactyl-photon-colours-in-content-category-header-background); */
     /* --tridactyl-header-third-bg: var(--tridactyl-header-first-bg); */
 
-    --tridactyl-header-first-bg: #333;
-    --tridactyl-header-second-bg: #222;
-    --tridactyl-header-third-bg: #111;
+    --tridactyl-header-first-bg: #181818;
+    --tridactyl-header-second-bg: #181818;
+    --tridactyl-header-third-bg: #181818;
 
     --tridactyl-cmplt-border-top: 1px solid
         var(--tridactyl-photon-colours-in-content-category-header-background);
@@ -274,19 +274,19 @@
     );
 }
 
-:root.TridactylThemeDark.TridactylOwnNamespace input[id^="spoiler"] ~ .spoiler {
+:root.TridactylThemeJackhxs.TridactylOwnNamespace input[id^="spoiler"] ~ .spoiler {
     border-color: var(--tridactyl-photon-colours-in-content-box-border-color);
 }
 
 /* These rules have greater specificity than the rules applying the variables
  * above, which causes *issues*. */
 
-/* :root.TridactylThemeDark.TridactylOwnNamespace */
+/* :root.TridactylThemeJackhxs.TridactylOwnNamespace */
 /* a:link { */
 /*     color: var(--tridactyl-photon-colours-in-content-link-color); */
 /* } */
 
-/* :root.TridactylThemeDark.TridactylOwnNamespace */
+/* :root.TridactylThemeJackhxs.TridactylOwnNamespace */
 /* a:link:visited { */
 /*     --tridactyl-photon-colours-in-content-link-color-visited: #0a8dff; */
 /* } */

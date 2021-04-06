@@ -1,13 +1,13 @@
 [user]
   name = Jack Huang
-  email = jack@ubiquity6.com
+  email = jackhxs@gmail.com
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
 [pager]
   diff = cat
 [github]
-  user = jack-u6
+  user = jackhxs
 [apply]
   whitespace = fix
 [color]

@@ -47,10 +47,10 @@ myTopicConfig = defaultTopicConfig
     , defaultTopic = "work"
     , defaultTopicAction = const $ spawn "gnome-terminal"
     , topicActions = M.fromList $
-        [ ("web", spawn "google-chrome")
-        , ("code", spawn "subl")
-        , ("remotes", spawn "gnome-terminal --profile ec2")
-        , ("cli", spawn "gnome-terminal --working-directory=$HOME/slideshare" >*> 4)
+        [ ("web", spawn "firefox")
+        , ("code", spawn "gnome-terminal")
+        , ("remotes", spawn "gnome-terminal")
+        , ("cli", spawn "gnome-terminal" >*> 4)
         ]
     }
 
