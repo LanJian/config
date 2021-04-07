@@ -8,3 +8,4 @@ bind <C-j> tabnext_gt
 bind <C-k> tabprev
 
 alias downloads tabopen about:downloads
+alias settings tabopen about:preferences
