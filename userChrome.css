@@ -5,10 +5,10 @@
 /*@import url("/path/to/firefox-csshacks/chrome/urlbar_full_width.css");*/
 /*@import url("/path/to/firefox-csshacks/chrome/navbar_tabs_oneliner.css");*/
 
-@import url("/path/to/firefox-csshacks/chrome/window_control_placeholder_support.css");
-@import url("/path/to/firefox-csshacks/chrome/linux_gtk_window_control_patch.css");
-@import url("/path/to/firefox-csshacks/chrome/urlbar_full_width.css");
-@import url("/path/to/firefox-csshacks/chrome/navbar_tabs_oneliner.css");
+@import url("chrome/firefox-csshacks/chrome/window_control_placeholder_support.css");
+@import url("chrome/firefox-csshacks/chrome/linux_gtk_window_control_patch.css");
+@import url("chrome/firefox-csshacks/chrome/urlbar_full_width.css");
+@import url("chrome/firefox-csshacks/chrome/navbar_tabs_oneliner.css");
 
 #back-button,
 #forward-button,
@@ -30,8 +30,8 @@
 
 [uidensity="compact"]:root {
   --tab-line-color: transparent !important;
-  --tab-min-height: 18px !important;
-  --nav-min-height: 18px !important;
+  --tab-min-height: 21px !important;
+  --nav-min-height: 21px !important;
   --newtab-margin: -3px 0 -3px -3px !important;
 }
 
@@ -58,7 +58,12 @@
 statuspanel,
 #statuspanel {
   right: 53px !important;
-  bottom: 21px !important;*/
+  bottom: 21px !important;
   display: inline !important;
 }
 
+#statuspanel-label {
+  color: #bbbbbb !important;
+  background-color: #333333 !important;
+  border: 1px dotted white !important;
+}
