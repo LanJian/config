@@ -23,38 +23,56 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Utilities
-Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/csv.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-"Plug 'scrooloose/syntastic'
 Plug 'sirver/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --rust-completer' }
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
-Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-speeddating'
+Plug 'google/vim-maktaba'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'petobens/poet-v'
+Plug 'vimwiki/vimwiki'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'mhinz/vim-startify'
+Plug 'npxbr/glow.nvim', {'branch': 'main'}
+Plug 'tpope/vim-rhubarb'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'justinmk/vim-sneak'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/nvim-bufferline.lua'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'psf/black', { 'branch': 'main' }
+
 
 " Colorschemes
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'embark-theme/vim', { 'as': 'embark' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'wadackel/vim-dogrun'
+Plug 'artanikin/vim-synthwave84'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'marko-cerovac/material.nvim'
 
 " Syntax highlighting
 Plug 'elzr/vim-json'
@@ -74,21 +92,89 @@ Plug 'pangloss/vim-javascript'
 Plug 'google/vim-jsonnet'
 Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
+Plug 'bazelbuild/vim-bazel'
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+Plug 'cespare/vim-toml'
+Plug 'NoahTheDuke/vim-just'
 
 " Syntactic sugar
 Plug 'Twinside/vim-haskellConceal'
 
 call plug#end()
 
-"set t_Co=256
-"colorscheme Tomorrow-Night-Eighties
-"let g:gruvbox_contrast_dark = 'hard'
-"let g:gruvbox_italic = 0
-"colorscheme gruvbox
 set background=dark
 set termguicolors
-let g:quantum_black=1
-colorscheme quantum
+
+" colorscheme
+
+"let g:quantum_black=1
+"let g:quantum_italics=1
+"colorscheme quantum
+
+"let g:tokyonight_style = 'night'
+"let g:tokyonight_italic_keywords = 0
+"colorscheme tokyonight
+
+"let g:material_style = 'deep ocean'
+"let g:material_italic_comments = 1
+"colorscheme material
+
+lua << EOF
+-- vim.g.nightfox_style = 'nightfox'
+-- vim.g.nightfox_italic_comments = 1
+-- vim.g.nightfox_colors = {
+--   bg = '#131A24',
+--   bg_alt = '#192330',
+--   bg_float = '#18222e',
+--   bg_popup = '#192330',
+--   bg_sidebar = '#192330',
+--   bg_statusline = '#192330',
+--   bg_highlight = '#1e2938',
+--   gitSigns = {
+--     change = '#b366b2',
+--   }
+-- }
+-- 
+-- require('nightfox').set()
+local options = {
+  styles = {
+    comments = "italic",
+  },
+  modules = {
+    gitsigns = true,
+  }
+}
+
+local palettes = {
+  nightfox = {
+    bg0 = '#18222e',
+    bg1 = '#131A24',
+    bg2 = '#192330',
+    bg3 = '#1e2938',
+    bg4 = '#665673',
+    fg3 = '#3b4261',
+    comment = '#464e59',
+  }
+}
+local specs = {
+  all = {
+    git = {
+      add = '#266d6a',
+      changed = '#b366b2'
+    }
+  }
+}
+
+require('nightfox').setup({
+  options = options,
+  palettes = palettes,
+  specs = specs,
+  groups = groups,
+})
+EOF
+colorscheme nightfox
+
+let mapleader = ","
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugin settings
@@ -98,17 +184,10 @@ let g:vim_json_syntax_conceal = 0
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " vim-markdown
 let g:vim_markdown_folding_disabled=1
-
-" vim-airline
-set statusline=1
-let g:airline_powerline_fonts=1
-let g:airline_theme='quantum'
 
 " tabular
 nmap <F1> :Tabularize /
@@ -121,10 +200,12 @@ map <F2> :NERDTreeToggle<cr>
 map <F8> :TagbarToggle<cr>
 
 " fzf
-nmap <C-p> :FZF<cr>
-
-" python-mode
-let g:pymode_python = 'python3'
+nmap <C-p> :Files<cr>
+nmap <leader>b :Buffers<cr>
+nmap <leader>rg :Rg<cr>
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
 
 " eclim
 let g:EclimBrowser='gopen'
@@ -134,46 +215,120 @@ au BufNewFile,BufRead *.java nnoremap <silent> <cr> :JavaSearchContext<cr>
 au BufNewFile,BufRead *.java nnoremap <silent> <leader>c :JavaCorrect<cr>
 let g:EclimCompletionMethod = 'omnifunc'
 
-" youcompleteme
-let g:ycm_rust_src_path = $RUST_SRC_PATH
-" disable javascript linting, this is done by ALE now
-let g:ycm_filter_diagnostics = { 'javascript': { 'regex': [ '.*' ] } }
-
-" syntastic
-"let g:syntastic_enable_signs=1
-"let g:syntastic_ruby_checkers=['rubocop', 'mri']
-
-" vim-javascript
-let g:javascript_plugin_flow = 1
-
 " ale 
-let g:ale_completion_enabled = 1
-let g:ale_linters = { 
-  \'javascript': ['eslint', 'flow'],
-  \'typescript': ['tsserver'],
-  \'rust': ['cargo'],
-\}
+let g:ale_enabled = 0
 
-" rust.vim
-"let g:syntastic_rust_checkers = []
+" coc
+source ~/.vim/coc.vim
 
-" ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+" poet-v
+let g:poetv_executables = ['poetry']
+let g:poetv_auto_activate = 1
+
+" indent-blankline
+"let g:indent_blankline_char = '¦'
+let g:indent_blankline_space_char = '·'
+let g:indent_blankline_filetype_exclude = ['help', 'vim', 'startify', 'vimwiki']
+
+" startify
+let g:startify_lists = [
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ ]
+let g:startify_change_to_dir = 0
+let g:startify_fortune_use_unicode = 1
+"let g:ascii = [
+      "\ '        __',
+      "\ '.--.--.|__|.--------.',
+      "\ '|  |  ||  ||        |',
+      "\ ' \___/ |__||__|__|__|',
+      "\ ''
+      "\]
+"let g:startify_custom_header =
+      "\ 'startify#pad(g:ascii + startify#fortune#cowsay())'
+"
+
+" fugitive
+nnoremap <leader>gh :GBrowse!<cr>
+vnoremap <leader>gh :GBrowse!<cr>
+
+" gitsigns
+set signcolumn=yes
+lua << EOF
+require('gitsigns').setup {
+  signs = {
+    add    = {text = '┃'},
+    change = {text = '┃'},
+    changedelete = {text = '┅'},
+  },
+}
+EOF
+
+" vim-sneak
+let g:sneak#label = 1
+
+" lualine
+set statusline=1
+lua << EOF
+require('lualine').setup {
+  options = {
+    theme = 'nightfox',
+    component_separators = { left = '',  right = ''},
+    section_separators = { left = '', right = ''},
+  },
+  sections = {
+    lualine_c = {'filename', 'g:coc_status'},
+    lualine_x = {'filetype'},
+    lualine_y = {
+      {
+        'diagnostics',
+        -- table of diagnostic sources, available sources:
+        -- nvim_lsp, coc, ale, vim_lsp
+        sources = {'coc'},
+        -- displays diagnostics from defined severity
+        sections = {'error', 'warn', 'info', 'hint'},
+        -- all colors are in format #rrggbb
+        symbols = {error = ' ', warn = ' ', hint = ' '},
+      },
+    },
+  },
+}
+EOF
+
+" devicons
+lua << EOF
+require('nvim-web-devicons').setup {
+  -- globally enable default icons (default to false)
+  -- will get overriden by `get_icons` option
+  default = true;
+}
+EOF
+
+" bufferline
+lua << EOF
+require('bufferline').setup {
+  options = {
+    -- separator_style = {'◥', '◣'},
+    -- separator_style = {'/', '\\'},
+    --separator_style = {'', ''},
+    separator_style = 'slant',
+    --indicator_icon = ' ',
+    always_show_bufferline = false,
+  },
+}
+EOF
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" end plugin settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 filetype plugin indent on
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" hightlight unwanted whitespace
-highlight ExtraWhitespace ctermbg=darkred guibg=darkred
-match ExtraWhitespace /\s\+\%#\@<!$/
-
 " 80 char per line
 set colorcolumn=80
-hi ColorColumn ctermbg=237
 
 set cursorline
 set textwidth=0 wrapmargin=0
@@ -203,7 +358,53 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-set guifont=Deja\ Vu\ Sans\ Mono\ For\ Powerline\ 10
+set guifont=MesloLGS\ NF\ Regular
+
+set clipboard+=unnamedplus
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" custom highlights
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" quantum
+"hi IndentBlanklineChar cterm=nocombine ctermfg=12 gui=nocombine guifg=#303333
+"hi IndentBlanklineSpaceChar cterm=nocombine ctermfg=12 gui=nocombine guifg=#303333
+"hi IndentBlanklineSpaceCharBlankline cterm=nocombine ctermfg=12 gui=nocombine guifg=#303333
+
+" for tokyonight: override colorcolumn
+"hi CursorLine cterm=underline guibg=#232433
+"hi ColorColumn cterm=underline guibg=#232433
+
+" nightfox
+hi IndentBlanklineChar cterm=nocombine ctermfg=darkgray gui=nocombine guifg=#15222e
+hi IndentBlanklineSpaceChar cterm=nocombine ctermfg=darkgray gui=nocombine guifg=#15222e
+hi IndentBlanklineSpaceCharBlankline cterm=nocombine ctermfg=darkgray gui=nocombine guifg=#15222e
+
+hi CocRustTypeHint cterm=nocombine,italic ctermfg=darkgray gui=nocombine,italic guifg=#4b364d
+hi CocRustChainingHint cterm=nocombine,italic ctermfg=darkgray gui=nocombine,italic guifg=#2f484d
+
+hi CocCodeLens guifg=#3d5166
+
+hi CocErrorVirtualText term=italic gui=italic guifg=#c94f6d
+hi CocWarningVirtualText term=italic gui=italic guifg=#f4a261
+hi CocHintVirtualText term=italic gui=italic guifg=#15aabf
+
+hi DiagnosticError guifg=#c94f6d
+hi DiagnosticWarn guifg=#f4a261
+hi DiagnosticHint guifg=#15aabf
+
+hi CocErrorSign term=italic gui=italic guifg=#c94f6d
+hi CocWarningSign term=italic gui=italic guifg=#f4a261
+hi CocHintSign term=italic gui=italic guifg=#15aabf
+
+hi ColorColumn guibg=#1e2938
+hi FloatBorder cterm=nocombine,italic ctermfg=darkgray gui=nocombine,italic guifg=#00adad
+
+"hi GitSignsAdd guifg=#266d6a
+"hi GitSignsChange guifg=#b366b2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" end custom highlights
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has("vms")
   set nobackup    " do not keep a backup file, use versions instead
@@ -247,6 +448,19 @@ if has("autocmd")
 
   autocmd FileType rust setlocal colorcolumn=100
 
+  " python black defaults to 88 chars ¯\_(ツ)_/¯
+  autocmd FileType python setlocal colorcolumn=88
+
+  autocmd FileType terraform setlocal colorcolumn=100
+
+  " auto run black on python file save
+  autocmd BufWritePre *.py execute ':Black'
+
+  " gopass
+  au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+
+  " dockerfile
+  autocmd BufEnter Dockerfile.* :setlocal filetype=dockerfile
 else
 
   set autoindent    " always set autoindenting on
@@ -258,11 +472,9 @@ endif " has("autocmd")
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
      \ | wincmd p | diffthis
 
-"let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :!ag 
-
-nmap <c-h> gT
-nmap <c-l> gt
+" move between buffers
+nmap <c-h> :bp<cr>
+nmap <c-l> :bn<cr>
 
 "nmap <c-h> <c-w>h
 "nmap <c-l> <c-w>l
@@ -285,5 +497,24 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 nnoremap <leader>i :set list!<cr>
 
 " insert date
-:nnoremap <F5> "=strftime("%m/%d/%Y")<CR>P
-:inoremap <F5> <C-R>=strftime("%m/%d/%Y")<CR>
+nnoremap <F5> "=strftime("%Y-%m-%d")<CR>P
+inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
+
+" plugin/syntax.vim
+
+" Output the highlight group under the cursor
+"
+" This function will output the entire stack of hightlight groups being applied. The stack is
+" outputted in the correct order from top to bottom. Vim will walk through the stack from top to
+" bottom and apply the first defined highlight group found.
+function! SynStack()
+  for i1 in synstack(line("."), col("."))
+    let i2 = synIDtrans(i1)
+    let n1 = synIDattr(i1, "name")
+    let n2 = synIDattr(i2, "name")
+    echo n1 "->" n2
+  endfor
+endfunction
+
+" You can also create a convenience mapping
+map <F3> <cmd>call SynStack()<cr>

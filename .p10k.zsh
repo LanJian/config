@@ -61,7 +61,7 @@
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
     # node_version          # node.js version
     # go_version            # go version (https://golang.org)
-    # rust_version          # rustc version (https://www.rust-lang.org)
+    rust_version          # rustc version (https://www.rust-lang.org)
     # dotnet_version        # .NET version (https://dotnet.microsoft.com)
     # php_version           # php version (https://www.php.net/)
     # laravel_version       # laravel php framework version (https://laravel.com/)
@@ -98,6 +98,7 @@
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     timewarrior             # timewarrior tracking status (https://timewarrior.net/)
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
+    battery                 # internal battery
     time                    # current time
     # =========================[ Line #2 ]=========================
     newline
@@ -898,7 +899,7 @@
   # Don't show Python version next to the virtual environment name.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   # Don't show virtualenv if pyenv is already shown.
-  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
+  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=true
   # Separate environment name from Python version only with a space.
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
   # Custom icon.
@@ -943,10 +944,10 @@
   # typeset -g POWERLEVEL9K_PYENV_FOREGROUND=0
   # typeset -g POWERLEVEL9K_PYENV_BACKGROUND=4
   # Hide python version if it doesn't come from one of these sources.
-  typeset -g POWERLEVEL9K_PYENV_SOURCES=(shell local global)
+  typeset -g POWERLEVEL9K_PYENV_SOURCES=(shell local)
   # If set to false, hide python version if it's the same as global:
   # $(pyenv version-name) == $(pyenv global).
-  typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW=false
+  typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW=true
   # If set to false, hide python version if it's equal to "system".
   typeset -g POWERLEVEL9K_PYENV_SHOW_SYSTEM=true
 
@@ -1520,8 +1521,10 @@
   # typeset -g POWERLEVEL9K_PROXY_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   ################################[ battery: internal battery ]#################################
+  # Don't show battery if it's at or above this charge level.
+  typeset -g POWERLEVEL9K_BATTERY_HIDE_ABOVE_THRESHOLD=30
   # Show battery in red when it's below this level and not connected to power supply.
-  typeset -g POWERLEVEL9K_BATTERY_LOW_THRESHOLD=20
+  typeset -g POWERLEVEL9K_BATTERY_LOW_THRESHOLD=15
   typeset -g POWERLEVEL9K_BATTERY_LOW_FOREGROUND=1
   # Show battery in green when it's charging or fully charged.
   typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=2

@@ -30,13 +30,13 @@ myTopics :: [Topic]
 myTopics =
     [ "web"
     , "code"
-    , "remotes"
-    , "cli"
-    , "cli 2"
-    , "cli 3"
-    , "cssh"
-    , "chat"
+    , "cli-1"
+    , "cli-2"
+    , "cli-3"
+    , "cli-4"
     , "music"
+    , "slack"
+    , "personal"
     ]
 
 myTopicConfig :: TopicConfig
@@ -49,8 +49,6 @@ myTopicConfig = defaultTopicConfig
     , topicActions = M.fromList $
         [ ("web", spawn "firefox")
         , ("code", spawn "gnome-terminal")
-        , ("remotes", spawn "gnome-terminal")
-        , ("cli", spawn "gnome-terminal" >*> 4)
         ]
     }
 
@@ -81,12 +79,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList
         ([ ((modm .|. shiftMask, xK_g), windowPromptGoto defaultXPConfig { autoComplete = Just 500000 } )
         , ((modm .|. shiftMask, xK_b), windowPromptBring defaultXPConfig { autoComplete = Just 500000 } )
         , ((modm .|. controlMask, xK_x), shellPrompt defaultXPConfig)
-        , ((modm .|. shiftMask, xK_u), sendMessage Shrink) -- since apple still masks cmd-h
-        , ((modm .|. shiftMask, xK_o), spawn "gnome-terminal --profile ec2")
-        , ((modm .|. shiftMask, xK_i), spawn "gnome-terminal --profile important")
+        , ((modm .|. controlMask, xK_semicolon), spawn "$HOME/.scripts/turn_off_screen")
         , ((modm .|. controlMask, xK_l), spawn "xscreensaver-command -lock")
         , ((modm, xK_p), spawn "rofi -combi-modi window,drun -show combi -modi combi -show-icons")
-        , ((modm .|. shiftMask, xK_p), spawn "$HOME/.scripts/passmenu --type")
+        , ((modm .|. shiftMask, xK_p), spawn "$HOME/.scripts/passmenu pass")
+        , ((modm .|. shiftMask, xK_o), spawn "$HOME/.scripts/passmenu otp")
+        , ((modm .|. shiftMask, xK_bracketleft), spawn "$HOME/.scripts/passmenu login")
+        , ((modm .|. shiftMask, xK_backslash), spawn "$HOME/.scripts/passmenu login")
+        , ((modm .|. shiftMask, xK_s), spawn "$HOME/.scripts/screenshot")
+        , ((modm .|. shiftMask, xK_t), spawn "$HOME/.scripts/iso_date")
         , ((modm, xK_a), currentTopicAction myTopicConfig)
         , ((modm, xK_g), promptedGoto)
         , ((modm .|. shiftMask, xK_g), promptedGoto)

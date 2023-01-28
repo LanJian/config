@@ -63,7 +63,14 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-completions)
+plugins=(
+  git
+  zsh-completions
+  docker
+  docker-compose
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,8 +101,12 @@ fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init --path)"
 #eval "$(pyenv virtualenv-init -)"
 
 bindkey \^U backward-kill-line
@@ -113,19 +124,19 @@ bindkey \^U backward-kill-line
   #exec tmux new-session
 #fi
 
-autoload -U compinit && compinit
+fpath=(~/.zsh_completions $fpath)
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit -i
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-autoload bashcompinit
-bashcompinit
 
 [[ -s "/home/jackhxs/.gvm/scripts/gvm" ]] && source "/home/jackhxs/.gvm/scripts/gvm"
 
+# gopass
 source <($GOPATH/bin/gopass completion zsh | head -n -1 | tail -n +2)
-
 compdef _gopass gopass
 
 export YVM_DIR=/home/jackhxs/.yvm
@@ -133,3 +144,12 @@ export YVM_DIR=/home/jackhxs/.yvm
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#2c3636"
+bindkey '^ ' autosuggest-accept
+
+eval "$(navi widget zsh)"
+
+# aws cli
+complete -C '/usr/local/bin/aws_completer' aws

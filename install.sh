@@ -14,6 +14,7 @@ ln -s -f $PWD/.p10k.zsh $HOME/.p10k.zsh
 ln -s -f -n $PWD/.xmonad $HOME/.xmonad
 ln -s -f -n $PWD/.pentadactyl $HOME/.pentadactyl
 ln -s -f -n $PWD/.config/rofi $HOME/.config/rofi
+ln -s -f -n $PWD/.config/dunst $HOME/.config/dunst
 ln -s -f -n $PWD/.config/tridactyl $HOME/.config/tridactyl
 
 mkdir -p $HOME/.scripts

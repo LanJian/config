@@ -1,3 +1,6 @@
-xrandr --fb 3840x1080 --output eDP-1 --mode 1920x1080 --panning 0x0 --output DP-1 --primary --mode 1920x1080 --pos 1920x0
+xrandr --dpi 162 --fb 6720x1890 \
+  --output eDP-1-1 --off \
+  --output HDMI-0 --mode 1920x1080 --scale 1.75x1.75 --panning 0x0 \
+  --output DP-1 --primary --mode 1920x1080 --scale 1.75x1.75 --pos 3360x0 --panning 3360x1890+3360+0
 setxkbmap -option caps:escape
 xset r rate 300 30

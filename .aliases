@@ -1,5 +1,5 @@
 alias vi='vim'
-alias vim='vim --servername vim'
+alias vim='PYENV_VERSION=3.8.9 nvr -s --servername `mktemp /tmp/XXXXX.nvimsocket --dry-run`'
 
 alias be="bundle exec"
 alias less="less -F -X"
@@ -22,21 +22,17 @@ alias gitdiff='GIT_EXTERNAL_DIFF=gitdiffwrap git diff'
 
 alias xopen='xdg-open'
 alias gcal='gcalcli'
-
-alias pretty_json='python -mjson.tool'
-
 alias ne='PATH=$(npm bin):$PATH'
-
-alias weather="curl 'wttr.in/sf?m'"
-
+alias weather="curl 'wttr.in'"
 alias copy="xclip -selection clipboard"
-
 alias sudosaws="AWS_PROFILE=sudo saws"
-
 alias dewhitespace="tr -d ' \t\n\r\f' <"
-
 alias pass='gopass'
-
 alias tldr='tldr --theme ocean'
-
 alias cat='bat -p'
+alias aws2='/usr/local/bin/aws'
+alias utc='date -u +"%Y-%m-%dT%H:%M:%S%Z"'
+alias gotop='gotop -c vice'
+alias aws-shell='PYENV_VERSION=3.7.9 aws-shell'
+alias yank='yank-cli -- xsel -b'
+alias hist='history -i -D'
