@@ -1,0 +1,3 @@
+- update tmux config
+- update vim configs
+- copy screensavers

@@ -219,7 +219,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 let g:ale_enabled = 0
 
 " coc
-source ~/.vim/coc.vim
+source ~/.config/nvim/coc.vim
 
 " poet-v
 let g:poetv_executables = ['poetry']

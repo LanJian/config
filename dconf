@@ -1,0 +1,20 @@
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color
+'rgb(15,4,20)'
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/font
+'MesloLGS NF 11'
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/foreground-color
+'rgb(184,214,216)'
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/palette
+['rgb(9,24,51)', 'rgb(204,0,37)', 'rgb(12,219,139)', 'rgb(245,120,0)', 'rgb(19,62,124)', 'rgb(113,28,145)', 'rgb(16,165,173)', 'rgb(215,215,213)', 'rgb(17,44,94)', 'rgb(255,64,129)', 'rgb(0,255,156)', 'rgb(246,198,30)', 'rgb(87,137,208)', 'rgb(234,0,217)', 'rgb(10,189,198)', 'rgb(238,238,236)']
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-lines
+19000
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-unlimited
+true
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollbar-policy
+'never'
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-system-font
+false
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-colors
+false
+▶ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/visible-name
+'jackhxs'
