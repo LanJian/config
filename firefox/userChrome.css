@@ -5,10 +5,10 @@
 /*@import url("/path/to/firefox-csshacks/chrome/urlbar_full_width.css");*/
 /*@import url("/path/to/firefox-csshacks/chrome/navbar_tabs_oneliner.css");*/
 
-@import url("chrome/firefox-csshacks/chrome/window_control_placeholder_support.css");
-@import url("chrome/firefox-csshacks/chrome/linux_gtk_window_control_patch.css");
-@import url("chrome/firefox-csshacks/chrome/urlbar_full_width.css");
-@import url("chrome/firefox-csshacks/chrome/navbar_tabs_oneliner.css");
+@import url("chrome/chrome/window_control_placeholder_support.css");
+@import url("chrome/chrome/linux_gtk_window_control_patch.css");
+@import url("chrome/chrome/urlbar_full_width.css");
+@import url("chrome/chrome/navbar_tabs_oneliner.css");
 
 #back-button,
 #forward-button,
@@ -22,11 +22,24 @@
   visibility: collapse;
 }
 
-#navigator-toolbox,#TabsToolbar,#PersonalToolbar{position: fixed !important; bottom: 0; display: block; z-index:100 }
-#nav-bar,#TabsToolbar{vertical-align: bottom !important;}
-#TabsToolbar-customization-target, #nav-bar-customization-target{ width: 100vw}
-:root:not([inDOMFullscreen]) #browser{ margin-bottom: var(--tab-min-height) }
+#navigator-toolbox,#TabsToolbar,#PersonalToolbar {
+  position: fixed !important;
+  bottom: 0;
+  display: block;
+  z-index:100
+}
 
+#nav-bar, #TabsToolbar {
+  vertical-align: bottom !important;
+}
+
+#TabsToolbar-customization-target, #nav-bar-customization-target {
+  width: 100vw
+}
+
+:root:not([inDOMFullscreen]) #browser {
+  margin-bottom: 21px;
+}
 
 [uidensity="compact"]:root {
   --tab-line-color: transparent !important;
@@ -52,13 +65,13 @@
 }
 
 .toolbarbutton-1 {
-  margin: -18px 0 -5px -5px !important;
+  margin: -5px 0 -5px -5px !important;
 }
 
 statuspanel,
 #statuspanel {
   right: 53px !important;
-  bottom: 21px !important;
+  bottom: 3px !important;
   display: inline !important;
 }
 

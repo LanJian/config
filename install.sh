@@ -16,6 +16,7 @@ ln -s -f -n $PWD/.pentadactyl $HOME/.pentadactyl
 ln -s -f -n $PWD/.config/rofi $HOME/.config/rofi
 ln -s -f -n $PWD/.config/dunst $HOME/.config/dunst
 ln -s -f -n $PWD/.config/tridactyl $HOME/.config/tridactyl
+ln -s -f -n $PWD/.config/nvim $HOME/.config/nvim
 
 mkdir -p $HOME/.scripts
 ln -s -f $PWD/.scripts/* $HOME/.scripts/

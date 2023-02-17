@@ -1,5 +1,5 @@
 alias vi='vim'
-alias vim='PYENV_VERSION=3.8.9 nvr -s --servername `mktemp /tmp/XXXXX.nvimsocket --dry-run`'
+alias vim='nvim'
 
 alias be="bundle exec"
 alias less="less -F -X"
@@ -36,3 +36,4 @@ alias gotop='gotop -c vice'
 alias aws-shell='PYENV_VERSION=3.7.9 aws-shell'
 alias yank='yank-cli -- xsel -b'
 alias hist='history -i -D'
+alias fdfind='fd'

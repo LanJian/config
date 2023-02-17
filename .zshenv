@@ -18,7 +18,7 @@ export PATH="$HOME/.gvm/bin:$PATH"
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/X11/lib/pkgconfig
 export GOPATH=$HOME/.go
-export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --exclude ".git"'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude ".git"'
 
 . "$HOME/.cargo/env"
 

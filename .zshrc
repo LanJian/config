@@ -124,7 +124,7 @@ bindkey \^U backward-kill-line
   #exec tmux new-session
 #fi
 
-fpath=(~/.zsh_completions $fpath)
+fpath=(~/.config/zsh_completions $fpath)
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit -i
 

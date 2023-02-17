@@ -32,6 +32,16 @@
   ol = log --oneline
   w = whatchanged
   p = pull --rebase
+  append = town append
+  hack = town hack
+  kill = town kill
+  new-pull-request = town new-pull-request
+  prepend = town prepend
+  prune-branches = town prune-branches
+  rename-branch = town rename-branch
+  repo = town repo
+  ship = town ship
+  sync = town sync
 [credential]
   helper = cache --timeout=3600
 

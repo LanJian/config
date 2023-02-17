@@ -27,7 +27,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
@@ -38,8 +38,6 @@ Plug 'sirver/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'xolox/vim-misc'
 Plug 'rust-lang/rust.vim'
@@ -61,6 +59,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'psf/black', { 'branch': 'main' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
 " Colorschemes
@@ -118,60 +117,6 @@ set termguicolors
 "let g:material_style = 'deep ocean'
 "let g:material_italic_comments = 1
 "colorscheme material
-
-lua << EOF
--- vim.g.nightfox_style = 'nightfox'
--- vim.g.nightfox_italic_comments = 1
--- vim.g.nightfox_colors = {
---   bg = '#131A24',
---   bg_alt = '#192330',
---   bg_float = '#18222e',
---   bg_popup = '#192330',
---   bg_sidebar = '#192330',
---   bg_statusline = '#192330',
---   bg_highlight = '#1e2938',
---   gitSigns = {
---     change = '#b366b2',
---   }
--- }
--- 
--- require('nightfox').set()
-local options = {
-  styles = {
-    comments = "italic",
-  },
-  modules = {
-    gitsigns = true,
-  }
-}
-
-local palettes = {
-  nightfox = {
-    bg0 = '#18222e',
-    bg1 = '#131A24',
-    bg2 = '#192330',
-    bg3 = '#1e2938',
-    bg4 = '#665673',
-    fg3 = '#3b4261',
-    comment = '#464e59',
-  }
-}
-local specs = {
-  all = {
-    git = {
-      add = '#266d6a',
-      changed = '#b366b2'
-    }
-  }
-}
-
-require('nightfox').setup({
-  options = options,
-  palettes = palettes,
-  specs = specs,
-  groups = groups,
-})
-EOF
 colorscheme nightfox
 
 let mapleader = ","
@@ -229,6 +174,7 @@ let g:poetv_auto_activate = 1
 "let g:indent_blankline_char = '¦'
 let g:indent_blankline_space_char = '·'
 let g:indent_blankline_filetype_exclude = ['help', 'vim', 'startify', 'vimwiki']
+let g:indent_blankline_show_current_context = v:true
 
 " startify
 let g:startify_lists = [
@@ -252,71 +198,16 @@ let g:startify_fortune_use_unicode = 1
 nnoremap <leader>gh :GBrowse!<cr>
 vnoremap <leader>gh :GBrowse!<cr>
 
-" gitsigns
-set signcolumn=yes
 lua << EOF
-require('gitsigns').setup {
-  signs = {
-    add    = {text = '┃'},
-    change = {text = '┃'},
-    changedelete = {text = '┅'},
-  },
-}
+require("plugins/nightfox")
+require("plugins/gitsigns")
+require("plugins/lualine")
+require("plugins/devicons")
+require("plugins/bufferline")
 EOF
 
 " vim-sneak
 let g:sneak#label = 1
-
-" lualine
-set statusline=1
-lua << EOF
-require('lualine').setup {
-  options = {
-    theme = 'nightfox',
-    component_separators = { left = '',  right = ''},
-    section_separators = { left = '', right = ''},
-  },
-  sections = {
-    lualine_c = {'filename', 'g:coc_status'},
-    lualine_x = {'filetype'},
-    lualine_y = {
-      {
-        'diagnostics',
-        -- table of diagnostic sources, available sources:
-        -- nvim_lsp, coc, ale, vim_lsp
-        sources = {'coc'},
-        -- displays diagnostics from defined severity
-        sections = {'error', 'warn', 'info', 'hint'},
-        -- all colors are in format #rrggbb
-        symbols = {error = ' ', warn = ' ', hint = ' '},
-      },
-    },
-  },
-}
-EOF
-
-" devicons
-lua << EOF
-require('nvim-web-devicons').setup {
-  -- globally enable default icons (default to false)
-  -- will get overriden by `get_icons` option
-  default = true;
-}
-EOF
-
-" bufferline
-lua << EOF
-require('bufferline').setup {
-  options = {
-    -- separator_style = {'◥', '◣'},
-    -- separator_style = {'/', '\\'},
-    --separator_style = {'', ''},
-    separator_style = 'slant',
-    --indicator_icon = ' ',
-    always_show_bufferline = false,
-  },
-}
-EOF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " end plugin settings
@@ -379,8 +270,9 @@ hi IndentBlanklineChar cterm=nocombine ctermfg=darkgray gui=nocombine guifg=#152
 hi IndentBlanklineSpaceChar cterm=nocombine ctermfg=darkgray gui=nocombine guifg=#15222e
 hi IndentBlanklineSpaceCharBlankline cterm=nocombine ctermfg=darkgray gui=nocombine guifg=#15222e
 
-hi CocRustTypeHint cterm=nocombine,italic ctermfg=darkgray gui=nocombine,italic guifg=#4b364d
-hi CocRustChainingHint cterm=nocombine,italic ctermfg=darkgray gui=nocombine,italic guifg=#2f484d
+hi CocInlayHint cterm=nocombine,italic ctermfg=darkgray gui=nocombine,italic guifg=#4b364d guibg=none
+hi CocInlayHintType cterm=nocombine,italic ctermfg=darkgray gui=nocombine,italic guifg=#4b364d guibg=none
+hi CocInlayHintParameter cterm=nocombine,italic ctermfg=darkgray gui=nocombine,italic guifg=#2f484d guibg=none
 
 hi CocCodeLens guifg=#3d5166
 
