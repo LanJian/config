@@ -1,12 +1,12 @@
 [user]
   name = Jack Huang
-  email = jack.huang@onlyalt.com
+  email = jackhxs@gmail.com
 [core]
   editor = nvim +15 -c 'startinsert'
   excludesfile = ~/.gitignore_global
   pager = delta
 [github]
-  user = jackhxs-alt
+  user = lanjian
 [apply]
   whitespace = fix
 [color]
@@ -68,3 +68,6 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
