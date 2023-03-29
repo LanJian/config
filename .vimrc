@@ -45,7 +45,6 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-speeddating'
 Plug 'google/vim-maktaba'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'petobens/poet-v'
 Plug 'vimwiki/vimwiki'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mhinz/vim-startify'
@@ -199,11 +198,12 @@ nnoremap <leader>gh :GBrowse!<cr>
 vnoremap <leader>gh :GBrowse!<cr>
 
 lua << EOF
-require("plugins/nightfox")
+require("plugins/bufferline")
+require("plugins/devicons")
 require("plugins/gitsigns")
 require("plugins/lualine")
-require("plugins/devicons")
-require("plugins/bufferline")
+require("plugins/nightfox")
+require("plugins/treesitter")
 EOF
 
 " vim-sneak

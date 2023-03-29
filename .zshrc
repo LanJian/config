@@ -98,12 +98,16 @@ if [ "$TERM"=="xterm" ]; then
   export TERM=xterm-256color
 fi
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if type "rbenv" > /dev/null; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if type "pyenv" > /dev/null; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 #export PATH="$HOME/.pyenv/bin:$PATH"
 #eval "$(pyenv init --path)"
@@ -133,11 +137,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-[[ -s "/home/jackhxs/.gvm/scripts/gvm" ]] && source "/home/jackhxs/.gvm/scripts/gvm"
-
-# gopass
-source <($GOPATH/bin/gopass completion zsh | head -n -1 | tail -n +2)
-compdef _gopass gopass
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 export YVM_DIR=/home/jackhxs/.yvm
 [ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
@@ -149,7 +149,12 @@ export YVM_DIR=/home/jackhxs/.yvm
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#2c3636"
 bindkey '^ ' autosuggest-accept
 
-eval "$(navi widget zsh)"
+if type "navi" > /dev/null; then
+  eval "$(navi widget zsh)"
+fi
 
 # aws cli
 complete -C '/usr/local/bin/aws_completer' aws
+
+#asdf
+[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh"
